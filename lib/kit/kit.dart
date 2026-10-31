@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../routes.dart';
+import '../theme.dart' show C;
 import 'keyboard.dart';
 export 'pickers.dart';
 export 'image_pick.dart';
@@ -124,20 +125,33 @@ Widget hTap(
   );
 }
 
-void hToast(BuildContext context, String msg) {
-  ScaffoldMessenger.of(context)
+void hToast(BuildContext context, String msg) =>
+    hToastOn(ScaffoldMessenger.of(context), msg);
+
+/// 提示条：深浅色都用明确的文字色与底色，悬浮在底部操作栏上方。
+void hToastOn(ScaffoldMessengerState messenger, String msg) {
+  messenger
     ..hideCurrentSnackBar()
     ..showSnackBar(
       SnackBar(
-        content: Text(msg),
-        behavior: SnackBarBehavior.floating,
-        duration: const Duration(milliseconds: 1400),
-        backgroundColor: dk(
-          context,
-          const Color(0xFF18181B),
-          const Color(0xFF34343A),
+        content: Text(
+          msg,
+          textAlign: TextAlign.center,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            height: 1.4,
+          ),
         ),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        behavior: SnackBarBehavior.floating,
+        margin: const EdgeInsets.fromLTRB(48, 0, 48, 104),
+        duration: const Duration(milliseconds: 1600),
+        elevation: 0,
+        backgroundColor: C.dark
+            ? const Color(0xFF3A3A40)
+            : const Color(0xFF18181B),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
       ),
     );
 }
@@ -281,15 +295,7 @@ Future<void> hConfirmPop(BuildContext context, String label) async {
     // 等弹窗退场动画结束再返回，避免两层转场叠在一起留下遮罩
     await Future<void>.delayed(const Duration(milliseconds: 240));
     nav.maybePop();
-    messenger
-      ..hideCurrentSnackBar()
-      ..showSnackBar(
-        const SnackBar(
-          content: Text('已完成（演示）'),
-          behavior: SnackBarBehavior.floating,
-          duration: Duration(milliseconds: 1400),
-        ),
-      );
+    hToastOn(messenger, '已完成（演示）');
   }
 }
 

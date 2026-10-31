@@ -1,4 +1,6 @@
 // 表单里的选择类交互：日期、车型、城市、列表选择、金额输入、车牌输入。数据均为 mock。
+import 'kit.dart';
+
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
@@ -1205,17 +1207,7 @@ class _HCodeHolderState extends State<HCodeHolder> {
 void hSendCode(BuildContext context, CodeCtrl c) {
   if (c.seconds > 0) return;
   c.start();
-  ScaffoldMessenger.of(context)
-    ..hideCurrentSnackBar()
-    ..showSnackBar(
-      SnackBar(
-        content: const Text('验证码已发送（演示）'),
-        behavior: SnackBarBehavior.floating,
-        duration: const Duration(milliseconds: 1400),
-        backgroundColor: _ink,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      ),
-    );
+  hToastOn(ScaffoldMessenger.of(context), '验证码已发送（演示）');
 }
 
 Widget hCodeText(CodeCtrl c, TextStyle style) => ListenableBuilder(

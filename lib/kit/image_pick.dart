@@ -1,4 +1,6 @@
 // 图片选择：拍照 / 从相册选择，选完在原处回显（不真正上传）。
+import 'kit.dart';
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -40,18 +42,12 @@ Future<void> hPickImage(
       );
     } catch (_) {
       if (context.mounted) {
-        ScaffoldMessenger.of(context)
-          ..hideCurrentSnackBar()
-          ..showSnackBar(
-            SnackBar(
-              content: Text(
-                src == ImageSource.camera
-                    ? '无法打开相机，请在系统设置中允许访问'
-                    : '无法访问相册，请在系统设置中允许访问',
-              ),
-              behavior: SnackBarBehavior.floating,
-            ),
-          );
+        hToastOn(
+          ScaffoldMessenger.of(context),
+          src == ImageSource.camera
+              ? '无法打开相机，请在系统设置中允许访问'
+              : '无法访问相册，请在系统设置中允许访问',
+        );
       }
       return;
     }

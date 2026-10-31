@@ -1,3 +1,5 @@
+import '../kit/kit.dart';
+
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
@@ -436,19 +438,7 @@ class Divider1 extends StatelessWidget {
 void push(BuildContext context, Widget page) =>
     Navigator.of(context).push(MaterialPageRoute(builder: (_) => page));
 
-void toast(BuildContext context, String msg) {
-  ScaffoldMessenger.of(context)
-    ..hideCurrentSnackBar()
-    ..showSnackBar(
-      SnackBar(
-        content: Text(msg),
-        behavior: SnackBarBehavior.floating,
-        duration: const Duration(milliseconds: 1400),
-        backgroundColor: C.ink,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      ),
-    );
-}
+void toast(BuildContext context, String msg) => hToast(context, msg);
 
 /// 暂未实现的页面占位
 class PlaceholderPage extends StatelessWidget {
