@@ -37,7 +37,7 @@ class _MembersPageState extends State<MembersPage> {
           0,
           MediaQuery.of(context).padding.top + 12,
           0,
-          24,
+          MediaQuery.of(context).padding.bottom + 16,
         ),
         children: [
           Padding(

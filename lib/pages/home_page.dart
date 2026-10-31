@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
           20,
           MediaQuery.of(context).padding.top + 12,
           20,
-          24,
+          MediaQuery.of(context).padding.bottom + 16,
         ),
         children: [
           _header(context),

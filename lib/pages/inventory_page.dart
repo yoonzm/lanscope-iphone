@@ -28,7 +28,7 @@ class _InventoryPageState extends State<InventoryPage> {
           20,
           MediaQuery.of(context).padding.top + 12,
           20,
-          24,
+          MediaQuery.of(context).padding.bottom + 16,
         ),
         children: [
           Row(

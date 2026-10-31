@@ -56,6 +56,8 @@ class _ShellState extends State<Shell> {
     return ValueListenableBuilder<int>(
       valueListenable: tabIndex,
       builder: (context, idx, _) => Scaffold(
+        // 底栏上方探出的 24px 是透明区域，内容要能从它后面透出来
+        extendBody: true,
         body: IndexedStack(index: idx, children: _pages),
         bottomNavigationBar: _BottomBar(
           index: idx,
