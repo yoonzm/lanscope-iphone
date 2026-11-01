@@ -59,7 +59,7 @@ class ServiceEditPage extends StatelessWidget {
                           ],
                         ),
                         child: hrow(
-                          [hsvg(dk(context, Svgs.s59, Svgs.s60), w: 20, h: 20)],
+                          [hsvg(dk(context, Svgs.s71, Svgs.s72), w: 20, h: 20)],
                           main: MainAxisAlignment.center,
                           cross: CrossAxisAlignment.center,
                           gap: 0,
@@ -989,7 +989,7 @@ class ServiceEditPage extends StatelessWidget {
                             child: hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s282, Svgs.s283),
+                                  dk(context, Svgs.s343, Svgs.s344),
                                   w: 18,
                                   h: 18,
                                 ),
@@ -1062,7 +1062,7 @@ class ServiceEditPage extends StatelessWidget {
                             child: hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s284, Svgs.s285),
+                                  dk(context, Svgs.s345, Svgs.s346),
                                   w: 18,
                                   h: 18,
                                 ),
@@ -1134,7 +1134,7 @@ class ServiceEditPage extends StatelessWidget {
                           child: hrow(
                             [
                               hsvg(
-                                dk(context, Svgs.s286, Svgs.s287),
+                                dk(context, Svgs.s347, Svgs.s348),
                                 w: 16,
                                 h: 16,
                               ),

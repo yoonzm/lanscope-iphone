@@ -10,6 +10,7 @@ import 'pages/member_detail_page.dart';
 import 'pages/order_page.dart';
 import 'pages/services_page.dart';
 import 'pages/settings_page.dart';
+import 'pages/scan_page.dart';
 import 'pages/shell.dart';
 import 'pages/theme_sheet.dart';
 
@@ -47,6 +48,14 @@ Widget? pageFor(String name) {
       return const ServicesPage();
     case 'Settings':
       return const SettingsPage();
+    case 'FindScanPlate':
+      return const ScanPage(ScanKind.findPlate);
+    case 'FindScanCode':
+      return const ScanPage(ScanKind.findCode);
+    case 'ScanLicense':
+      return const ScanPage(ScanKind.licenseCard);
+    case 'ScanPlate':
+      return const ScanPage(ScanKind.plateCard);
   }
   final b = genRoutes[name];
   return b == null ? null : Builder(builder: b);
@@ -92,6 +101,7 @@ const Set<String> resultPages = {
   'RegDone',
   'MemberAddDone',
   'BindDone',
+  'PackageSold',
 };
 
 /// 表单卡片 / 全屏流程：从底部滑入，左上角是 ✕（设计稿“页面出场方式”第 3、4 类）。
@@ -108,6 +118,15 @@ const Set<String> _modalPages = {
   'ServiceEdit',
   'CardTierEdit',
   'StockCheck',
+  'MemberEdit',
+  'MemberAdjust',
+  'MemberVisit',
+  'MemberSendMsg',
+  'PackageEdit',
+  'ScanLicense',
+  'ScanPlate',
+  'FindScanPlate',
+  'FindScanCode',
 };
 
 String? _routeName(BuildContext context) =>

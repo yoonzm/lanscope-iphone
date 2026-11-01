@@ -200,7 +200,7 @@ class HoldListPage extends StatelessWidget {
                               child: hrow(
                                 [
                                   hrow(
-                                    [hsvg(Svgs.s142, w: 18, h: 18)],
+                                    [hsvg(Svgs.s162, w: 18, h: 18)],
                                     main: MainAxisAlignment.start,
                                     cross: CrossAxisAlignment.start,
                                     gap: 0,
@@ -776,7 +776,7 @@ class HoldListPage extends StatelessWidget {
                             hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s143, Svgs.s144),
+                                  dk(context, Svgs.s163, Svgs.s164),
                                   w: 14,
                                   h: 14,
                                 ),
@@ -901,7 +901,7 @@ class HoldListPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s145, Svgs.s146),
+                                          dk(context, Svgs.s165, Svgs.s166),
                                           w: 18,
                                           h: 18,
                                         ),
@@ -1135,7 +1135,7 @@ class HoldListPage extends StatelessWidget {
                             hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s143, Svgs.s144),
+                                  dk(context, Svgs.s163, Svgs.s164),
                                   w: 14,
                                   h: 14,
                                 ),
@@ -1239,7 +1239,7 @@ class HoldListPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s145, Svgs.s146),
+                                          dk(context, Svgs.s165, Svgs.s166),
                                           w: 18,
                                           h: 18,
                                         ),
@@ -1481,7 +1481,7 @@ class HoldListPage extends StatelessWidget {
                             hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s143, Svgs.s144),
+                                  dk(context, Svgs.s163, Svgs.s164),
                                   w: 14,
                                   h: 14,
                                 ),
@@ -1577,7 +1577,7 @@ class HoldListPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s145, Svgs.s146),
+                                          dk(context, Svgs.s165, Svgs.s166),
                                           w: 18,
                                           h: 18,
                                         ),
@@ -1823,7 +1823,7 @@ class HoldListPage extends StatelessWidget {
                             hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s143, Svgs.s144),
+                                  dk(context, Svgs.s163, Svgs.s164),
                                   w: 14,
                                   h: 14,
                                 ),
@@ -1927,7 +1927,7 @@ class HoldListPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s145, Svgs.s146),
+                                          dk(context, Svgs.s165, Svgs.s166),
                                           w: 18,
                                           h: 18,
                                         ),

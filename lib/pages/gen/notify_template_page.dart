@@ -135,7 +135,7 @@ class NotifyTemplatePage extends StatelessWidget {
                         child: hrow(
                           [
                             hsvg(
-                              dk(context, Svgs.s232, Svgs.s233),
+                              dk(context, Svgs.s270, Svgs.s271),
                               w: 22,
                               h: 22,
                             ),
@@ -492,7 +492,7 @@ class NotifyTemplatePage extends StatelessWidget {
                                       ),
                                     ),
                                     hsvg(
-                                      dk(context, Svgs.s187, Svgs.s188),
+                                      dk(context, Svgs.s207, Svgs.s208),
                                       w: 14,
                                       h: 14,
                                     ),

@@ -1280,7 +1280,7 @@ class StockCheckPage extends StatelessWidget {
                   pad: EdgeInsets.fromLTRB(14, 12, 14, 12),
                   child: hrow(
                     [
-                      hsvg(dk(context, Svgs.s294, Svgs.s295), w: 16, h: 16),
+                      hsvg(dk(context, Svgs.s355, Svgs.s356), w: 16, h: 16),
                       Expanded(
                         flex: 1,
                         child: Text(

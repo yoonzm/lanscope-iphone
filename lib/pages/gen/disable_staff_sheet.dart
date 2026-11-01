@@ -93,7 +93,7 @@ class DisableStaffSheet extends StatelessWidget {
             [
               hrow(
                 [
-                  hsvg(dk(context, Svgs.s87, Svgs.s88), w: 14, h: 14),
+                  hsvg(dk(context, Svgs.s101, Svgs.s102), w: 14, h: 14),
                   Flexible(
                     flex: 260,
                     child: Text(
@@ -112,7 +112,7 @@ class DisableStaffSheet extends StatelessWidget {
               ),
               hrow(
                 [
-                  hsvg(dk(context, Svgs.s87, Svgs.s88), w: 14, h: 14),
+                  hsvg(dk(context, Svgs.s101, Svgs.s102), w: 14, h: 14),
                   Flexible(
                     flex: 223,
                     child: Text(
@@ -131,7 +131,7 @@ class DisableStaffSheet extends StatelessWidget {
               ),
               hrow(
                 [
-                  hsvg(dk(context, Svgs.s87, Svgs.s88), w: 14, h: 14),
+                  hsvg(dk(context, Svgs.s101, Svgs.s102), w: 14, h: 14),
                   Flexible(
                     flex: 169,
                     child: Text(

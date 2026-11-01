@@ -112,7 +112,7 @@ class PayConfigPage extends StatelessWidget {
                               bg: Color(0xFF17C964),
                               radius: BorderRadius.circular(12),
                               child: hrow(
-                                [hsvg(Svgs.s234, w: 20, h: 20)],
+                                [hsvg(Svgs.s291, w: 20, h: 20)],
                                 main: MainAxisAlignment.center,
                                 cross: CrossAxisAlignment.center,
                                 gap: 0,
@@ -683,51 +683,59 @@ class PayConfigPage extends StatelessWidget {
                             ),
                             margin: EdgeInsets.fromLTRB(16, 0, 0, 0),
                           ),
-                          hbox(
-                            minH: 54,
-                            pad: EdgeInsets.fromLTRB(16, 0, 16, 0),
-                            child: hrow(
-                              [
-                                Expanded(
-                                  flex: 1,
-                                  child: hcol(
-                                    [
-                                      Text(
-                                        '收款后自动通知会员',
-                                        style: hts(
-                                          14,
-                                          dk(
-                                            context,
-                                            Color(0xFF18181B),
-                                            Color(0xFFFAFAFA),
+                          hTap(
+                            context,
+                            hbox(
+                              minH: 54,
+                              pad: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                              child: hrow(
+                                [
+                                  Expanded(
+                                    flex: 1,
+                                    child: hcol(
+                                      [
+                                        Text(
+                                          '收款后通知会员',
+                                          style: hts(
+                                            14,
+                                            dk(
+                                              context,
+                                              Color(0xFF18181B),
+                                              Color(0xFFFAFAFA),
+                                            ),
+                                            lh: 20,
                                           ),
-                                          lh: 20,
                                         ),
-                                      ),
-                                      Text(
-                                        '按"通知与消息"中的渠道发送',
-                                        style: hts(
-                                          12,
-                                          dk(
-                                            context,
-                                            Color(0xFF71717A),
-                                            Color(0xFF9A9AA3),
+                                        Text(
+                                          '自动发送 · 优先微信，失败转短信',
+                                          style: hts(
+                                            12,
+                                            dk(
+                                              context,
+                                              Color(0xFF71717A),
+                                              Color(0xFF9A9AA3),
+                                            ),
+                                            lh: 16,
                                           ),
-                                          lh: 16,
                                         ),
-                                      ),
-                                    ],
-                                    main: MainAxisAlignment.start,
-                                    cross: CrossAxisAlignment.stretch,
-                                    gap: 1,
+                                      ],
+                                      main: MainAxisAlignment.start,
+                                      cross: CrossAxisAlignment.stretch,
+                                      gap: 1,
+                                    ),
                                   ),
-                                ),
-                                HSwitch(initial: true),
-                              ],
-                              main: MainAxisAlignment.start,
-                              cross: CrossAxisAlignment.center,
-                              gap: 12,
+                                  hsvg(
+                                    dk(context, Svgs.s3, Svgs.s4),
+                                    w: 16,
+                                    h: 16,
+                                  ),
+                                ],
+                                main: MainAxisAlignment.start,
+                                cross: CrossAxisAlignment.center,
+                                gap: 12,
+                              ),
                             ),
+                            to: 'NotifySettings',
                           ),
                           hbox(
                             h: 1,

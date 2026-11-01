@@ -26,7 +26,7 @@ class MemberDetailPage extends StatelessWidget {
                 child: RoundBtn(
                   'dots',
                   label: '更多',
-                  onTap: () => toast(context, '更多操作（演示）'),
+                  onTap: () => openRoute(context, 'MemberMore'),
                 ),
               ),
             ),
@@ -59,10 +59,14 @@ class MemberDetailPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const SectionTitle('次卡套餐'),
+                  SectionTitle(
+                    '次卡套餐',
+                    action: '购买次卡',
+                    onAction: () => openRoute(context, 'Recharge'),
+                  ),
                   const SizedBox(height: 12),
                   for (final p in memberPacks) ...[
-                    _pack(p),
+                    _pack(context, p),
                     const SizedBox(height: 10),
                   ],
                   const SizedBox(height: 10),
@@ -308,7 +312,8 @@ class MemberDetailPage extends StatelessWidget {
     ),
   );
 
-  Widget _pack(CardPack p) => AppCard(
+  Widget _pack(BuildContext context, CardPack p) => AppCard(
+    onTap: () => openRoute(context, 'PackageDetail'),
     radius: 20,
     padding: const EdgeInsets.all(16),
     child: Column(

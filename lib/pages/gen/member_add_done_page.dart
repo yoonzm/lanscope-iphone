@@ -10,12 +10,12 @@ class MemberAddDonePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return HPage(
       bg: dk(context, Color(0xFFF4F4F5), Color(0xFF09090B)),
-      height: 1120,
+      height: 1144,
       fixedHeight: false,
       flow: hcol(
         [
           hbox(
-            pad: EdgeInsets.fromLTRB(20, topInset(context), 20, 120),
+            pad: EdgeInsets.fromLTRB(20, topInset(context), 20, 130),
             child: hcol(
               [
                 hrow(
@@ -73,76 +73,156 @@ class MemberAddDonePage extends StatelessWidget {
                   gap: 0,
                 ),
                 hbox(
-                  pad: EdgeInsets.fromLTRB(0, 8, 0, 8),
-                  child: hcol(
-                    [
-                      hbox(
-                        w: 96,
-                        h: 96,
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                        child: hstack(
-                          hrow(
-                            [
-                              hbox(
-                                w: 72,
-                                h: 72,
-                                bg: Color(0xFF17C964),
-                                radius: BorderRadius.circular(36),
-                                shadow: [
-                                  BoxShadow(
-                                    color: Color.fromRGBO(23, 201, 100, 0.35),
-                                    offset: Offset(0, 8),
-                                    blurRadius: 20,
-                                    spreadRadius: 0,
+                  pad: EdgeInsets.fromLTRB(0, 26, 0, 6),
+                  child: hstack(
+                    hcol(
+                      [
+                        hbox(
+                          w: 128,
+                          h: 128,
+                          child: hstack(
+                            hrow(
+                              [
+                                hbox(
+                                  w: 76,
+                                  h: 76,
+                                  grad: LinearGradient(
+                                    begin: Alignment(-0.342, -0.94),
+                                    end: Alignment(0.342, 0.94),
+                                    colors: [
+                                      Color(0xFF3BDC86),
+                                      Color(0xFF17C964),
+                                    ],
+                                    stops: [0, 1],
                                   ),
-                                ],
-                                child: hrow(
-                                  [hsvg(Svgs.s30, w: 36, h: 36)],
-                                  main: MainAxisAlignment.center,
-                                  cross: CrossAxisAlignment.center,
-                                  gap: 0,
+                                  radius: BorderRadius.circular(38),
+                                  shadow: [
+                                    BoxShadow(
+                                      color: Color.fromRGBO(23, 201, 100, 0.35),
+                                      offset: Offset(0, 10),
+                                      blurRadius: 24,
+                                      spreadRadius: 0,
+                                    ),
+                                  ],
+                                  child: hrow(
+                                    [hsvg(Svgs.s29, w: 40, h: 40)],
+                                    main: MainAxisAlignment.center,
+                                    cross: CrossAxisAlignment.center,
+                                    gap: 0,
+                                  ),
                                 ),
+                              ],
+                              main: MainAxisAlignment.center,
+                              cross: CrossAxisAlignment.center,
+                              gap: 0,
+                            ),
+                            [
+                              Positioned(
+                                left: 0,
+                                top: 0,
+                                child: hsvg(Svgs.s28, w: 128, h: 128),
                               ),
                             ],
-                            main: MainAxisAlignment.center,
-                            cross: CrossAxisAlignment.center,
-                            gap: 0,
                           ),
-                          [],
-                          behind: [
-                            Positioned(
-                              left: -32,
-                              top: -32,
-                              child: hsvg(
-                                dk(context, Svgs.s28, Svgs.s29),
-                                w: 160,
-                                h: 160,
-                              ),
-                            ),
-                          ],
+                        ),
+                        Text(
+                          '开卡成功',
+                          style: hts(
+                            21,
+                            dk(context, Color(0xFF18181B), Color(0xFFFAFAFA)),
+                            w: FontWeight.w600,
+                            lh: 28,
+                          ),
+                        ),
+                        Text(
+                          '已为李女士建立会员档案，当前为普通会员',
+                          style: hts(
+                            13,
+                            dk(context, Color(0xFF71717A), Color(0xFF9A9AA3)),
+                            lh: 19,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                      main: MainAxisAlignment.start,
+                      cross: CrossAxisAlignment.center,
+                      gap: 8,
+                    ),
+                    [],
+                    behind: [
+                      Positioned(
+                        left: 38,
+                        top: 30,
+                        width: 8,
+                        height: 8,
+                        child: hbox(
+                          w: 8,
+                          h: 8,
+                          bg: Color(0xFFF5D78E),
+                          radius: BorderRadius.circular(4),
                         ),
                       ),
-                      Text(
-                        '开卡成功',
-                        style: hts(
-                          17,
-                          dk(context, Color(0xFF2B7745), Color(0xFF5FD48C)),
-                          w: FontWeight.w600,
-                          lh: 24,
+                      Positioned(
+                        left: 300,
+                        top: 52,
+                        width: 6,
+                        height: 6,
+                        child: hbox(
+                          w: 6,
+                          h: 6,
+                          bg: Color(0xFF0485F7),
+                          radius: BorderRadius.circular(3),
                         ),
                       ),
-                      Text(
-                        '已为李女士建立金卡会员档案',
-                        style: hts(
-                          13,
-                          dk(context, Color(0xFF71717A), Color(0xFF9A9AA3)),
-                          lh: 18,
+                      Positioned(
+                        left: 70,
+                        top: 150,
+                        width: 5,
+                        height: 5,
+                        child: hbox(
+                          w: 5,
+                          h: 5,
+                          bg: Color(0xFF17C964),
+                          radius: BorderRadius.circular(2.5),
+                        ),
+                      ),
+                      Positioned(
+                        left: 318,
+                        top: 140,
+                        width: 9,
+                        height: 9,
+                        child: hbox(
+                          w: 9,
+                          h: 9,
+                          bg: Color(0xFFF5D78E),
+                          radius: BorderRadius.circular(4.5),
+                        ),
+                      ),
+                      Positioned(
+                        left: 24,
+                        top: 100,
+                        width: 6,
+                        height: 6,
+                        child: hbox(
+                          w: 6,
+                          h: 6,
+                          bg: Color(0xFF0485F7),
+                          radius: BorderRadius.circular(3),
+                        ),
+                      ),
+                      Positioned(
+                        left: 344,
+                        top: 98,
+                        width: 5,
+                        height: 5,
+                        child: hbox(
+                          w: 5,
+                          h: 5,
+                          bg: Color(0xFF17C964),
+                          radius: BorderRadius.circular(2.5),
                         ),
                       ),
                     ],
-                    main: MainAxisAlignment.start,
-                    cross: CrossAxisAlignment.center,
-                    gap: 6,
                   ),
                 ),
                 hbox(
@@ -179,129 +259,393 @@ class MemberAddDonePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  pad: EdgeInsets.fromLTRB(18, 6, 18, 6),
+                  clip: true,
                   child: hcol(
                     [
                       hbox(
-                        minH: 36,
-                        child: hrow(
+                        pad: EdgeInsets.fromLTRB(18, 18, 18, 8),
+                        child: hcol(
                           [
-                            Expanded(
-                              flex: 1,
-                              child: Text(
-                                '会员',
-                                style: hts(
-                                  14,
-                                  dk(
-                                    context,
-                                    Color(0xFF71717A),
-                                    Color(0xFF9A9AA3),
+                            hrow(
+                              [
+                                hbox(
+                                  w: 48,
+                                  h: 48,
+                                  grad: LinearGradient(
+                                    begin: Alignment(-0.5, -0.866),
+                                    end: Alignment(0.5, 0.866),
+                                    colors: [
+                                      Color(0xFFFFF1CF),
+                                      Color(0xFFF5D78E),
+                                    ],
+                                    stops: [0, 1],
                                   ),
-                                  lh: 20,
+                                  radius: BorderRadius.circular(24),
+                                  align: Alignment(0, 0),
+                                  child: Text(
+                                    '李',
+                                    style: hts(
+                                      19,
+                                      Color(0xFF5C3D0A),
+                                      w: FontWeight.w600,
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                Expanded(
+                                  flex: 1,
+                                  child: hcol(
+                                    [
+                                      hrow(
+                                        [
+                                          Flexible(
+                                            flex: 48,
+                                            child: Text(
+                                              '李女士',
+                                              style: hts(
+                                                16,
+                                                dk(
+                                                  context,
+                                                  Color(0xFF18181B),
+                                                  Color(0xFFFAFAFA),
+                                                ),
+                                                w: FontWeight.w600,
+                                                lh: 23,
+                                              ),
+                                            ),
+                                          ),
+                                          Flexible(
+                                            flex: 60,
+                                            child: hbox(
+                                              bg: dk(
+                                                context,
+                                                Color(0xFFEEEEF0),
+                                                Color(0xFF27272A),
+                                              ),
+                                              radius: BorderRadius.circular(9),
+                                              pad: EdgeInsets.fromLTRB(
+                                                8,
+                                                0,
+                                                8,
+                                                0,
+                                              ),
+                                              child: Text(
+                                                '普通会员',
+                                                style: hts(
+                                                  11,
+                                                  dk(
+                                                    context,
+                                                    Color(0xFF3F3F46),
+                                                    Color(0xFFD4D4D8),
+                                                  ),
+                                                  w: FontWeight.w600,
+                                                  lh: 18,
+                                                ),
+                                                softWrap: false,
+                                                maxLines: 1,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                        main: MainAxisAlignment.start,
+                                        cross: CrossAxisAlignment.center,
+                                        gap: 8,
+                                      ),
+                                      Text(
+                                        '139 **** 5530',
+                                        style: hts(
+                                          12,
+                                          dk(
+                                            context,
+                                            Color(0xFF71717A),
+                                            Color(0xFF9A9AA3),
+                                          ),
+                                          lh: 17,
+                                        ),
+                                      ),
+                                    ],
+                                    main: MainAxisAlignment.start,
+                                    cross: CrossAxisAlignment.stretch,
+                                    gap: 3,
+                                  ),
+                                ),
+                              ],
+                              main: MainAxisAlignment.start,
+                              cross: CrossAxisAlignment.center,
+                              gap: 12,
                             ),
-                            Text(
-                              '李女士 · 139 **** 5530',
-                              style: hts(
-                                14,
-                                dk(
-                                  context,
-                                  Color(0xFF18181B),
-                                  Color(0xFFFAFAFA),
+                            NegMargin(
+                              top: 0,
+                              left: -16,
+                              child: hbox(
+                                margin: EdgeInsets.fromLTRB(0, 14, 0, 0),
+                                child: hcol(
+                                  [
+                                    hbox(
+                                      minH: 26,
+                                      pad: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                                      child: hrow(
+                                        [
+                                          Expanded(
+                                            flex: 1,
+                                            child: Text(
+                                              '当前权益',
+                                              style: hts(
+                                                14,
+                                                dk(
+                                                  context,
+                                                  Color(0xFF52525B),
+                                                  Color(0xFFA8A8B3),
+                                                ),
+                                                lh: 20,
+                                              ),
+                                            ),
+                                          ),
+                                          Text(
+                                            '服务原价 · 积分 1 倍',
+                                            style: hts(
+                                              15,
+                                              dk(
+                                                context,
+                                                Color(0xFF18181B),
+                                                Color(0xFFFAFAFA),
+                                              ),
+                                              lh: 22,
+                                            ),
+                                          ),
+                                        ],
+                                        main: MainAxisAlignment.start,
+                                        cross: CrossAxisAlignment.center,
+                                        gap: 12,
+                                      ),
+                                    ),
+                                    hbox(
+                                      minH: 26,
+                                      pad: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                                      child: hrow(
+                                        [
+                                          Expanded(
+                                            flex: 1,
+                                            child: Text(
+                                              '开卡时间',
+                                              style: hts(
+                                                14,
+                                                dk(
+                                                  context,
+                                                  Color(0xFF52525B),
+                                                  Color(0xFFA8A8B3),
+                                                ),
+                                                lh: 20,
+                                              ),
+                                            ),
+                                          ),
+                                          Text(
+                                            '11月1日 12:02',
+                                            style: hts(
+                                              15,
+                                              dk(
+                                                context,
+                                                Color(0xFF18181B),
+                                                Color(0xFFFAFAFA),
+                                              ),
+                                              lh: 22,
+                                            ),
+                                          ),
+                                        ],
+                                        main: MainAxisAlignment.start,
+                                        cross: CrossAxisAlignment.center,
+                                        gap: 12,
+                                      ),
+                                    ),
+                                  ],
+                                  main: MainAxisAlignment.start,
+                                  cross: CrossAxisAlignment.stretch,
+                                  gap: 12,
                                 ),
-                                w: FontWeight.w500,
-                                lh: 20,
                               ),
                             ),
                           ],
                           main: MainAxisAlignment.start,
-                          cross: CrossAxisAlignment.baseline,
-                          gap: 12,
+                          cross: CrossAxisAlignment.stretch,
+                          gap: 0,
                         ),
                       ),
                       hbox(
-                        h: 1,
-                        bg: dk(context, Color(0xFFEFEFF1), Color(0xFF2A2A2E)),
-                      ),
-                      hbox(
-                        minH: 36,
-                        child: hrow(
+                        h: 20,
+                        child: hstack(
+                          hcol(
+                            [],
+                            main: MainAxisAlignment.start,
+                            cross: CrossAxisAlignment.stretch,
+                            gap: 0,
+                            min: false,
+                          ),
                           [
-                            Expanded(
-                              flex: 1,
-                              child: Text(
-                                '卡种',
-                                style: hts(
-                                  14,
-                                  dk(
-                                    context,
-                                    Color(0xFF71717A),
-                                    Color(0xFF9A9AA3),
-                                  ),
-                                  lh: 20,
+                            Positioned(
+                              left: -10,
+                              top: 0,
+                              width: 20,
+                              height: 20,
+                              child: hbox(
+                                w: 20,
+                                h: 20,
+                                bg: dk(
+                                  context,
+                                  Color(0xFFF4F4F5),
+                                  Color(0xFF27272A),
                                 ),
+                                radius: BorderRadius.circular(10),
                               ),
                             ),
-                            Text(
-                              '金卡会员（9.2 折）',
-                              style: hts(
-                                14,
-                                dk(
+                            Positioned(
+                              top: 0,
+                              right: -10,
+                              width: 20,
+                              height: 20,
+                              child: hbox(
+                                w: 20,
+                                h: 20,
+                                bg: dk(
                                   context,
-                                  Color(0xFF18181B),
-                                  Color(0xFFFAFAFA),
+                                  Color(0xFFF4F4F5),
+                                  Color(0xFF27272A),
                                 ),
-                                w: FontWeight.w600,
-                                lh: 20,
+                                radius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            Positioned(
+                              left: 16,
+                              top: 10,
+                              right: 16,
+                              child: hbox(
+                                dashed: true,
+                                dashColor: dk(
+                                  context,
+                                  Color(0xFFE4E4E7),
+                                  Color(0xFF3A3A40),
+                                ),
+                                dashWidth: 1.5,
                               ),
                             ),
                           ],
-                          main: MainAxisAlignment.start,
-                          cross: CrossAxisAlignment.baseline,
-                          gap: 12,
                         ),
                       ),
                       hbox(
-                        h: 1,
-                        bg: dk(context, Color(0xFFEFEFF1), Color(0xFF2A2A2E)),
-                      ),
-                      hbox(
-                        minH: 36,
-                        child: hrow(
+                        pad: EdgeInsets.fromLTRB(18, 6, 18, 18),
+                        child: hcol(
                           [
-                            Expanded(
-                              flex: 1,
-                              child: Text(
-                                '车辆',
-                                style: hts(
-                                  14,
-                                  dk(
-                                    context,
-                                    Color(0xFF71717A),
-                                    Color(0xFF9A9AA3),
+                            hrow(
+                              [
+                                hsvg(
+                                  dk(context, Svgs.s209, Svgs.s210),
+                                  w: 72,
+                                  h: 27,
+                                ),
+                                Expanded(
+                                  flex: 1,
+                                  child: hcol(
+                                    [
+                                      Align(
+                                        alignment: Alignment.topLeft,
+                                        child: hbox(
+                                          grad: LinearGradient(
+                                            begin: Alignment(-0, -1),
+                                            end: Alignment(0, 1),
+                                            colors: [
+                                              Color(0xFF2F73F2),
+                                              Color(0xFF1A4FC4),
+                                            ],
+                                            stops: [0, 1],
+                                          ),
+                                          radius: BorderRadius.circular(5),
+                                          shadow: [
+                                            BoxShadow(
+                                              color: Color.fromRGBO(
+                                                0,
+                                                0,
+                                                0,
+                                                0.08,
+                                              ),
+                                              offset: Offset(0, 0),
+                                              blurRadius: 0,
+                                              spreadRadius: 1,
+                                            ),
+                                          ],
+                                          border: Border.all(
+                                            color: Color.fromRGBO(
+                                              255,
+                                              255,
+                                              255,
+                                              0.75,
+                                            ),
+                                            width: 1.5,
+                                          ),
+                                          pad: EdgeInsets.fromLTRB(7, 1, 7, 1),
+                                          child: Text(
+                                            '沪A·8K29M',
+                                            style: hts(
+                                              12,
+                                              Color(0xFFFFFFFF),
+                                              w: FontWeight.w600,
+                                              lh: 18,
+                                              ls: 0.5,
+                                            ),
+                                            softWrap: false,
+                                            maxLines: 1,
+                                          ),
+                                        ),
+                                      ),
+                                      Text(
+                                        '宝马 5系 525Li',
+                                        style: hts(
+                                          13,
+                                          dk(
+                                            context,
+                                            Color(0xFF18181B),
+                                            Color(0xFFFAFAFA),
+                                          ),
+                                          w: FontWeight.w500,
+                                          lh: 19,
+                                        ),
+                                      ),
+                                    ],
+                                    main: MainAxisAlignment.start,
+                                    cross: CrossAxisAlignment.stretch,
+                                    gap: 4,
                                   ),
-                                  lh: 20,
                                 ),
-                              ),
-                            ),
-                            Text(
-                              '宝马 5系 525Li · 沪A·8K29M',
-                              style: hts(
-                                14,
-                                dk(
-                                  context,
-                                  Color(0xFF18181B),
-                                  Color(0xFFFAFAFA),
+                                hbox(
+                                  bg: dk(
+                                    context,
+                                    Color(0xFFE1F0FE),
+                                    Color.fromRGBO(4, 133, 247, 0.18),
+                                  ),
+                                  radius: BorderRadius.circular(9),
+                                  pad: EdgeInsets.fromLTRB(8, 0, 8, 0),
+                                  child: Text(
+                                    '已登记车辆',
+                                    style: hts(
+                                      11,
+                                      dk(
+                                        context,
+                                        Color(0xFF1E63AE),
+                                        Color(0xFF6AB4FA),
+                                      ),
+                                      w: FontWeight.w600,
+                                      lh: 18,
+                                    ),
+                                    softWrap: false,
+                                    maxLines: 1,
+                                  ),
                                 ),
-                                w: FontWeight.w500,
-                                lh: 20,
-                              ),
+                              ],
+                              main: MainAxisAlignment.start,
+                              cross: CrossAxisAlignment.center,
+                              gap: 12,
                             ),
                           ],
                           main: MainAxisAlignment.start,
-                          cross: CrossAxisAlignment.baseline,
-                          gap: 12,
+                          cross: CrossAxisAlignment.stretch,
+                          gap: 0,
                         ),
                       ),
                     ],
@@ -350,20 +694,20 @@ class MemberAddDonePage extends StatelessWidget {
                       hrow(
                         [
                           hbox(
-                            w: 32,
-                            h: 32,
+                            w: 40,
+                            h: 40,
                             bg: dk(
                               context,
                               Color(0xFFDDF6E7),
                               Color.fromRGBO(23, 201, 100, 0.16),
                             ),
-                            radius: BorderRadius.circular(10),
+                            radius: BorderRadius.circular(13),
                             child: hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s189, Svgs.s190),
-                                  w: 18,
-                                  h: 18,
+                                  dk(context, Svgs.s211, Svgs.s212),
+                                  w: 20,
+                                  h: 20,
                                 ),
                               ],
                               main: MainAxisAlignment.center,
@@ -373,48 +717,106 @@ class MemberAddDonePage extends StatelessWidget {
                           ),
                           Expanded(
                             flex: 1,
+                            child: hcol(
+                              [
+                                Text(
+                                  '让会员扫码绑定微信',
+                                  style: hts(
+                                    16,
+                                    dk(
+                                      context,
+                                      Color(0xFF18181B),
+                                      Color(0xFFFAFAFA),
+                                    ),
+                                    w: FontWeight.w600,
+                                    lh: 23,
+                                  ),
+                                ),
+                                Text(
+                                  '绑定后可免费收到消费、充值通知',
+                                  style: hts(
+                                    12,
+                                    dk(
+                                      context,
+                                      Color(0xFF71717A),
+                                      Color(0xFF9A9AA3),
+                                    ),
+                                    lh: 17,
+                                  ),
+                                ),
+                              ],
+                              main: MainAxisAlignment.start,
+                              cross: CrossAxisAlignment.stretch,
+                              gap: 2,
+                            ),
+                          ),
+                          hbox(
+                            bg: dk(
+                              context,
+                              Color(0xFFDDF6E7),
+                              Color.fromRGBO(23, 201, 100, 0.16),
+                            ),
+                            radius: BorderRadius.circular(9),
+                            pad: EdgeInsets.fromLTRB(8, 0, 8, 0),
                             child: Text(
-                              '让会员扫码绑定微信',
+                              '推荐',
                               style: hts(
-                                16,
+                                11,
                                 dk(
                                   context,
-                                  Color(0xFF18181B),
-                                  Color(0xFFFAFAFA),
+                                  Color(0xFF2B7745),
+                                  Color(0xFF5FD48C),
                                 ),
                                 w: FontWeight.w600,
-                                lh: 22,
+                                lh: 18,
                               ),
+                              softWrap: false,
+                              maxLines: 1,
                             ),
                           ),
                         ],
                         main: MainAxisAlignment.start,
                         cross: CrossAxisAlignment.center,
-                        gap: 10,
-                      ),
-                      Text(
-                        '现在绑定，第一笔充值和消费就能收到免费微信通知，也可以自己查余额。',
-                        style: hts(
-                          13,
-                          dk(context, Color(0xFF52525B), Color(0xFFA8A8B3)),
-                          lh: 20,
-                        ),
+                        gap: 12,
                       ),
                       hrow(
                         [
                           hbox(
-                            bg: Color(0xFFFFFFFF),
-                            radius: BorderRadius.circular(20),
+                            grad: LinearGradient(
+                              begin: Alignment(-0.342, -0.94),
+                              end: Alignment(0.342, 0.94),
+                              colors: [Color(0xFFEAFBF1), Color(0xFFF7FDFA)],
+                              stops: [0, 1],
+                            ),
+                            radius: BorderRadius.circular(26),
                             border: Border.all(
-                              color: Color(0xFFE4E4E7),
+                              color: Color(0xFFCFEFDB),
                               width: 1,
                             ),
-                            pad: EdgeInsets.fromLTRB(14, 14, 14, 14),
-                            child: hrow(
-                              [hsvg(Svgs.s191, w: 132, h: 132)],
-                              main: MainAxisAlignment.center,
-                              cross: CrossAxisAlignment.center,
-                              gap: 0,
+                            pad: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                            child: IntrinsicWidth(
+                              child: hcol(
+                                [
+                                  hbox(
+                                    bg: Color(0xFFFFFFFF),
+                                    radius: BorderRadius.circular(20),
+                                    border: Border.all(
+                                      color: Color(0xFFE4E4E7),
+                                      width: 1,
+                                    ),
+                                    pad: EdgeInsets.fromLTRB(12, 12, 12, 12),
+                                    child: hrow(
+                                      [hsvg(Svgs.s213, w: 136, h: 136)],
+                                      main: MainAxisAlignment.center,
+                                      cross: CrossAxisAlignment.center,
+                                      gap: 0,
+                                    ),
+                                  ),
+                                ],
+                                main: MainAxisAlignment.start,
+                                cross: CrossAxisAlignment.stretch,
+                                gap: 0,
+                              ),
                             ),
                           ),
                         ],
@@ -424,142 +826,183 @@ class MemberAddDonePage extends StatelessWidget {
                         intrinsic: true,
                       ),
                       hbox(
-                        pad: EdgeInsets.fromLTRB(0, 4, 0, 0),
-                        child: hrow(
-                          [
-                            Expanded(
-                              flex: 1,
-                              child: hcol(
-                                [
-                                  hbox(
-                                    w: 24,
-                                    h: 24,
-                                    bg: dk(
-                                      context,
-                                      Color(0xFF18181B),
-                                      Color(0xFF34343A),
+                        pad: EdgeInsets.fromLTRB(0, 2, 0, 0),
+                        child: hstack(
+                          hrow(
+                            [
+                              Expanded(
+                                flex: 1,
+                                child: hcol(
+                                  [
+                                    hbox(
+                                      w: 26,
+                                      h: 26,
+                                      bg: dk(
+                                        context,
+                                        Color(0xFF18181B),
+                                        Color(0xFF34343A),
+                                      ),
+                                      radius: BorderRadius.circular(13),
+                                      shadow: [
+                                        BoxShadow(
+                                          color: Color(0xFFFFFFFF),
+                                          offset: Offset(0, 0),
+                                          blurRadius: 0,
+                                          spreadRadius: 4,
+                                        ),
+                                      ],
+                                      align: Alignment(0, 0),
+                                      child: Text(
+                                        '1',
+                                        style: hts(
+                                          12,
+                                          Color(0xFFFFFFFF),
+                                          w: FontWeight.w600,
+                                        ),
+                                      ),
                                     ),
-                                    radius: BorderRadius.circular(12),
-                                    align: Alignment(0, 0),
-                                    child: Text(
-                                      '1',
+                                    Text(
+                                      '扫码关注',
                                       style: hts(
                                         12,
-                                        Color(0xFFFFFFFF),
-                                        w: FontWeight.w600,
+                                        dk(
+                                          context,
+                                          Color(0xFF52525B),
+                                          Color(0xFFA8A8B3),
+                                        ),
+                                        lh: 16,
                                       ),
-                                      textAlign: TextAlign.center,
+                                      softWrap: false,
+                                      maxLines: 1,
                                     ),
-                                  ),
-                                  Text(
-                                    '扫码关注公众号',
-                                    style: hts(
-                                      12,
-                                      dk(
-                                        context,
-                                        Color(0xFF52525B),
-                                        Color(0xFFA8A8B3),
-                                      ),
-                                      lh: 16,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ],
-                                main: MainAxisAlignment.start,
-                                cross: CrossAxisAlignment.center,
-                                gap: 6,
+                                  ],
+                                  main: MainAxisAlignment.start,
+                                  cross: CrossAxisAlignment.center,
+                                  gap: 8,
+                                ),
                               ),
-                            ),
-                            Expanded(
-                              flex: 1,
-                              child: hcol(
-                                [
-                                  hbox(
-                                    w: 24,
-                                    h: 24,
-                                    bg: dk(
-                                      context,
-                                      Color(0xFF18181B),
-                                      Color(0xFF34343A),
+                              Expanded(
+                                flex: 1,
+                                child: hcol(
+                                  [
+                                    hbox(
+                                      w: 26,
+                                      h: 26,
+                                      bg: dk(
+                                        context,
+                                        Color(0xFF18181B),
+                                        Color(0xFF34343A),
+                                      ),
+                                      radius: BorderRadius.circular(13),
+                                      shadow: [
+                                        BoxShadow(
+                                          color: Color(0xFFFFFFFF),
+                                          offset: Offset(0, 0),
+                                          blurRadius: 0,
+                                          spreadRadius: 4,
+                                        ),
+                                      ],
+                                      align: Alignment(0, 0),
+                                      child: Text(
+                                        '2',
+                                        style: hts(
+                                          12,
+                                          Color(0xFFFFFFFF),
+                                          w: FontWeight.w600,
+                                        ),
+                                      ),
                                     ),
-                                    radius: BorderRadius.circular(12),
-                                    align: Alignment(0, 0),
-                                    child: Text(
-                                      '2',
+                                    Text(
+                                      '授权手机号',
                                       style: hts(
                                         12,
-                                        Color(0xFFFFFFFF),
-                                        w: FontWeight.w600,
+                                        dk(
+                                          context,
+                                          Color(0xFF52525B),
+                                          Color(0xFFA8A8B3),
+                                        ),
+                                        lh: 16,
                                       ),
-                                      textAlign: TextAlign.center,
+                                      softWrap: false,
+                                      maxLines: 1,
                                     ),
-                                  ),
-                                  Text(
-                                    '授权手机号',
-                                    style: hts(
-                                      12,
-                                      dk(
-                                        context,
-                                        Color(0xFF52525B),
-                                        Color(0xFFA8A8B3),
-                                      ),
-                                      lh: 16,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ],
-                                main: MainAxisAlignment.start,
-                                cross: CrossAxisAlignment.center,
-                                gap: 6,
+                                  ],
+                                  main: MainAxisAlignment.start,
+                                  cross: CrossAxisAlignment.center,
+                                  gap: 8,
+                                ),
                               ),
-                            ),
-                            Expanded(
-                              flex: 1,
-                              child: hcol(
-                                [
-                                  hbox(
-                                    w: 24,
-                                    h: 24,
-                                    bg: dk(
-                                      context,
-                                      Color(0xFF18181B),
-                                      Color(0xFF34343A),
+                              Expanded(
+                                flex: 1,
+                                child: hcol(
+                                  [
+                                    hbox(
+                                      w: 26,
+                                      h: 26,
+                                      bg: dk(
+                                        context,
+                                        Color(0xFF18181B),
+                                        Color(0xFF34343A),
+                                      ),
+                                      radius: BorderRadius.circular(13),
+                                      shadow: [
+                                        BoxShadow(
+                                          color: Color(0xFFFFFFFF),
+                                          offset: Offset(0, 0),
+                                          blurRadius: 0,
+                                          spreadRadius: 4,
+                                        ),
+                                      ],
+                                      align: Alignment(0, 0),
+                                      child: Text(
+                                        '3',
+                                        style: hts(
+                                          12,
+                                          Color(0xFFFFFFFF),
+                                          w: FontWeight.w600,
+                                        ),
+                                      ),
                                     ),
-                                    radius: BorderRadius.circular(12),
-                                    align: Alignment(0, 0),
-                                    child: Text(
-                                      '3',
+                                    Text(
+                                      '自动绑定',
                                       style: hts(
                                         12,
-                                        Color(0xFFFFFFFF),
-                                        w: FontWeight.w600,
+                                        dk(
+                                          context,
+                                          Color(0xFF52525B),
+                                          Color(0xFFA8A8B3),
+                                        ),
+                                        lh: 16,
                                       ),
-                                      textAlign: TextAlign.center,
+                                      softWrap: false,
+                                      maxLines: 1,
                                     ),
-                                  ),
-                                  Text(
-                                    '自动绑定并补发通知',
-                                    style: hts(
-                                      12,
-                                      dk(
-                                        context,
-                                        Color(0xFF52525B),
-                                        Color(0xFFA8A8B3),
-                                      ),
-                                      lh: 16,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ],
-                                main: MainAxisAlignment.start,
-                                cross: CrossAxisAlignment.center,
-                                gap: 6,
+                                  ],
+                                  main: MainAxisAlignment.start,
+                                  cross: CrossAxisAlignment.center,
+                                  gap: 8,
+                                ),
+                              ),
+                            ],
+                            main: MainAxisAlignment.start,
+                            cross: CrossAxisAlignment.start,
+                            gap: 0,
+                          ),
+                          [],
+                          behind: [
+                            Positioned(
+                              top: 15,
+                              height: 2,
+                              child: hbox(
+                                h: 2,
+                                bg: dk(
+                                  context,
+                                  Color(0xFFE4E4E7),
+                                  Color(0xFF3A3A40),
+                                ),
                               ),
                             ),
                           ],
-                          main: MainAxisAlignment.start,
-                          cross: CrossAxisAlignment.start,
-                          gap: 4,
                         ),
                       ),
                       hrow(
@@ -623,7 +1066,6 @@ class MemberAddDonePage extends StatelessWidget {
                                       w: FontWeight.w500,
                                       lh: 18,
                                     ),
-                                    textAlign: TextAlign.center,
                                   ),
                                 ),
                               ),
@@ -639,7 +1081,7 @@ class MemberAddDonePage extends StatelessWidget {
                     ],
                     main: MainAxisAlignment.start,
                     cross: CrossAxisAlignment.stretch,
-                    gap: 14,
+                    gap: 16,
                   ),
                 ),
               ],
@@ -658,7 +1100,7 @@ class MemberAddDonePage extends StatelessWidget {
           child: hbox(
             bg: dk(
               context,
-              Color.fromRGBO(255, 255, 255, 0.92),
+              Color.fromRGBO(255, 255, 255, 0.94),
               Color.fromRGBO(9, 9, 11, 0.92),
             ),
             shadow: dk(
@@ -684,7 +1126,7 @@ class MemberAddDonePage extends StatelessWidget {
             child: hrow(
               [
                 Expanded(
-                  flex: 1,
+                  flex: 10,
                   child: hTap(
                     context,
                     hbox(
@@ -709,7 +1151,7 @@ class MemberAddDonePage extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 1,
+                  flex: 14,
                   child: hTap(
                     context,
                     hbox(
@@ -735,9 +1177,8 @@ class MemberAddDonePage extends StatelessWidget {
                 ),
               ],
               main: MainAxisAlignment.start,
-              cross: CrossAxisAlignment.stretch,
+              cross: CrossAxisAlignment.center,
               gap: 10,
-              intrinsic: true,
             ),
           ),
         ),

@@ -20,7 +20,8 @@ from html.parser import HTMLParser
 HANDWRITTEN = {
     'Main', 'Members', 'MemberDetail', 'Inventory', 'Stats', 'Login',
     'Settings', 'Order', 'Appointments', 'AppointmentAdd', 'Services',
-    'ThemeSheet',  # 外观选择：手写，直接作用于全局主题
+    'ThemeSheet',
+    'FindScanPlate', 'FindScanCode', 'ScanLicense', 'ScanPlate',  # 相机扫描页：手写  # 外观选择：手写，直接作用于全局主题
 }
 SKIP = {'AppIcon', 'DarkTokens', 'PageTransitions'}
 # 设计稿里的深色版本只是参考，深色效果由同一套页面自动适配
@@ -1780,6 +1781,103 @@ def snake(name):
     return re.sub(r'(?<!^)(?=[A-Z])', '_', name).lower()
 
 
+
+def _div_block(src, cls):
+    """找到 class="cls" 的 <div ...>...</div> 整块（按嵌套配对），返回 (start, end)。"""
+    m = re.search(r'<div\b[^>]*class="%s"[^>]*>' % cls, src)
+    if not m:
+        return None
+    depth, i = 0, m.start()
+    for t in re.finditer(r'<div\b|</div>', src[m.start():]):
+        depth += 1 if t.group(0) == '<div' else -1
+        if depth == 0:
+            return m.start(), m.start() + t.end()
+    return None
+
+
+def _cut(src, cls):
+    b = _div_block(src, cls)
+    return src if not b else src[:b[0]] + src[b[1]:]
+
+
+def split_variants(name, src):
+    """设计稿里用 CSS 单选框 / 复选框切换的页面（目前只有 Recharge），按状态拆成独立页面。"""
+    if name != 'Recharge':
+        return [(name, src)]
+    sel = 'background:#FFFFFF;color:#18181B;box-shadow:0 2px 4px rgba(0,0,0,.04),0 1px 2px rgba(0,0,0,.06);'
+
+    def tidy(t, selected, to_other, other):
+        t = re.sub(r'<input[^>]*class="rt"[^>]*>', '', t)
+        # 当前页签：选中样式；另一页签：改成跳转链接
+        def lab(m):
+            tag = m.group(0)
+            f = re.search(r'for="(rt\d)"', tag).group(1)
+            if f == selected:
+                return tag.replace('<label for="%s"' % f, '<span').replace('style="', 'style="' + sel, 1)
+            return tag.replace('<label for="%s"' % f, '<a href="%s.dc.html"' % other)
+        t = re.sub(r'<label for="rt\d"[^>]*>', lab, t)
+        t = re.sub(r'(<a href="[^"]*"[^>]*>[^<]*)</label>', r'\1</a>', t)
+        t = re.sub(r'<(\w+)([^>]*)>([^<]*)</label>', lambda m: m.group(0), t)
+        return t
+
+    def fix_close(t):
+        # label 的结束标签按配对改回 span / a
+        out, stack = [], []
+        for tok in re.split(r'(<label\b[^>]*>|<span\b[^>]*>|<a\b[^>]*>|</span>|</a>|</label>)', t):
+            if tok.startswith('<label'):
+                stack.append('label'); out.append(tok)
+            elif tok.startswith('<span') or tok.startswith('<a '):
+                stack.append(tok[1:].split()[0].rstrip('>')); out.append(tok)
+            elif tok in ('</span>', '</a>', '</label>'):
+                top = stack.pop() if stack else None
+                out.append('</%s>' % top if top else tok)
+            else:
+                out.append(tok)
+        return ''.join(out)
+
+    base = re.sub(r'class="(p1|p2|b1|b2|sh)"', lambda m: 'data-v="%s"' % m.group(1), src)
+    base = re.sub(r'<div data-v=', '<div class=', base)  # 保持后面按 class 查找
+    base = src
+    # 状态 1：储值充值
+    a = _cut(_cut(_cut(src, 'p2'), 'b2'), 'sh')
+    a = a.replace('class="p1"', '').replace('class="b1"', '')
+    a = re.sub(r'<label for="sh"[^>]*>', '<a href="RechargeCard.dc.html" style="display:flex">', a)
+    a = tidy(a, 'rt1', 'RechargeCard', 'RechargeCard')
+    # 状态 2：购买次卡
+    b = _cut(_cut(_cut(src, 'p1'), 'b1'), 'sh')
+    b = b.replace('class="p2"', '').replace('class="b2"', '')
+    b = re.sub(r'<label for="sh"([^>]*)>', r'<a href="RechargePick.dc.html"\1>', b)
+    b = tidy(b, 'rt2', 'Recharge', 'Recharge')
+    # 状态 3：选择套餐弹层（叠在状态 2 之上）
+    blk = _div_block(src, 'sh')
+    inner = src[blk[0]:blk[1]]
+    inner = re.sub(r'^<div class="sh">', '', inner)
+    inner = re.sub(r'</div>$', '', inner)
+    inner = re.sub(r'<label for="sh"([^>]*)>', r'<a href="RechargeCard.dc.html"\1>', inner)
+    head = re.match(r'(.*?<div style="width: 390px[^>]*>)', src, flags=re.S).group(1)
+    c = head + inner + '</div></x-dc>' + src.split('</x-dc>', 1)[1]
+    return [('Recharge', fix_close(a)), ('RechargeCard', fix_close(b)), ('RechargePick', fix_close(c))]
+
+
+def _gen_one(gen, name, src, out_dir, done, sheets):
+    gen.sel_counter = 0
+    try:
+        root = extract_page(src)
+        code = gen.emit_page(root, name)
+    except Exception as e:  # noqa
+        print('FAILED', name, repr(e))
+        raise
+    if name == 'AppointmentSchedule':
+        open(os.path.join(out_dir, 'appointment_schedule_body.dart'), 'w', encoding='utf-8').write(
+            gen.emit_body_after_tabs(root, name))
+    if gen.is_sheet:
+        open(os.path.join(out_dir, snake(name) + '_sheet.dart'), 'w', encoding='utf-8').write(code)
+        sheets.append((name, gen.sheet_parent))
+    else:
+        open(os.path.join(out_dir, snake(name) + '_page.dart'), 'w', encoding='utf-8').write(code)
+        done.append(name)
+
+
 def main():
     src_dir, out_dir = sys.argv[1], sys.argv[2]
     only = set(sys.argv[3:])
@@ -1793,29 +1891,16 @@ def main():
             continue
         tmp = Gen({})
         tmp.refs = gen.global_refs
-        tmp.prescan(extract_page(open(os.path.join(src_dir, name + '.dc.html'), encoding='utf-8').read()))
+        for _vn, _vs in split_variants(name, open(os.path.join(src_dir, name + '.dc.html'), encoding='utf-8').read()):
+            tmp.prescan(extract_page(_vs))
     for name in names:
         if name in HANDWRITTEN or name in SKIP or name.endswith(SKIP_SUFFIX):
             continue
         if only and name not in only:
             continue
-        src = open(os.path.join(src_dir, name + '.dc.html'), encoding='utf-8').read()
-        gen.sel_counter = 0
-        try:
-            root = extract_page(src)
-            code = gen.emit_page(root, name)
-        except Exception as e:  # noqa
-            print('FAILED', name, repr(e))
-            raise
-        if name == 'AppointmentSchedule':
-            open(os.path.join(out_dir, 'appointment_schedule_body.dart'), 'w', encoding='utf-8').write(
-                gen.emit_body_after_tabs(root, name))
-        if gen.is_sheet:
-            open(os.path.join(out_dir, snake(name) + '_sheet.dart'), 'w', encoding='utf-8').write(code)
-            sheets.append((name, gen.sheet_parent))
-        else:
-            open(os.path.join(out_dir, snake(name) + '_page.dart'), 'w', encoding='utf-8').write(code)
-            done.append(name)
+        src0 = open(os.path.join(src_dir, name + '.dc.html'), encoding='utf-8').read()
+        for vname, src in split_variants(name, src0):
+            _gen_one(gen, vname, src, out_dir, done, sheets)
     # svgs
     lines = ['// 由 tools/design_to_flutter.py 生成，请勿手工修改。', 'class Svgs {', '  Svgs._();']
     for markup, ident in svgs.items():

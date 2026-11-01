@@ -155,7 +155,7 @@ class StoreInfoPage extends StatelessWidget {
                             hcol(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s310, Svgs.s311),
+                                  dk(context, Svgs.s371, Svgs.s372),
                                   w: 28,
                                   h: 28,
                                 ),
@@ -363,7 +363,7 @@ class StoreInfoPage extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.fromLTRB(0, 1, 0, 0),
                               child: hsvg(
-                                dk(context, Svgs.s312, Svgs.s313),
+                                dk(context, Svgs.s373, Svgs.s374),
                                 w: 20,
                                 h: 20,
                               ),
@@ -437,7 +437,7 @@ class StoreInfoPage extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.fromLTRB(0, 1, 0, 0),
                               child: hsvg(
-                                dk(context, Svgs.s314, Svgs.s315),
+                                dk(context, Svgs.s375, Svgs.s376),
                                 w: 20,
                                 h: 20,
                               ),
@@ -494,7 +494,7 @@ class StoreInfoPage extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.fromLTRB(0, 1, 0, 0),
                               child: hsvg(
-                                dk(context, Svgs.s316, Svgs.s317),
+                                dk(context, Svgs.s377, Svgs.s378),
                                 w: 20,
                                 h: 20,
                               ),
@@ -551,7 +551,7 @@ class StoreInfoPage extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.fromLTRB(0, 1, 0, 0),
                               child: hsvg(
-                                dk(context, Svgs.s318, Svgs.s319),
+                                dk(context, Svgs.s379, Svgs.s380),
                                 w: 20,
                                 h: 20,
                               ),
@@ -743,7 +743,7 @@ class StoreInfoPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s320, Svgs.s321),
+                                          dk(context, Svgs.s381, Svgs.s382),
                                           w: 18,
                                           h: 18,
                                         ),
@@ -822,7 +822,7 @@ class StoreInfoPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s322, Svgs.s323),
+                                          dk(context, Svgs.s383, Svgs.s384),
                                           w: 18,
                                           h: 18,
                                         ),
@@ -900,7 +900,7 @@ class StoreInfoPage extends StatelessWidget {
                           child: hrow(
                             [
                               hsvg(
-                                dk(context, Svgs.s324, Svgs.s325),
+                                dk(context, Svgs.s385, Svgs.s386),
                                 w: 22,
                                 h: 22,
                               ),

@@ -59,7 +59,7 @@ class CardTierEditPage extends StatelessWidget {
                           ],
                         ),
                         child: hrow(
-                          [hsvg(dk(context, Svgs.s59, Svgs.s60), w: 20, h: 20)],
+                          [hsvg(dk(context, Svgs.s71, Svgs.s72), w: 20, h: 20)],
                           main: MainAxisAlignment.center,
                           cross: CrossAxisAlignment.center,
                           gap: 0,
@@ -178,7 +178,7 @@ class CardTierEditPage extends StatelessWidget {
                         right: -80,
                         bottom: -110,
                         child: hsvg(
-                          dk(context, Svgs.s61, Svgs.s62),
+                          dk(context, Svgs.s73, Svgs.s74),
                           w: 240,
                           h: 240,
                         ),
@@ -455,7 +455,7 @@ class CardTierEditPage extends StatelessWidget {
                     hbox(
                       pad: EdgeInsets.fromLTRB(4, 0, 0, 0),
                       child: Text(
-                        '开卡条件（满足任一即可）',
+                        '升级条件（满足任一即实时升级）',
                         style: hts(
                           13,
                           dk(context, Color(0xFF52525B), Color(0xFFA8A8B3)),
@@ -847,7 +847,7 @@ class CardTierEditPage extends StatelessWidget {
                                       child: hrow(
                                         [
                                           hsvg(
-                                            dk(context, Svgs.s63, Svgs.s64),
+                                            dk(context, Svgs.s75, Svgs.s76),
                                             w: 18,
                                             h: 18,
                                           ),
@@ -930,7 +930,7 @@ class CardTierEditPage extends StatelessWidget {
                                       child: hrow(
                                         [
                                           hsvg(
-                                            dk(context, Svgs.s65, Svgs.s66),
+                                            dk(context, Svgs.s77, Svgs.s78),
                                             w: 18,
                                             h: 18,
                                           ),
@@ -1014,7 +1014,7 @@ class CardTierEditPage extends StatelessWidget {
                                   child: hrow(
                                     [
                                       hsvg(
-                                        dk(context, Svgs.s67, Svgs.s68),
+                                        dk(context, Svgs.s79, Svgs.s80),
                                         w: 18,
                                         h: 18,
                                       ),

@@ -21,7 +21,11 @@ void main() {
     expect(C.dark, isFalse);
 
     Future<void> apply(String label) async {
-      await t.scrollUntilVisible(find.text('外观'), 200, scrollable: find.byType(Scrollable).first);
+      await t.scrollUntilVisible(
+        find.text('外观'),
+        200,
+        scrollable: find.byType(Scrollable).first,
+      );
       await t.drag(find.byType(Scrollable).first, const Offset(0, -300));
       await t.pumpAndSettle();
       await t.tap(find.text('外观'));
@@ -33,9 +37,8 @@ void main() {
     }
 
     final ctx = t.element(find.byType(Scaffold).first);
-    Navigator.of(ctx).push(
-      MaterialPageRoute(builder: (_) => const SettingsPage()),
-    );
+    Navigator.of(ctx)
+        .push(MaterialPageRoute(builder: (_) => const SettingsPage()));
     await t.pumpAndSettle();
 
     await apply('深色');
@@ -48,4 +51,3 @@ void main() {
     expect(t.takeException(), isNull);
   });
 }
-

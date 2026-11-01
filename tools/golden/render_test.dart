@@ -17,6 +17,7 @@ import 'package:qimei_guanjia/pages/order_page.dart';
 import 'package:qimei_guanjia/pages/appointments_page.dart';
 import 'package:qimei_guanjia/pages/appointment_add_page.dart';
 import 'package:qimei_guanjia/pages/login_page.dart';
+import 'package:qimei_guanjia/pages/scan_page.dart';
 import 'package:qimei_guanjia/pages/member_detail_page.dart';
 import 'package:qimei_guanjia/mock/mock_data.dart';
 import 'package:qimei_guanjia/theme.dart';
@@ -70,6 +71,10 @@ void main() {
     'AppointmentSchedule': () => const AppointmentsPage(initialView: 1),
     'AppointmentAdd': () => const AppointmentAddPage(),
     'Login': () => const LoginPage(),
+    'FindScanPlate': () => const ScanPage(ScanKind.findPlate),
+    'FindScanCode': () => const ScanPage(ScanKind.findCode),
+    'ScanLicense': () => const ScanPage(ScanKind.licenseCard),
+    'ScanPlate': () => const ScanPage(ScanKind.plateCard),
     'MemberDetail': () => MemberDetailPage(member: members.first),
   };
   for (final e in <String, WidgetBuilder>{
@@ -81,7 +86,9 @@ void main() {
     if (only.isNotEmpty && !only.split(',').contains(e.key)) continue;
     testWidgets('render ${e.key}', (tester) async {
       final bk = e.key.replaceAll('__hand', '');
-      final h = forceH > 0 ? forceH.toDouble() : (boards['$bk.dc.html']?['h'] ?? 844).toDouble();
+      final h = forceH > 0
+          ? forceH.toDouble()
+          : (boards['$bk.dc.html']?['h'] ?? 844).toDouble();
       tester.view.physicalSize = Size(390 * 2, h * 2);
       tester.view.devicePixelRatio = 2;
       addTearDown(tester.view.reset);
@@ -132,7 +139,8 @@ void main() {
             key.currentContext!.findRenderObject() as RenderRepaintBoundary;
         final img = await b.toImage(pixelRatio: 1);
         final data = await img.toByteData(format: ui.ImageByteFormat.png);
-        File('$out/${e.key}${dark ? '_dark' : ''}.png').writeAsBytesSync(data!.buffer.asUint8List());
+        File('$out/${e.key}${dark ? '_dark' : ''}.png')
+            .writeAsBytesSync(data!.buffer.asUint8List());
       });
       if (errs.isNotEmpty) print('ERR ${e.key}: ${errs.take(3).join(' | ')}');
     });

@@ -5,6 +5,7 @@ import 'package:qimei_guanjia/routes.dart';
 
 void main() {
   resultCloseTest();
+  scanTests();
   void phone(WidgetTester t) {
     t.view.physicalSize = const Size(390 * 3, 900 * 3);
     t.view.devicePixelRatio = 3;
@@ -13,9 +14,9 @@ void main() {
 
   testWidgets('确认弹窗：取消 / 确定后遮罩完全消失', (t) async {
     phone(t);
-    await t.pumpWidget(MaterialApp(
-      home: Builder(builder: genRoutes['ServiceEdit']!),
-    ));
+    await t.pumpWidget(
+      MaterialApp(home: Builder(builder: genRoutes['ServiceEdit']!)),
+    );
     await t.pumpAndSettle();
     final del = find.text('删除此项目');
     await t.ensureVisible(del);
@@ -26,17 +27,20 @@ void main() {
     await t.pumpAndSettle();
     expect(find.text('确认删除此项目？'), findsNothing);
     // 弹窗关闭后只剩页面自己的遮罩（无）
-    expect(find.byType(ModalBarrier).evaluate().where((e) {
-      final b = e.widget as ModalBarrier;
-      return b.color != null && b.color != Colors.transparent;
-    }), isEmpty);
+    expect(
+      find.byType(ModalBarrier).evaluate().where((e) {
+        final b = e.widget as ModalBarrier;
+        return b.color != null && b.color != Colors.transparent;
+      }),
+      isEmpty,
+    );
   });
 
   testWidgets('上传入口：点击弹出“拍照 / 从相册选择”，取消后关闭', (t) async {
     phone(t);
-    await t.pumpWidget(MaterialApp(
-      home: Builder(builder: genRoutes['EcoFiling']!),
-    ));
+    await t.pumpWidget(
+      MaterialApp(home: Builder(builder: genRoutes['EcoFiling']!)),
+    );
     await t.pumpAndSettle();
     await t.tap(find.text('上传排水许可证'));
     await t.pumpAndSettle();
@@ -61,12 +65,16 @@ void resultCloseTest() {
     };
     addTearDown(() => FlutterError.onError = old);
     late BuildContext ctx;
-    await t.pumpWidget(MaterialApp(
-      home: Builder(builder: (c) {
-        ctx = c;
-        return const Scaffold(body: Text('入口页'));
-      }),
-    ));
+    await t.pumpWidget(
+      MaterialApp(
+        home: Builder(
+          builder: (c) {
+            ctx = c;
+            return const Scaffold(body: Text('入口页'));
+          },
+        ),
+      ),
+    );
     openRoute(ctx, 'MemberAddDone');
     await t.pumpAndSettle();
     expect(find.text('开卡成功'), findsOneWidget);
@@ -74,5 +82,38 @@ void resultCloseTest() {
     await t.pumpAndSettle();
     expect(find.text('开卡成功'), findsNothing);
     expect(find.text('入口页'), findsOneWidget);
+  });
+}
+
+void scanTests() {
+  testWidgets('扫码找会员：切换会员码、点快门弹出识别结果', (t) async {
+    t.view.physicalSize = const Size(390 * 3, 900 * 3);
+    t.view.devicePixelRatio = 3;
+    addTearDown(t.view.reset);
+    final old = FlutterError.onError;
+    FlutterError.onError = (d) {
+      if (!d.exceptionAsString().contains('overflowed')) old?.call(d);
+    };
+    addTearDown(() => FlutterError.onError = old);
+    late BuildContext ctx;
+    await t.pumpWidget(
+      MaterialApp(
+        home: Builder(
+          builder: (c) {
+            ctx = c;
+            return const Scaffold(body: Text('会员页'));
+          },
+        ),
+      ),
+    );
+    openRoute(ctx, 'FindScanPlate');
+    await t.pumpAndSettle();
+    expect(find.text('将车牌对准框内'), findsOneWidget);
+    await t.tap(find.text('会员码'));
+    await t.pumpAndSettle();
+    expect(find.text('将会员码放入框内'), findsOneWidget);
+    await t.tapAt(const Offset(195, 900 - 64));
+    await t.pumpAndSettle();
+    expect(find.textContaining('识别成功'), findsWidgets);
   });
 }

@@ -803,7 +803,7 @@ class MemberFollowUpPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s192, Svgs.s193),
+                                          dk(context, Svgs.s216, Svgs.s217),
                                           w: 18,
                                           h: 18,
                                         ),
@@ -829,7 +829,7 @@ class MemberFollowUpPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s194, Svgs.s195),
+                                          dk(context, Svgs.s218, Svgs.s219),
                                           w: 18,
                                           h: 18,
                                         ),
@@ -1078,7 +1078,7 @@ class MemberFollowUpPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s192, Svgs.s193),
+                                          dk(context, Svgs.s216, Svgs.s217),
                                           w: 18,
                                           h: 18,
                                         ),
@@ -1104,7 +1104,7 @@ class MemberFollowUpPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s194, Svgs.s195),
+                                          dk(context, Svgs.s218, Svgs.s219),
                                           w: 18,
                                           h: 18,
                                         ),
@@ -1353,7 +1353,7 @@ class MemberFollowUpPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s192, Svgs.s193),
+                                          dk(context, Svgs.s216, Svgs.s217),
                                           w: 18,
                                           h: 18,
                                         ),
@@ -1379,7 +1379,7 @@ class MemberFollowUpPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s194, Svgs.s195),
+                                          dk(context, Svgs.s218, Svgs.s219),
                                           w: 18,
                                           h: 18,
                                         ),
@@ -1628,7 +1628,7 @@ class MemberFollowUpPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s192, Svgs.s193),
+                                          dk(context, Svgs.s216, Svgs.s217),
                                           w: 18,
                                           h: 18,
                                         ),
@@ -1654,7 +1654,7 @@ class MemberFollowUpPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s194, Svgs.s195),
+                                          dk(context, Svgs.s218, Svgs.s219),
                                           w: 18,
                                           h: 18,
                                         ),

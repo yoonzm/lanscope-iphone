@@ -59,7 +59,7 @@ class VehicleAddPage extends StatelessWidget {
                           ],
                         ),
                         child: hrow(
-                          [hsvg(dk(context, Svgs.s59, Svgs.s60), w: 20, h: 20)],
+                          [hsvg(dk(context, Svgs.s71, Svgs.s72), w: 20, h: 20)],
                           main: MainAxisAlignment.center,
                           cross: CrossAxisAlignment.center,
                           gap: 0,
@@ -130,7 +130,7 @@ class VehicleAddPage extends StatelessWidget {
                             child: hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s329, Svgs.s330),
+                                  dk(context, Svgs.s390, Svgs.s391),
                                   w: 22,
                                   h: 22,
                                 ),
@@ -141,7 +141,7 @@ class VehicleAddPage extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            '拍摄行驶证，自动填写',
+                            '扫描行驶证或车牌，自动填写',
                             style: hts(
                               14,
                               dk(context, Color(0xFF18181B), Color(0xFFFAFAFA)),
@@ -174,7 +174,7 @@ class VehicleAddPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  label: '拍摄行驶证，自动填写',
+                  to: 'ScanLicense',
                 ),
                 hbox(
                   bg: dk(context, Color(0xFFFFFFFF), Color(0xFF18181B)),
@@ -218,33 +218,42 @@ class VehicleAddPage extends StatelessWidget {
                         radius: BorderRadius.circular(18),
                         pad: EdgeInsets.fromLTRB(4, 4, 4, 4),
                         margin: EdgeInsets.fromLTRB(16, 0, 16, 0),
-                        child: HSelHolder(
-                          groups: [
-                            ({1}, false),
-                          ],
-                          onSelect: {0: (i) => plateEnergy.value = i == 1},
-                          builder: (context, g1) => hrow(
-                            [
-                              Expanded(
-                                flex: 1,
-                                child: HSel(
-                                  ctrl: g1[0],
-                                  index: 0,
-                                  on: hbox(
-                                    h: 32,
-                                    radius: BorderRadius.circular(16),
-                                    shadow: dk(context, [
+                        child: hrow(
+                          [
+                            Expanded(
+                              flex: 1,
+                              child: HToggle(
+                                initial: false,
+                                on: hbox(
+                                  h: 32,
+                                  bg: dk(
+                                    context,
+                                    Color(0xFFFFFFFF),
+                                    Color(0xFF18181B),
+                                  ),
+                                  radius: BorderRadius.circular(16),
+                                  shadow: dk(
+                                    context,
+                                    [
                                       BoxShadow(
                                         color: Color.fromRGBO(0, 0, 0, 0.08),
                                         offset: Offset(0, 1),
                                         blurRadius: 2,
                                         spreadRadius: 0,
                                       ),
-                                    ], null),
-                                    child: Align(
-                                      alignment: Alignment.center,
-                                      widthFactor: 1,
-                                      child: Text(
+                                    ],
+                                    [
+                                      BoxShadow(
+                                        color: Color(0xFF26262B),
+                                        offset: Offset(0, 0),
+                                        blurRadius: 0,
+                                        spreadRadius: 1,
+                                      ),
+                                    ],
+                                  ),
+                                  child: hrow(
+                                    [
+                                      Text(
                                         '燃油车 · 蓝牌',
                                         style: hts(
                                           13,
@@ -257,15 +266,95 @@ class VehicleAddPage extends StatelessWidget {
                                           lh: 18,
                                         ),
                                       ),
-                                    ),
+                                      Expanded(
+                                        flex: 1,
+                                        child: HToggle(
+                                          initial: true,
+                                          on: hbox(
+                                            h: 32,
+                                            bg: dk(
+                                              context,
+                                              Color(0xFFFFFFFF),
+                                              Color(0xFF18181B),
+                                            ),
+                                            radius: BorderRadius.circular(16),
+                                            shadow: dk(
+                                              context,
+                                              [
+                                                BoxShadow(
+                                                  color: Color.fromRGBO(
+                                                    0,
+                                                    0,
+                                                    0,
+                                                    0.08,
+                                                  ),
+                                                  offset: Offset(0, 1),
+                                                  blurRadius: 2,
+                                                  spreadRadius: 0,
+                                                ),
+                                              ],
+                                              [
+                                                BoxShadow(
+                                                  color: Color(0xFF26262B),
+                                                  offset: Offset(0, 0),
+                                                  blurRadius: 0,
+                                                  spreadRadius: 1,
+                                                ),
+                                              ],
+                                            ),
+                                            child: Align(
+                                              alignment: Alignment.center,
+                                              widthFactor: 1,
+                                              child: Text(
+                                                '新能源 · 绿牌',
+                                                style: hts(
+                                                  13,
+                                                  dk(
+                                                    context,
+                                                    Color(0xFF18181B),
+                                                    Color(0xFFFAFAFA),
+                                                  ),
+                                                  w: FontWeight.w500,
+                                                  lh: 18,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          off: hbox(
+                                            h: 32,
+                                            radius: BorderRadius.circular(16),
+                                            child: Align(
+                                              alignment: Alignment.center,
+                                              widthFactor: 1,
+                                              child: Text(
+                                                '新能源 · 绿牌',
+                                                style: hts(
+                                                  13,
+                                                  dk(
+                                                    context,
+                                                    Color(0xFF52525B),
+                                                    Color(0xFFA8A8B3),
+                                                  ),
+                                                  w: FontWeight.w500,
+                                                  lh: 18,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                    main: MainAxisAlignment.start,
+                                    cross: CrossAxisAlignment.center,
+                                    gap: 6,
                                   ),
-                                  off: hbox(
-                                    h: 32,
-                                    radius: BorderRadius.circular(16),
-                                    child: Align(
-                                      alignment: Alignment.center,
-                                      widthFactor: 1,
-                                      child: Text(
+                                ),
+                                off: hbox(
+                                  h: 32,
+                                  radius: BorderRadius.circular(16),
+                                  child: hrow(
+                                    [
+                                      Text(
                                         '燃油车 · 蓝牌',
                                         style: hts(
                                           13,
@@ -278,94 +367,95 @@ class VehicleAddPage extends StatelessWidget {
                                           lh: 18,
                                         ),
                                       ),
-                                    ),
+                                      Expanded(
+                                        flex: 1,
+                                        child: HToggle(
+                                          initial: true,
+                                          on: hbox(
+                                            h: 32,
+                                            bg: dk(
+                                              context,
+                                              Color(0xFFFFFFFF),
+                                              Color(0xFF18181B),
+                                            ),
+                                            radius: BorderRadius.circular(16),
+                                            shadow: dk(
+                                              context,
+                                              [
+                                                BoxShadow(
+                                                  color: Color.fromRGBO(
+                                                    0,
+                                                    0,
+                                                    0,
+                                                    0.08,
+                                                  ),
+                                                  offset: Offset(0, 1),
+                                                  blurRadius: 2,
+                                                  spreadRadius: 0,
+                                                ),
+                                              ],
+                                              [
+                                                BoxShadow(
+                                                  color: Color(0xFF26262B),
+                                                  offset: Offset(0, 0),
+                                                  blurRadius: 0,
+                                                  spreadRadius: 1,
+                                                ),
+                                              ],
+                                            ),
+                                            child: Align(
+                                              alignment: Alignment.center,
+                                              widthFactor: 1,
+                                              child: Text(
+                                                '新能源 · 绿牌',
+                                                style: hts(
+                                                  13,
+                                                  dk(
+                                                    context,
+                                                    Color(0xFF18181B),
+                                                    Color(0xFFFAFAFA),
+                                                  ),
+                                                  w: FontWeight.w500,
+                                                  lh: 18,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          off: hbox(
+                                            h: 32,
+                                            radius: BorderRadius.circular(16),
+                                            child: Align(
+                                              alignment: Alignment.center,
+                                              widthFactor: 1,
+                                              child: Text(
+                                                '新能源 · 绿牌',
+                                                style: hts(
+                                                  13,
+                                                  dk(
+                                                    context,
+                                                    Color(0xFF52525B),
+                                                    Color(0xFFA8A8B3),
+                                                  ),
+                                                  w: FontWeight.w500,
+                                                  lh: 18,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                    main: MainAxisAlignment.start,
+                                    cross: CrossAxisAlignment.center,
+                                    gap: 6,
                                   ),
                                 ),
                               ),
-                              Expanded(
-                                flex: 1,
-                                child: HSel(
-                                  ctrl: g1[0],
-                                  index: 1,
-                                  on: hbox(
-                                    h: 32,
-                                    bg: dk(
-                                      context,
-                                      Color(0xFFFFFFFF),
-                                      Color(0xFF18181B),
-                                    ),
-                                    radius: BorderRadius.circular(16),
-                                    shadow: dk(
-                                      context,
-                                      [
-                                        BoxShadow(
-                                          color: Color.fromRGBO(0, 0, 0, 0.08),
-                                          offset: Offset(0, 1),
-                                          blurRadius: 2,
-                                          spreadRadius: 0,
-                                        ),
-                                      ],
-                                      [
-                                        BoxShadow(
-                                          color: Color(0xFF26262B),
-                                          offset: Offset(0, 0),
-                                          blurRadius: 0,
-                                          spreadRadius: 1,
-                                        ),
-                                      ],
-                                    ),
-                                    child: Align(
-                                      alignment: Alignment.center,
-                                      widthFactor: 1,
-                                      child: Text(
-                                        '新能源 · 绿牌',
-                                        style: hts(
-                                          13,
-                                          dk(
-                                            context,
-                                            Color(0xFF18181B),
-                                            Color(0xFFFAFAFA),
-                                          ),
-                                          w: FontWeight.w500,
-                                          lh: 18,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  off: hbox(
-                                    h: 32,
-                                    bg: dk(
-                                      context,
-                                      Color(0xFFFFFFFF),
-                                      Color(0xFF18181B),
-                                    ),
-                                    radius: BorderRadius.circular(16),
-                                    child: Align(
-                                      alignment: Alignment.center,
-                                      widthFactor: 1,
-                                      child: Text(
-                                        '新能源 · 绿牌',
-                                        style: hts(
-                                          13,
-                                          dk(
-                                            context,
-                                            Color(0xFF52525B),
-                                            Color(0xFFA8A8B3),
-                                          ),
-                                          w: FontWeight.w500,
-                                          lh: 18,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                            main: MainAxisAlignment.start,
-                            cross: CrossAxisAlignment.stretch,
-                            gap: 2,
-                            intrinsic: true,
-                          ),
+                            ),
+                          ],
+                          main: MainAxisAlignment.start,
+                          cross: CrossAxisAlignment.start,
+                          gap: 2,
                         ),
                       ),
                       HPlate(initial: '沪AF09316', green: true, linked: true),
@@ -373,7 +463,7 @@ class VehicleAddPage extends StatelessWidget {
                         [
                           HStrHolder(
                             initial: '理想 L7 · 灰',
-                            builder: (context, s2) => hTap(
+                            builder: (context, s1) => hTap(
                               context,
                               hbox(
                                 minH: 54,
@@ -396,7 +486,7 @@ class VehicleAddPage extends StatelessWidget {
                                       ),
                                     ),
                                     hStr(
-                                      s2,
+                                      s1,
                                       hts(
                                         15,
                                         dk(
@@ -418,7 +508,7 @@ class VehicleAddPage extends StatelessWidget {
                                   gap: 12,
                                 ),
                               ),
-                              onTap: () => hPick(context, 'car', '品牌车型', s2),
+                              onTap: () => hPick(context, 'car', '品牌车型', s1),
                             ),
                           ),
                           hbox(

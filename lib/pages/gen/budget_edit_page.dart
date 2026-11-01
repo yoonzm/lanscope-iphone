@@ -156,7 +156,7 @@ class BudgetEditPage extends StatelessWidget {
                             child: hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s39, Svgs.s40),
+                                  dk(context, Svgs.s38, Svgs.s39),
                                   w: 22,
                                   h: 22,
                                 ),
@@ -1442,7 +1442,7 @@ class BudgetEditPage extends StatelessWidget {
                       Align(
                         alignment: Alignment.topLeft,
                         child: hsvg(
-                          dk(context, Svgs.s41, Svgs.s42),
+                          dk(context, Svgs.s40, Svgs.s41),
                           w: 314,
                           h: 124,
                         ),

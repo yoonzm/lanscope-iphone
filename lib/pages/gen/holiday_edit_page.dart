@@ -424,7 +424,7 @@ class HolidayEditPage extends StatelessWidget {
                                             ),
                                           ),
                                           hsvg(
-                                            dk(context, Svgs.s147, Svgs.s148),
+                                            dk(context, Svgs.s167, Svgs.s168),
                                             w: 16,
                                             h: 16,
                                           ),
@@ -491,7 +491,7 @@ class HolidayEditPage extends StatelessWidget {
                                             ),
                                           ),
                                           hsvg(
-                                            dk(context, Svgs.s147, Svgs.s148),
+                                            dk(context, Svgs.s167, Svgs.s168),
                                             w: 16,
                                             h: 16,
                                           ),

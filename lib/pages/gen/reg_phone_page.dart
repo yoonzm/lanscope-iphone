@@ -569,51 +569,51 @@ class RegPhonePage extends StatelessWidget {
                             ),
                             radius: BorderRadius.circular(14),
                             pad: EdgeInsets.fromLTRB(14, 0, 14, 0),
-                            child: HHolder(
-                              inits: [1],
-                              builder: (context, ctrls) {
-                                final p2 = ctrls[0];
-                                return hrow(
-                                  [
-                                    Expanded(
-                                      child: ListenableBuilder(
-                                        listenable: p2,
-                                        builder: (context, _) => HInput(
-                                          style: hts(
-                                            15,
-                                            dk(
-                                              context,
-                                              Color(0xFF18181B),
-                                              Color(0xFFFAFAFA),
-                                            ),
-                                            lh: 22,
+                            child: hrow(
+                              [
+                                Expanded(
+                                  child: HInput(
+                                    style: hts(
+                                      15,
+                                      dk(
+                                        context,
+                                        Color(0xFF18181B),
+                                        Color(0xFFFAFAFA),
+                                      ),
+                                      lh: 22,
+                                    ),
+                                    hint: '8-20 位，含字母和数字',
+                                    obscure: true,
+                                  ),
+                                ),
+                                hTap(
+                                  context,
+                                  NegMargin(
+                                    top: 0,
+                                    left: 0,
+                                    child: hbox(
+                                      w: 32,
+                                      h: 32,
+                                      child: hrow(
+                                        [
+                                          hsvg(
+                                            dk(context, Svgs.s85, Svgs.s86),
+                                            w: 20,
+                                            h: 20,
                                           ),
-                                          hint: '8-20 位，含字母和数字',
-                                          obscure: p2.on,
-                                        ),
+                                        ],
+                                        main: MainAxisAlignment.center,
+                                        cross: CrossAxisAlignment.center,
+                                        gap: 0,
                                       ),
                                     ),
-                                    hTap(
-                                      context,
-                                      hPwdLabel(
-                                        p2,
-                                        hts(
-                                          13,
-                                          dk(
-                                            context,
-                                            Color(0xFF71717A),
-                                            Color(0xFF9A9AA3),
-                                          ),
-                                        ),
-                                      ),
-                                      onTap: () => p2.flip(),
-                                    ),
-                                  ],
-                                  main: MainAxisAlignment.start,
-                                  cross: CrossAxisAlignment.center,
-                                  gap: 10,
-                                );
-                              },
+                                  ),
+                                  label: '显示密码',
+                                ),
+                              ],
+                              main: MainAxisAlignment.start,
+                              cross: CrossAxisAlignment.center,
+                              gap: 10,
                             ),
                           ),
                         ],

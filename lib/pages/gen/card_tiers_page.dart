@@ -88,7 +88,7 @@ class CardTiersPage extends StatelessWidget {
                         bg: dk(context, Color(0xFF18181B), Color(0xFFFAFAFA)),
                         radius: BorderRadius.circular(22),
                         child: hrow(
-                          [hsvg(dk(context, Svgs.s69, Svgs.s70), w: 20, h: 20)],
+                          [hsvg(dk(context, Svgs.s81, Svgs.s82), w: 20, h: 20)],
                           main: MainAxisAlignment.center,
                           cross: CrossAxisAlignment.center,
                           gap: 0,
@@ -105,105 +105,23 @@ class CardTiersPage extends StatelessWidget {
                   bg: dk(context, Color(0xFFE9E9EB), Color(0xFF1F1F23)),
                   radius: BorderRadius.circular(20),
                   pad: EdgeInsets.fromLTRB(4, 4, 4, 4),
-                  child: HSelHolder(
-                    groups: [
-                      ({0}, false),
-                    ],
-                    builder: (context, g1) => hrow(
-                      [
-                        Expanded(
-                          flex: 1,
-                          child: HSel(
-                            ctrl: g1[0],
-                            index: 0,
-                            on: hbox(
-                              h: 34,
-                              bg: dk(
-                                context,
-                                Color(0xFFFFFFFF),
-                                Color(0xFF18181B),
-                              ),
-                              radius: BorderRadius.circular(17),
-                              shadow: dk(
-                                context,
-                                [
-                                  BoxShadow(
-                                    color: Color.fromRGBO(0, 0, 0, 0.04),
-                                    offset: Offset(0, 2),
-                                    blurRadius: 4,
-                                    spreadRadius: 0,
-                                  ),
-                                  BoxShadow(
-                                    color: Color.fromRGBO(0, 0, 0, 0.06),
-                                    offset: Offset(0, 1),
-                                    blurRadius: 2,
-                                    spreadRadius: 0,
-                                  ),
-                                ],
-                                [
-                                  BoxShadow(
-                                    color: Color(0xFF26262B),
-                                    offset: Offset(0, 0),
-                                    blurRadius: 0,
-                                    spreadRadius: 1,
-                                  ),
-                                ],
-                              ),
-                              child: Align(
-                                alignment: Alignment.center,
-                                widthFactor: 1,
-                                child: Text(
-                                  '等级储值卡 4',
-                                  style: hts(
-                                    14,
-                                    dk(
-                                      context,
-                                      Color(0xFF18181B),
-                                      Color(0xFFFAFAFA),
-                                    ),
-                                    w: FontWeight.w500,
-                                    lh: 20,
-                                  ),
-                                ),
-                              ),
+                  child: hrow(
+                    [
+                      Expanded(
+                        flex: 1,
+                        child: HToggle(
+                          initial: true,
+                          on: hbox(
+                            h: 34,
+                            bg: dk(
+                              context,
+                              Color(0xFFFFFFFF),
+                              Color(0xFF18181B),
                             ),
-                            off: hbox(
-                              h: 34,
-                              bg: dk(
-                                context,
-                                Color(0xFFFFFFFF),
-                                Color(0xFF18181B),
-                              ),
-                              radius: BorderRadius.circular(17),
-                              child: Align(
-                                alignment: Alignment.center,
-                                widthFactor: 1,
-                                child: Text(
-                                  '等级储值卡 4',
-                                  style: hts(
-                                    14,
-                                    dk(
-                                      context,
-                                      Color(0xFF52525B),
-                                      Color(0xFFA8A8B3),
-                                    ),
-                                    w: FontWeight.w500,
-                                    lh: 20,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: HSel(
-                            ctrl: g1[0],
-                            index: 1,
-                            on: hbox(
-                              h: 34,
-                              radius: BorderRadius.circular(17),
-                              shadow: dk(context, [
+                            radius: BorderRadius.circular(17),
+                            shadow: dk(
+                              context,
+                              [
                                 BoxShadow(
                                   color: Color.fromRGBO(0, 0, 0, 0.04),
                                   offset: Offset(0, 2),
@@ -216,54 +134,90 @@ class CardTiersPage extends StatelessWidget {
                                   blurRadius: 2,
                                   spreadRadius: 0,
                                 ),
-                              ], null),
-                              child: Align(
-                                alignment: Alignment.center,
-                                widthFactor: 1,
-                                child: Text(
-                                  '次卡套餐 6',
-                                  style: hts(
-                                    14,
-                                    dk(
-                                      context,
-                                      Color(0xFF18181B),
-                                      Color(0xFFFAFAFA),
-                                    ),
-                                    w: FontWeight.w500,
-                                    lh: 20,
+                              ],
+                              [
+                                BoxShadow(
+                                  color: Color(0xFF26262B),
+                                  offset: Offset(0, 0),
+                                  blurRadius: 0,
+                                  spreadRadius: 1,
+                                ),
+                              ],
+                            ),
+                            child: Align(
+                              alignment: Alignment.center,
+                              widthFactor: 1,
+                              child: Text(
+                                '等级储值卡 4',
+                                style: hts(
+                                  14,
+                                  dk(
+                                    context,
+                                    Color(0xFF18181B),
+                                    Color(0xFFFAFAFA),
                                   ),
+                                  w: FontWeight.w500,
+                                  lh: 20,
                                 ),
                               ),
                             ),
-                            off: hbox(
-                              h: 34,
-                              radius: BorderRadius.circular(17),
-                              child: Align(
-                                alignment: Alignment.center,
-                                widthFactor: 1,
-                                child: Text(
-                                  '次卡套餐 6',
-                                  style: hts(
-                                    14,
-                                    dk(
-                                      context,
-                                      Color(0xFF52525B),
-                                      Color(0xFFA8A8B3),
-                                    ),
-                                    w: FontWeight.w500,
-                                    lh: 20,
+                          ),
+                          off: hbox(
+                            h: 32,
+                            radius: BorderRadius.circular(16),
+                            child: Align(
+                              alignment: Alignment.center,
+                              widthFactor: 1,
+                              child: Text(
+                                '等级储值卡 4',
+                                style: hts(
+                                  13,
+                                  dk(
+                                    context,
+                                    Color(0xFF52525B),
+                                    Color(0xFFA8A8B3),
                                   ),
+                                  w: FontWeight.w500,
+                                  lh: 18,
                                 ),
                               ),
                             ),
                           ),
                         ),
-                      ],
-                      main: MainAxisAlignment.start,
-                      cross: CrossAxisAlignment.stretch,
-                      gap: 2,
-                      intrinsic: true,
-                    ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: hTap(
+                          context,
+                          hbox(
+                            h: 34,
+                            radius: BorderRadius.circular(17),
+                            child: Align(
+                              alignment: Alignment(0, 0),
+                              widthFactor: 1,
+                              child: Text(
+                                '次卡套餐 6',
+                                style: hts(
+                                  14,
+                                  dk(
+                                    context,
+                                    Color(0xFF52525B),
+                                    Color(0xFFA8A8B3),
+                                  ),
+                                  w: FontWeight.w500,
+                                  lh: 20,
+                                ),
+                              ),
+                            ),
+                          ),
+                          to: 'CardPackages',
+                        ),
+                      ),
+                    ],
+                    main: MainAxisAlignment.start,
+                    cross: CrossAxisAlignment.stretch,
+                    gap: 2,
+                    intrinsic: true,
                   ),
                 ),
                 hTap(
@@ -331,7 +285,7 @@ class CardTiersPage extends StatelessWidget {
                               Expanded(
                                 flex: 1,
                                 child: Text(
-                                  '单次充值 ¥10,000 开卡 · 积分 2 倍',
+                                  '充值 ¥10,000 / 累计消费 ¥30,000 · 积分 2 倍',
                                   style: hts(12, Color(0xFFD4D4D8), lh: 16),
                                 ),
                               ),
@@ -360,7 +314,7 @@ class CardTiersPage extends StatelessWidget {
                           top: -80,
                           right: -60,
                           child: hsvg(
-                            dk(context, Svgs.s71, Svgs.s72),
+                            dk(context, Svgs.s83, Svgs.s84),
                             w: 200,
                             h: 200,
                           ),
@@ -433,7 +387,7 @@ class CardTiersPage extends StatelessWidget {
                             Expanded(
                               flex: 1,
                               child: Text(
-                                '单次充值 ¥5,000 开卡 · 积分 1.5 倍',
+                                '充值 ¥5,000 / 累计消费 ¥10,000 · 积分 1.5 倍',
                                 style: hts(12, Color(0xFF5C4520), lh: 16),
                               ),
                             ),
@@ -538,7 +492,7 @@ class CardTiersPage extends StatelessWidget {
                             Expanded(
                               flex: 1,
                               child: Text(
-                                '单次充值 ¥2,000 开卡 · 积分 1 倍',
+                                '充值 ¥2,000 / 累计消费 ¥3,000 · 积分 1 倍',
                                 style: hts(
                                   12,
                                   dk(
@@ -748,7 +702,7 @@ class CardTiersPage extends StatelessWidget {
                             child: hcol(
                               [
                                 Text(
-                                  '累计消费自动升级',
+                                  '充值或消费自动升级',
                                   style: hts(
                                     14,
                                     dk(
@@ -760,7 +714,7 @@ class CardTiersPage extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  '达到上一级门槛后，次日自动升级',
+                                  '单次充值或累计消费达标，实时升级，取最高等级',
                                   style: hts(
                                     12,
                                     dk(

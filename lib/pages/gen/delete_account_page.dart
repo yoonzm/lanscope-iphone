@@ -96,7 +96,7 @@ class DeleteAccountPage extends StatelessWidget {
                   pad: EdgeInsets.fromLTRB(14, 12, 14, 12),
                   child: hrow(
                     [
-                      hsvg(dk(context, Svgs.s84, Svgs.s85), w: 18, h: 18),
+                      hsvg(dk(context, Svgs.s98, Svgs.s99), w: 18, h: 18),
                       Flexible(
                         flex: 504,
                         child: Text(
@@ -176,7 +176,7 @@ class DeleteAccountPage extends StatelessWidget {
                                   bg: Color.fromRGBO(255, 56, 60, 0.133),
                                   radius: BorderRadius.circular(10),
                                   child: hrow(
-                                    [hsvg(Svgs.s86, w: 12, h: 12)],
+                                    [hsvg(Svgs.s100, w: 12, h: 12)],
                                     main: MainAxisAlignment.center,
                                     cross: CrossAxisAlignment.center,
                                     gap: 0,
@@ -419,7 +419,7 @@ class DeleteAccountPage extends StatelessWidget {
                           hrow(
                             [
                               hsvg(
-                                dk(context, Svgs.s87, Svgs.s88),
+                                dk(context, Svgs.s101, Svgs.s102),
                                 w: 14,
                                 h: 14,
                               ),
@@ -446,7 +446,7 @@ class DeleteAccountPage extends StatelessWidget {
                           hrow(
                             [
                               hsvg(
-                                dk(context, Svgs.s87, Svgs.s88),
+                                dk(context, Svgs.s101, Svgs.s102),
                                 w: 14,
                                 h: 14,
                               ),
@@ -473,7 +473,7 @@ class DeleteAccountPage extends StatelessWidget {
                           hrow(
                             [
                               hsvg(
-                                dk(context, Svgs.s87, Svgs.s88),
+                                dk(context, Svgs.s101, Svgs.s102),
                                 w: 14,
                                 h: 14,
                               ),

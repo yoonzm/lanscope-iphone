@@ -10,7 +10,7 @@ class PayUnboundPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return HPage(
       bg: dk(context, Color(0xFFF4F4F5), Color(0xFF09090B)),
-      height: 1220,
+      height: 1201,
       fixedHeight: false,
       flow: hcol(
         [
@@ -73,86 +73,166 @@ class PayUnboundPage extends StatelessWidget {
                   gap: 0,
                 ),
                 hbox(
-                  pad: EdgeInsets.fromLTRB(0, 8, 0, 8),
-                  child: hcol(
-                    [
-                      hbox(
-                        w: 96,
-                        h: 96,
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                        child: hstack(
-                          hrow(
-                            [
-                              hbox(
-                                w: 72,
-                                h: 72,
-                                bg: Color(0xFF17C964),
-                                radius: BorderRadius.circular(36),
-                                shadow: [
-                                  BoxShadow(
-                                    color: Color.fromRGBO(23, 201, 100, 0.35),
-                                    offset: Offset(0, 8),
-                                    blurRadius: 20,
-                                    spreadRadius: 0,
+                  pad: EdgeInsets.fromLTRB(0, 26, 0, 6),
+                  child: hstack(
+                    hcol(
+                      [
+                        hbox(
+                          w: 128,
+                          h: 128,
+                          child: hstack(
+                            hrow(
+                              [
+                                hbox(
+                                  w: 76,
+                                  h: 76,
+                                  grad: LinearGradient(
+                                    begin: Alignment(-0.342, -0.94),
+                                    end: Alignment(0.342, 0.94),
+                                    colors: [
+                                      Color(0xFF3BDC86),
+                                      Color(0xFF17C964),
+                                    ],
+                                    stops: [0, 1],
                                   ),
-                                ],
-                                child: hrow(
-                                  [hsvg(Svgs.s30, w: 36, h: 36)],
-                                  main: MainAxisAlignment.center,
-                                  cross: CrossAxisAlignment.center,
-                                  gap: 0,
+                                  radius: BorderRadius.circular(38),
+                                  shadow: [
+                                    BoxShadow(
+                                      color: Color.fromRGBO(23, 201, 100, 0.35),
+                                      offset: Offset(0, 10),
+                                      blurRadius: 24,
+                                      spreadRadius: 0,
+                                    ),
+                                  ],
+                                  child: hrow(
+                                    [hsvg(Svgs.s29, w: 40, h: 40)],
+                                    main: MainAxisAlignment.center,
+                                    cross: CrossAxisAlignment.center,
+                                    gap: 0,
+                                  ),
                                 ),
+                              ],
+                              main: MainAxisAlignment.center,
+                              cross: CrossAxisAlignment.center,
+                              gap: 0,
+                            ),
+                            [
+                              Positioned(
+                                left: 0,
+                                top: 0,
+                                child: hsvg(Svgs.s28, w: 128, h: 128),
                               ),
                             ],
-                            main: MainAxisAlignment.center,
-                            cross: CrossAxisAlignment.center,
-                            gap: 0,
                           ),
-                          [],
-                          behind: [
-                            Positioned(
-                              left: -32,
-                              top: -32,
-                              child: hsvg(
-                                dk(context, Svgs.s28, Svgs.s29),
-                                w: 160,
-                                h: 160,
-                              ),
-                            ),
-                          ],
+                        ),
+                        Text(
+                          '收款成功',
+                          style: hts(
+                            21,
+                            dk(context, Color(0xFF18181B), Color(0xFFFAFAFA)),
+                            w: FontWeight.w600,
+                            lh: 28,
+                          ),
+                        ),
+                        Text(
+                          '¥880.00',
+                          style: hts(
+                            34,
+                            dk(context, Color(0xFF18181B), Color(0xFFFAFAFA)),
+                            w: FontWeight.w600,
+                            lh: 40,
+                            ls: -0.5,
+                          ),
+                        ),
+                        Text(
+                          '沪B·2C519 · 李女士 · 微信支付 · 14:41',
+                          style: hts(
+                            13,
+                            dk(context, Color(0xFF71717A), Color(0xFF9A9AA3)),
+                            lh: 19,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                      main: MainAxisAlignment.start,
+                      cross: CrossAxisAlignment.center,
+                      gap: 8,
+                    ),
+                    [],
+                    behind: [
+                      Positioned(
+                        left: 38,
+                        top: 30,
+                        width: 8,
+                        height: 8,
+                        child: hbox(
+                          w: 8,
+                          h: 8,
+                          bg: Color(0xFFF5D78E),
+                          radius: BorderRadius.circular(4),
                         ),
                       ),
-                      Text(
-                        '收款成功',
-                        style: hts(
-                          17,
-                          dk(context, Color(0xFF2B7745), Color(0xFF5FD48C)),
-                          w: FontWeight.w600,
-                          lh: 24,
+                      Positioned(
+                        left: 300,
+                        top: 52,
+                        width: 6,
+                        height: 6,
+                        child: hbox(
+                          w: 6,
+                          h: 6,
+                          bg: Color(0xFF0485F7),
+                          radius: BorderRadius.circular(3),
                         ),
                       ),
-                      Text(
-                        '¥880.00',
-                        style: hts(
-                          40,
-                          dk(context, Color(0xFF18181B), Color(0xFFFAFAFA)),
-                          w: FontWeight.w600,
-                          lh: 48,
-                          ls: -1,
+                      Positioned(
+                        left: 70,
+                        top: 150,
+                        width: 5,
+                        height: 5,
+                        child: hbox(
+                          w: 5,
+                          h: 5,
+                          bg: Color(0xFF17C964),
+                          radius: BorderRadius.circular(2.5),
                         ),
                       ),
-                      Text(
-                        '沪B·2C519 · 李女士 · 微信支付 · 14:41',
-                        style: hts(
-                          13,
-                          dk(context, Color(0xFF71717A), Color(0xFF9A9AA3)),
-                          lh: 18,
+                      Positioned(
+                        left: 318,
+                        top: 140,
+                        width: 9,
+                        height: 9,
+                        child: hbox(
+                          w: 9,
+                          h: 9,
+                          bg: Color(0xFFF5D78E),
+                          radius: BorderRadius.circular(4.5),
+                        ),
+                      ),
+                      Positioned(
+                        left: 24,
+                        top: 100,
+                        width: 6,
+                        height: 6,
+                        child: hbox(
+                          w: 6,
+                          h: 6,
+                          bg: Color(0xFF0485F7),
+                          radius: BorderRadius.circular(3),
+                        ),
+                      ),
+                      Positioned(
+                        left: 344,
+                        top: 98,
+                        width: 5,
+                        height: 5,
+                        child: hbox(
+                          w: 5,
+                          h: 5,
+                          bg: Color(0xFF17C964),
+                          radius: BorderRadius.circular(2.5),
                         ),
                       ),
                     ],
-                    main: MainAxisAlignment.start,
-                    cross: CrossAxisAlignment.center,
-                    gap: 6,
                   ),
                 ),
                 hbox(
@@ -193,7 +273,7 @@ class PayUnboundPage extends StatelessWidget {
                   child: hcol(
                     [
                       hbox(
-                        minH: 36,
+                        minH: 44,
                         child: hrow(
                           [
                             Expanded(
@@ -226,7 +306,7 @@ class PayUnboundPage extends StatelessWidget {
                             ),
                           ],
                           main: MainAxisAlignment.start,
-                          cross: CrossAxisAlignment.baseline,
+                          cross: CrossAxisAlignment.center,
                           gap: 12,
                         ),
                       ),
@@ -235,7 +315,7 @@ class PayUnboundPage extends StatelessWidget {
                         bg: dk(context, Color(0xFFEFEFF1), Color(0xFF2A2A2E)),
                       ),
                       hbox(
-                        minH: 36,
+                        minH: 44,
                         child: hrow(
                           [
                             Expanded(
@@ -268,7 +348,7 @@ class PayUnboundPage extends StatelessWidget {
                             ),
                           ],
                           main: MainAxisAlignment.start,
-                          cross: CrossAxisAlignment.baseline,
+                          cross: CrossAxisAlignment.center,
                           gap: 12,
                         ),
                       ),
@@ -277,7 +357,7 @@ class PayUnboundPage extends StatelessWidget {
                         bg: dk(context, Color(0xFFEFEFF1), Color(0xFF2A2A2E)),
                       ),
                       hbox(
-                        minH: 36,
+                        minH: 44,
                         child: hrow(
                           [
                             Expanded(
@@ -310,7 +390,7 @@ class PayUnboundPage extends StatelessWidget {
                             ),
                           ],
                           main: MainAxisAlignment.start,
-                          cross: CrossAxisAlignment.baseline,
+                          cross: CrossAxisAlignment.center,
                           gap: 12,
                         ),
                       ),
@@ -371,7 +451,7 @@ class PayUnboundPage extends StatelessWidget {
                             child: hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s244, Svgs.s245),
+                                  dk(context, Svgs.s296, Svgs.s297),
                                   w: 18,
                                   h: 18,
                                 ),
@@ -443,7 +523,7 @@ class PayUnboundPage extends StatelessWidget {
                             ),
                             pad: EdgeInsets.fromLTRB(14, 14, 14, 14),
                             child: hrow(
-                              [hsvg(Svgs.s191, w: 132, h: 132)],
+                              [hsvg(Svgs.s298, w: 132, h: 132)],
                               main: MainAxisAlignment.center,
                               cross: CrossAxisAlignment.center,
                               gap: 0,
@@ -570,7 +650,7 @@ class PayUnboundPage extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    '自动绑定并补发通知',
+                                    '自动绑定',
                                     style: hts(
                                       12,
                                       dk(

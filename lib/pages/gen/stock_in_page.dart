@@ -463,8 +463,8 @@ class StockInPage extends StatelessWidget {
                                               hsvg(
                                                 dk(
                                                   context,
-                                                  Svgs.s296,
-                                                  Svgs.s297,
+                                                  Svgs.s357,
+                                                  Svgs.s358,
                                                 ),
                                                 w: 14,
                                                 h: 14,
@@ -703,8 +703,8 @@ class StockInPage extends StatelessWidget {
                                               hsvg(
                                                 dk(
                                                   context,
-                                                  Svgs.s296,
-                                                  Svgs.s297,
+                                                  Svgs.s357,
+                                                  Svgs.s358,
                                                 ),
                                                 w: 14,
                                                 h: 14,
@@ -914,7 +914,7 @@ class StockInPage extends StatelessWidget {
                                       child: hrow(
                                         [
                                           hsvg(
-                                            dk(context, Svgs.s298, Svgs.s299),
+                                            dk(context, Svgs.s359, Svgs.s360),
                                             w: 16,
                                             h: 16,
                                           ),
@@ -958,7 +958,7 @@ class StockInPage extends StatelessWidget {
                                       child: hrow(
                                         [
                                           hsvg(
-                                            dk(context, Svgs.s300, Svgs.s301),
+                                            dk(context, Svgs.s361, Svgs.s362),
                                             w: 16,
                                             h: 16,
                                           ),
@@ -1694,7 +1694,7 @@ class StockInPage extends StatelessWidget {
                             child: hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s128, Svgs.s129),
+                                  dk(context, Svgs.s142, Svgs.s143),
                                   w: 26,
                                   h: 26,
                                 ),
@@ -1719,7 +1719,7 @@ class StockInPage extends StatelessWidget {
                               child: hrow(
                                 [
                                   hsvg(
-                                    dk(context, Svgs.s111, Svgs.s112),
+                                    dk(context, Svgs.s125, Svgs.s126),
                                     w: 24,
                                     h: 24,
                                   ),

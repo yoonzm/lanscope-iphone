@@ -1526,7 +1526,7 @@ class BusinessHoursPage extends StatelessWidget {
                     ),
                     child: hrow(
                       [
-                        hsvg(dk(context, Svgs.s57, Svgs.s58), w: 18, h: 18),
+                        hsvg(dk(context, Svgs.s56, Svgs.s57), w: 18, h: 18),
                         Flexible(
                           flex: 60,
                           child: Text(

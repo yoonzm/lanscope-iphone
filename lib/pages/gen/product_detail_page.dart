@@ -121,7 +121,7 @@ class ProductDetailPage extends StatelessWidget {
                         child: hrow(
                           [
                             hsvg(
-                              dk(context, Svgs.s256, Svgs.s257),
+                              dk(context, Svgs.s313, Svgs.s314),
                               w: 20,
                               h: 20,
                             ),
@@ -164,7 +164,7 @@ class ProductDetailPage extends StatelessWidget {
                               bg: Color(0xFF27272A),
                               radius: BorderRadius.circular(14),
                               child: hrow(
-                                [hsvg(Svgs.s258, w: 22, h: 22)],
+                                [hsvg(Svgs.s315, w: 22, h: 22)],
                                 main: MainAxisAlignment.center,
                                 cross: CrossAxisAlignment.center,
                                 gap: 0,
@@ -1357,7 +1357,7 @@ class ProductDetailPage extends StatelessWidget {
                                   child: hrow(
                                     [
                                       hsvg(
-                                        dk(context, Svgs.s259, Svgs.s260),
+                                        dk(context, Svgs.s316, Svgs.s317),
                                         w: 18,
                                         h: 18,
                                       ),
@@ -1466,7 +1466,7 @@ class ProductDetailPage extends StatelessWidget {
                                   child: hrow(
                                     [
                                       hsvg(
-                                        dk(context, Svgs.s259, Svgs.s260),
+                                        dk(context, Svgs.s316, Svgs.s317),
                                         w: 18,
                                         h: 18,
                                       ),
@@ -1575,7 +1575,7 @@ class ProductDetailPage extends StatelessWidget {
                                   child: hrow(
                                     [
                                       hsvg(
-                                        dk(context, Svgs.s261, Svgs.s262),
+                                        dk(context, Svgs.s318, Svgs.s319),
                                         w: 18,
                                         h: 18,
                                       ),
@@ -1684,7 +1684,7 @@ class ProductDetailPage extends StatelessWidget {
                                   child: hrow(
                                     [
                                       hsvg(
-                                        dk(context, Svgs.s263, Svgs.s264),
+                                        dk(context, Svgs.s320, Svgs.s321),
                                         w: 18,
                                         h: 18,
                                       ),

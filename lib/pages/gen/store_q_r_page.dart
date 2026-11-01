@@ -347,7 +347,7 @@ class StoreQRPage extends StatelessWidget {
                               ),
                               pad: EdgeInsets.fromLTRB(16, 16, 16, 16),
                               child: hrow(
-                                [hsvg(Svgs.s326, w: 190, h: 190)],
+                                [hsvg(Svgs.s387, w: 190, h: 190)],
                                 main: MainAxisAlignment.center,
                                 cross: CrossAxisAlignment.center,
                                 gap: 0,

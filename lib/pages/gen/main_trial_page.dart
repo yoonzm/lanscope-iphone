@@ -54,7 +54,7 @@ class MainTrialPage extends StatelessWidget {
                                   ),
                                 ),
                                 hsvg(
-                                  dk(context, Svgs.s153, Svgs.s154),
+                                  dk(context, Svgs.s173, Svgs.s174),
                                   w: 18,
                                   h: 18,
                                 ),
@@ -113,7 +113,7 @@ class MainTrialPage extends StatelessWidget {
                           hrow(
                             [
                               hsvg(
-                                dk(context, Svgs.s155, Svgs.s156),
+                                dk(context, Svgs.s175, Svgs.s176),
                                 w: 20,
                                 h: 20,
                               ),
@@ -198,7 +198,7 @@ class MainTrialPage extends StatelessWidget {
                         child: hrow(
                           [
                             hsvg(
-                              dk(context, Svgs.s185, Svgs.s85),
+                              dk(context, Svgs.s205, Svgs.s99),
                               w: 18,
                               h: 18,
                             ),
@@ -326,7 +326,7 @@ class MainTrialPage extends StatelessWidget {
                                   ),
                                   hrow(
                                     [
-                                      hsvg(Svgs.s160, w: 14, h: 14),
+                                      hsvg(Svgs.s180, w: 14, h: 14),
                                       Flexible(
                                         flex: 90,
                                         child: Text(
@@ -527,7 +527,7 @@ class MainTrialPage extends StatelessWidget {
                         top: -80,
                         right: -70,
                         child: hsvg(
-                          dk(context, Svgs.s158, Svgs.s159),
+                          dk(context, Svgs.s178, Svgs.s179),
                           w: 220,
                           h: 220,
                         ),
@@ -563,7 +563,7 @@ class MainTrialPage extends StatelessWidget {
                                         ),
                                         radius: BorderRadius.circular(22),
                                         child: hrow(
-                                          [hsvg(Svgs.s170, w: 22, h: 22)],
+                                          [hsvg(Svgs.s190, w: 22, h: 22)],
                                           main: MainAxisAlignment.center,
                                           cross: CrossAxisAlignment.center,
                                           gap: 0,
@@ -607,7 +607,7 @@ class MainTrialPage extends StatelessWidget {
                                   Positioned(
                                     right: -80,
                                     bottom: -80,
-                                    child: hsvg(Svgs.s169, w: 190, h: 190),
+                                    child: hsvg(Svgs.s189, w: 190, h: 190),
                                   ),
                                 ],
                               ),
@@ -637,7 +637,7 @@ class MainTrialPage extends StatelessWidget {
                                         hrow(
                                           [
                                             hsvg(
-                                              dk(context, Svgs.s163, Svgs.s164),
+                                              dk(context, Svgs.s183, Svgs.s184),
                                               w: 20,
                                               h: 20,
                                             ),
@@ -688,7 +688,7 @@ class MainTrialPage extends StatelessWidget {
                                         right: -8,
                                         bottom: -10,
                                         child: hsvg(
-                                          dk(context, Svgs.s161, Svgs.s162),
+                                          dk(context, Svgs.s181, Svgs.s182),
                                           w: 64,
                                           h: 64,
                                         ),
@@ -719,7 +719,7 @@ class MainTrialPage extends StatelessWidget {
                                         hrow(
                                           [
                                             hsvg(
-                                              dk(context, Svgs.s167, Svgs.s168),
+                                              dk(context, Svgs.s187, Svgs.s188),
                                               w: 20,
                                               h: 20,
                                             ),
@@ -770,7 +770,7 @@ class MainTrialPage extends StatelessWidget {
                                         right: -8,
                                         bottom: -10,
                                         child: hsvg(
-                                          dk(context, Svgs.s165, Svgs.s166),
+                                          dk(context, Svgs.s185, Svgs.s186),
                                           w: 64,
                                           h: 64,
                                         ),
@@ -828,7 +828,7 @@ class MainTrialPage extends StatelessWidget {
                                 child: hrow(
                                   [
                                     hsvg(
-                                      dk(context, Svgs.s173, Svgs.s174),
+                                      dk(context, Svgs.s193, Svgs.s194),
                                       w: 18,
                                       h: 18,
                                     ),
@@ -872,7 +872,7 @@ class MainTrialPage extends StatelessWidget {
                               hrow(
                                 [
                                   hsvg(
-                                    dk(context, Svgs.s175, Svgs.s176),
+                                    dk(context, Svgs.s195, Svgs.s196),
                                     w: 18,
                                     h: 18,
                                   ),
@@ -892,7 +892,7 @@ class MainTrialPage extends StatelessWidget {
                               top: -70,
                               right: -50,
                               child: hsvg(
-                                dk(context, Svgs.s171, Svgs.s172),
+                                dk(context, Svgs.s191, Svgs.s192),
                                 w: 190,
                                 h: 190,
                               ),
@@ -1490,7 +1490,7 @@ class MainTrialPage extends StatelessWidget {
                                 pad: EdgeInsets.fromLTRB(0, 10, 0, 0),
                                 child: hcol(
                                   [
-                                    hsvg(Svgs.s177, w: 24, h: 24),
+                                    hsvg(Svgs.s197, w: 24, h: 24),
                                     Text(
                                       '首页',
                                       style: hts(
@@ -1524,7 +1524,7 @@ class MainTrialPage extends StatelessWidget {
                                 child: hcol(
                                   [
                                     hsvg(
-                                      dk(context, Svgs.s178, Svgs.s179),
+                                      dk(context, Svgs.s198, Svgs.s199),
                                       w: 24,
                                       h: 24,
                                     ),
@@ -1561,7 +1561,7 @@ class MainTrialPage extends StatelessWidget {
                                 child: hcol(
                                   [
                                     hsvg(
-                                      dk(context, Svgs.s180, Svgs.s181),
+                                      dk(context, Svgs.s200, Svgs.s201),
                                       w: 24,
                                       h: 24,
                                     ),
@@ -1597,7 +1597,7 @@ class MainTrialPage extends StatelessWidget {
                                 child: hcol(
                                   [
                                     hsvg(
-                                      dk(context, Svgs.s182, Svgs.s183),
+                                      dk(context, Svgs.s202, Svgs.s203),
                                       w: 24,
                                       h: 24,
                                     ),
@@ -1671,7 +1671,7 @@ class MainTrialPage extends StatelessWidget {
                           ),
                         ],
                         child: hrow(
-                          [hsvg(Svgs.s184, w: 26, h: 26)],
+                          [hsvg(Svgs.s204, w: 26, h: 26)],
                           main: MainAxisAlignment.center,
                           cross: CrossAxisAlignment.center,
                           gap: 0,

@@ -14,6 +14,7 @@ import 'bind_h5_page.dart';
 import 'budget_edit_page.dart';
 import 'budget_total_page.dart';
 import 'business_hours_page.dart';
+import 'card_packages_page.dart';
 import 'card_tier_edit_page.dart';
 import 'card_tiers_page.dart';
 import 'change_password_page.dart';
@@ -37,12 +38,19 @@ import 'main_expiring_page.dart';
 import 'main_trial_page.dart';
 import 'member_add_page.dart';
 import 'member_add_done_page.dart';
+import 'member_adjust_page.dart';
+import 'member_edit_page.dart';
 import 'member_follow_up_page.dart';
 import 'member_records_page.dart';
+import 'member_send_msg_page.dart';
+import 'member_visit_page.dart';
 import 'messages_page.dart';
 import 'notify_log_page.dart';
 import 'notify_settings_page.dart';
 import 'notify_template_page.dart';
+import 'package_detail_page.dart';
+import 'package_edit_page.dart';
+import 'package_sold_page.dart';
 import 'pay_config_page.dart';
 import 'pay_method_page.dart';
 import 'pay_success_page.dart';
@@ -56,6 +64,7 @@ import 'privacy_page.dart';
 import 'product_detail_page.dart';
 import 'profile_edit_page.dart';
 import 'recharge_page.dart';
+import 'recharge_card_page.dart';
 import 'recharge_success_page.dart';
 import 'reg_done_page.dart';
 import 'reg_phone_page.dart';
@@ -86,9 +95,19 @@ import 'coupon_sheet_sheet.dart';
 import 'default_pay_sheet.dart';
 import 'disable_staff_sheet.dart';
 import 'export_sheet_sheet.dart';
+import 'find_result_sheet.dart';
+import 'find_result_code_sheet.dart';
 import 'hold_sheet_sheet.dart';
+import 'member_delete_sheet.dart';
 import 'member_filter_sheet.dart';
+import 'member_more_sheet.dart';
+import 'package_extend_sheet.dart';
+import 'package_refund_sheet.dart';
+import 'package_svc_pick_sheet.dart';
+import 'recharge_pick_sheet.dart';
 import 'renew_sheet.dart';
+import 'scan_plate_result_sheet.dart';
+import 'scan_result_sheet.dart';
 import 'store_switch_sheet.dart';
 
 final Map<String, WidgetBuilder> genRoutes = {
@@ -105,6 +124,7 @@ final Map<String, WidgetBuilder> genRoutes = {
   'BudgetEdit': (_) => const BudgetEditPage(),
   'BudgetTotal': (_) => const BudgetTotalPage(),
   'BusinessHours': (_) => const BusinessHoursPage(),
+  'CardPackages': (_) => const CardPackagesPage(),
   'CardTierEdit': (_) => const CardTierEditPage(),
   'CardTiers': (_) => const CardTiersPage(),
   'ChangePassword': (_) => const ChangePasswordPage(),
@@ -128,12 +148,19 @@ final Map<String, WidgetBuilder> genRoutes = {
   'MainTrial': (_) => const MainTrialPage(),
   'MemberAdd': (_) => const MemberAddPage(),
   'MemberAddDone': (_) => const MemberAddDonePage(),
+  'MemberAdjust': (_) => const MemberAdjustPage(),
+  'MemberEdit': (_) => const MemberEditPage(),
   'MemberFollowUp': (_) => const MemberFollowUpPage(),
   'MemberRecords': (_) => const MemberRecordsPage(),
+  'MemberSendMsg': (_) => const MemberSendMsgPage(),
+  'MemberVisit': (_) => const MemberVisitPage(),
   'Messages': (_) => const MessagesPage(),
   'NotifyLog': (_) => const NotifyLogPage(),
   'NotifySettings': (_) => const NotifySettingsPage(),
   'NotifyTemplate': (_) => const NotifyTemplatePage(),
+  'PackageDetail': (_) => const PackageDetailPage(),
+  'PackageEdit': (_) => const PackageEditPage(),
+  'PackageSold': (_) => const PackageSoldPage(),
   'PayConfig': (_) => const PayConfigPage(),
   'PayMethod': (_) => const PayMethodPage(),
   'PaySuccess': (_) => const PaySuccessPage(),
@@ -147,6 +174,7 @@ final Map<String, WidgetBuilder> genRoutes = {
   'ProductDetail': (_) => const ProductDetailPage(),
   'ProfileEdit': (_) => const ProfileEditPage(),
   'Recharge': (_) => const RechargePage(),
+  'RechargeCard': (_) => const RechargeCardPage(),
   'RechargeSuccess': (_) => const RechargeSuccessPage(),
   'RegDone': (_) => const RegDonePage(),
   'RegPhone': (_) => const RegPhonePage(),
@@ -181,9 +209,19 @@ final Map<String, WidgetBuilder> genSheets = {
   'DefaultPay': (_) => const DefaultPaySheet(),
   'DisableStaff': (_) => const DisableStaffSheet(),
   'ExportSheet': (_) => const ExportSheetSheet(),
+  'FindResult': (_) => const FindResultSheet(),
+  'FindResultCode': (_) => const FindResultCodeSheet(),
   'HoldSheet': (_) => const HoldSheetSheet(),
+  'MemberDelete': (_) => const MemberDeleteSheet(),
   'MemberFilter': (_) => const MemberFilterSheet(),
+  'MemberMore': (_) => const MemberMoreSheet(),
+  'PackageExtend': (_) => const PackageExtendSheet(),
+  'PackageRefund': (_) => const PackageRefundSheet(),
+  'PackageSvcPick': (_) => const PackageSvcPickSheet(),
+  'RechargePick': (_) => const RechargePickSheet(),
   'Renew': (_) => const RenewSheet(),
+  'ScanPlateResult': (_) => const ScanPlateResultSheet(),
+  'ScanResult': (_) => const ScanResultSheet(),
   'StoreSwitch': (_) => const StoreSwitchSheet(),
 };
 
@@ -198,8 +236,18 @@ const Map<String, String> sheetParents = {
   'DefaultPay': 'PayConfig',
   'DisableStaff': 'StaffDetail',
   'ExportSheet': 'Stats',
+  'FindResult': 'FindScanPlate',
+  'FindResultCode': 'FindScanCode',
   'HoldSheet': 'Order',
+  'MemberDelete': 'MemberMore',
   'MemberFilter': 'Members',
+  'MemberMore': 'MemberDetail',
+  'PackageExtend': 'PackageDetail',
+  'PackageRefund': 'PackageDetail',
+  'PackageSvcPick': 'PackageEdit',
+  'RechargePick': 'RechargeCard',
   'Renew': 'Subscription',
+  'ScanPlateResult': 'ScanPlate',
+  'ScanResult': 'ScanLicense',
   'StoreSwitch': 'Main',
 };

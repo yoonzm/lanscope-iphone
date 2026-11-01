@@ -59,7 +59,7 @@ class MemberAddPage extends StatelessWidget {
                           ],
                         ),
                         child: hrow(
-                          [hsvg(dk(context, Svgs.s59, Svgs.s60), w: 20, h: 20)],
+                          [hsvg(dk(context, Svgs.s71, Svgs.s72), w: 20, h: 20)],
                           main: MainAxisAlignment.center,
                           cross: CrossAxisAlignment.center,
                           gap: 0,
@@ -122,7 +122,7 @@ class MemberAddPage extends StatelessWidget {
                           bg: Color(0xFF0485F7),
                           radius: BorderRadius.circular(12),
                           child: hrow(
-                            [hsvg(Svgs.s186, w: 22, h: 22)],
+                            [hsvg(Svgs.s206, w: 22, h: 22)],
                             main: MainAxisAlignment.center,
                             cross: CrossAxisAlignment.center,
                             gap: 0,
@@ -133,7 +133,7 @@ class MemberAddPage extends StatelessWidget {
                           child: hcol(
                             [
                               Text(
-                                '扫行驶证快速建档',
+                                '扫描行驶证 / 车牌快速建档',
                                 style: hts(
                                   15,
                                   Color(0xFFFAFAFA),
@@ -166,7 +166,7 @@ class MemberAddPage extends StatelessWidget {
                       gap: 12,
                     ),
                   ),
-                  label: '扫行驶证快速建档自动识别车牌',
+                  to: 'ScanLicense',
                 ),
                 hcol(
                   [
@@ -402,116 +402,23 @@ class MemberAddPage extends StatelessWidget {
                                   ),
                                   radius: BorderRadius.circular(16),
                                   pad: EdgeInsets.fromLTRB(3, 3, 3, 3),
-                                  child: HSelHolder(
-                                    groups: [
-                                      ({0}, false),
-                                    ],
-                                    builder: (context, g1) => hrow(
-                                      [
-                                        Flexible(
-                                          flex: 54,
-                                          child: HSel(
-                                            ctrl: g1[0],
-                                            index: 0,
-                                            on: hbox(
-                                              h: 28,
-                                              bg: dk(
-                                                context,
-                                                Color(0xFFFFFFFF),
-                                                Color(0xFF18181B),
-                                              ),
-                                              radius: BorderRadius.circular(14),
-                                              shadow: dk(
-                                                context,
-                                                [
-                                                  BoxShadow(
-                                                    color: Color.fromRGBO(
-                                                      0,
-                                                      0,
-                                                      0,
-                                                      0.08,
-                                                    ),
-                                                    offset: Offset(0, 1),
-                                                    blurRadius: 2,
-                                                    spreadRadius: 0,
-                                                  ),
-                                                ],
-                                                [
-                                                  BoxShadow(
-                                                    color: Color(0xFF26262B),
-                                                    offset: Offset(0, 0),
-                                                    blurRadius: 0,
-                                                    spreadRadius: 1,
-                                                  ),
-                                                ],
-                                              ),
-                                              pad: EdgeInsets.fromLTRB(
-                                                14,
-                                                0,
-                                                14,
-                                                0,
-                                              ),
-                                              child: Align(
-                                                alignment: Alignment.center,
-                                                widthFactor: 1,
-                                                child: Text(
-                                                  '先生',
-                                                  style: hts(
-                                                    13,
-                                                    dk(
-                                                      context,
-                                                      Color(0xFF18181B),
-                                                      Color(0xFFFAFAFA),
-                                                    ),
-                                                    w: FontWeight.w500,
-                                                    lh: 18,
-                                                  ),
-                                                ),
-                                              ),
+                                  child: hrow(
+                                    [
+                                      Flexible(
+                                        flex: 82,
+                                        child: HToggle(
+                                          initial: true,
+                                          on: hbox(
+                                            h: 28,
+                                            bg: dk(
+                                              context,
+                                              Color(0xFFFFFFFF),
+                                              Color(0xFF18181B),
                                             ),
-                                            off: hbox(
-                                              h: 28,
-                                              bg: dk(
-                                                context,
-                                                Color(0xFFFFFFFF),
-                                                Color(0xFF18181B),
-                                              ),
-                                              radius: BorderRadius.circular(14),
-                                              pad: EdgeInsets.fromLTRB(
-                                                14,
-                                                0,
-                                                14,
-                                                0,
-                                              ),
-                                              child: Align(
-                                                alignment: Alignment.center,
-                                                widthFactor: 1,
-                                                child: Text(
-                                                  '先生',
-                                                  style: hts(
-                                                    13,
-                                                    dk(
-                                                      context,
-                                                      Color(0xFF52525B),
-                                                      Color(0xFFA8A8B3),
-                                                    ),
-                                                    w: FontWeight.w500,
-                                                    lh: 18,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Flexible(
-                                          flex: 54,
-                                          child: HSel(
-                                            ctrl: g1[0],
-                                            index: 1,
-                                            on: hbox(
-                                              h: 28,
-                                              radius: BorderRadius.circular(14),
-                                              shadow: dk(context, [
+                                            radius: BorderRadius.circular(14),
+                                            shadow: dk(
+                                              context,
+                                              [
                                                 BoxShadow(
                                                   color: Color.fromRGBO(
                                                     0,
@@ -523,66 +430,298 @@ class MemberAddPage extends StatelessWidget {
                                                   blurRadius: 2,
                                                   spreadRadius: 0,
                                                 ),
-                                              ], null),
-                                              pad: EdgeInsets.fromLTRB(
-                                                14,
-                                                0,
-                                                14,
-                                                0,
-                                              ),
-                                              child: Align(
-                                                alignment: Alignment.center,
-                                                widthFactor: 1,
-                                                child: Text(
-                                                  '女士',
-                                                  style: hts(
-                                                    13,
-                                                    dk(
-                                                      context,
-                                                      Color(0xFF18181B),
-                                                      Color(0xFFFAFAFA),
-                                                    ),
-                                                    w: FontWeight.w500,
-                                                    lh: 18,
-                                                  ),
+                                              ],
+                                              [
+                                                BoxShadow(
+                                                  color: Color(0xFF26262B),
+                                                  offset: Offset(0, 0),
+                                                  blurRadius: 0,
+                                                  spreadRadius: 1,
                                                 ),
-                                              ),
+                                              ],
                                             ),
-                                            off: hbox(
-                                              h: 28,
-                                              radius: BorderRadius.circular(14),
-                                              pad: EdgeInsets.fromLTRB(
-                                                14,
-                                                0,
-                                                14,
-                                                0,
-                                              ),
-                                              child: Align(
-                                                alignment: Alignment.center,
-                                                widthFactor: 1,
-                                                child: Text(
-                                                  '女士',
-                                                  style: hts(
-                                                    13,
-                                                    dk(
-                                                      context,
-                                                      Color(0xFF52525B),
-                                                      Color(0xFFA8A8B3),
+                                            pad: EdgeInsets.fromLTRB(
+                                              14,
+                                              0,
+                                              14,
+                                              0,
+                                            ),
+                                            child: hrow(
+                                              [
+                                                Flexible(
+                                                  flex: 26,
+                                                  child: Text(
+                                                    '先生',
+                                                    style: hts(
+                                                      13,
+                                                      dk(
+                                                        context,
+                                                        Color(0xFF18181B),
+                                                        Color(0xFFFAFAFA),
+                                                      ),
+                                                      w: FontWeight.w500,
+                                                      lh: 18,
                                                     ),
-                                                    w: FontWeight.w500,
-                                                    lh: 18,
                                                   ),
                                                 ),
-                                              ),
+                                                Flexible(
+                                                  flex: 54,
+                                                  child: HToggle(
+                                                    initial: false,
+                                                    on: hbox(
+                                                      h: 28,
+                                                      bg: dk(
+                                                        context,
+                                                        Color(0xFFFFFFFF),
+                                                        Color(0xFF18181B),
+                                                      ),
+                                                      radius:
+                                                          BorderRadius.circular(
+                                                            14,
+                                                          ),
+                                                      shadow: dk(
+                                                        context,
+                                                        [
+                                                          BoxShadow(
+                                                            color:
+                                                                Color.fromRGBO(
+                                                                  0,
+                                                                  0,
+                                                                  0,
+                                                                  0.08,
+                                                                ),
+                                                            offset: Offset(
+                                                              0,
+                                                              1,
+                                                            ),
+                                                            blurRadius: 2,
+                                                            spreadRadius: 0,
+                                                          ),
+                                                        ],
+                                                        [
+                                                          BoxShadow(
+                                                            color: Color(
+                                                              0xFF26262B,
+                                                            ),
+                                                            offset: Offset(
+                                                              0,
+                                                              0,
+                                                            ),
+                                                            blurRadius: 0,
+                                                            spreadRadius: 1,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      pad: EdgeInsets.fromLTRB(
+                                                        14,
+                                                        0,
+                                                        14,
+                                                        0,
+                                                      ),
+                                                      child: Align(
+                                                        alignment:
+                                                            Alignment.center,
+                                                        widthFactor: 1,
+                                                        child: Text(
+                                                          '女士',
+                                                          style: hts(
+                                                            13,
+                                                            dk(
+                                                              context,
+                                                              Color(0xFF18181B),
+                                                              Color(0xFFFAFAFA),
+                                                            ),
+                                                            w: FontWeight.w500,
+                                                            lh: 18,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    off: hbox(
+                                                      h: 28,
+                                                      radius:
+                                                          BorderRadius.circular(
+                                                            14,
+                                                          ),
+                                                      pad: EdgeInsets.fromLTRB(
+                                                        14,
+                                                        0,
+                                                        14,
+                                                        0,
+                                                      ),
+                                                      child: Align(
+                                                        alignment:
+                                                            Alignment.center,
+                                                        widthFactor: 1,
+                                                        child: Text(
+                                                          '女士',
+                                                          style: hts(
+                                                            13,
+                                                            dk(
+                                                              context,
+                                                              Color(0xFF52525B),
+                                                              Color(0xFFA8A8B3),
+                                                            ),
+                                                            w: FontWeight.w500,
+                                                            lh: 18,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                              main: MainAxisAlignment.start,
+                                              cross: CrossAxisAlignment.center,
+                                              gap: 6,
+                                            ),
+                                          ),
+                                          off: hbox(
+                                            h: 28,
+                                            radius: BorderRadius.circular(14),
+                                            pad: EdgeInsets.fromLTRB(
+                                              14,
+                                              0,
+                                              14,
+                                              0,
+                                            ),
+                                            child: hrow(
+                                              [
+                                                Flexible(
+                                                  flex: 26,
+                                                  child: Text(
+                                                    '先生',
+                                                    style: hts(
+                                                      13,
+                                                      dk(
+                                                        context,
+                                                        Color(0xFF52525B),
+                                                        Color(0xFFA8A8B3),
+                                                      ),
+                                                      w: FontWeight.w500,
+                                                      lh: 18,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  flex: 54,
+                                                  child: HToggle(
+                                                    initial: false,
+                                                    on: hbox(
+                                                      h: 28,
+                                                      bg: dk(
+                                                        context,
+                                                        Color(0xFFFFFFFF),
+                                                        Color(0xFF18181B),
+                                                      ),
+                                                      radius:
+                                                          BorderRadius.circular(
+                                                            14,
+                                                          ),
+                                                      shadow: dk(
+                                                        context,
+                                                        [
+                                                          BoxShadow(
+                                                            color:
+                                                                Color.fromRGBO(
+                                                                  0,
+                                                                  0,
+                                                                  0,
+                                                                  0.08,
+                                                                ),
+                                                            offset: Offset(
+                                                              0,
+                                                              1,
+                                                            ),
+                                                            blurRadius: 2,
+                                                            spreadRadius: 0,
+                                                          ),
+                                                        ],
+                                                        [
+                                                          BoxShadow(
+                                                            color: Color(
+                                                              0xFF26262B,
+                                                            ),
+                                                            offset: Offset(
+                                                              0,
+                                                              0,
+                                                            ),
+                                                            blurRadius: 0,
+                                                            spreadRadius: 1,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      pad: EdgeInsets.fromLTRB(
+                                                        14,
+                                                        0,
+                                                        14,
+                                                        0,
+                                                      ),
+                                                      child: Align(
+                                                        alignment:
+                                                            Alignment.center,
+                                                        widthFactor: 1,
+                                                        child: Text(
+                                                          '女士',
+                                                          style: hts(
+                                                            13,
+                                                            dk(
+                                                              context,
+                                                              Color(0xFF18181B),
+                                                              Color(0xFFFAFAFA),
+                                                            ),
+                                                            w: FontWeight.w500,
+                                                            lh: 18,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    off: hbox(
+                                                      h: 28,
+                                                      radius:
+                                                          BorderRadius.circular(
+                                                            14,
+                                                          ),
+                                                      pad: EdgeInsets.fromLTRB(
+                                                        14,
+                                                        0,
+                                                        14,
+                                                        0,
+                                                      ),
+                                                      child: Align(
+                                                        alignment:
+                                                            Alignment.center,
+                                                        widthFactor: 1,
+                                                        child: Text(
+                                                          '女士',
+                                                          style: hts(
+                                                            13,
+                                                            dk(
+                                                              context,
+                                                              Color(0xFF52525B),
+                                                              Color(0xFFA8A8B3),
+                                                            ),
+                                                            w: FontWeight.w500,
+                                                            lh: 18,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                              main: MainAxisAlignment.start,
+                                              cross: CrossAxisAlignment.center,
+                                              gap: 6,
                                             ),
                                           ),
                                         ),
-                                      ],
-                                      main: MainAxisAlignment.start,
-                                      cross: CrossAxisAlignment.stretch,
-                                      gap: 2,
-                                      intrinsic: true,
-                                    ),
+                                      ),
+                                    ],
+                                    main: MainAxisAlignment.start,
+                                    cross: CrossAxisAlignment.stretch,
+                                    gap: 2,
+                                    intrinsic: true,
                                   ),
                                 ),
                               ],
@@ -602,7 +741,7 @@ class MemberAddPage extends StatelessWidget {
                           ),
                           HStrHolder(
                             initial: '选填，用于生日礼',
-                            builder: (context, s2) => hTap(
+                            builder: (context, s1) => hTap(
                               context,
                               hbox(
                                 minH: 54,
@@ -625,7 +764,7 @@ class MemberAddPage extends StatelessWidget {
                                       ),
                                     ),
                                     hStr(
-                                      s2,
+                                      s1,
                                       hts(
                                         15,
                                         dk(
@@ -648,7 +787,7 @@ class MemberAddPage extends StatelessWidget {
                                   gap: 12,
                                 ),
                               ),
-                              onTap: () => hPick(context, 'birthday', '生日', s2),
+                              onTap: () => hPick(context, 'birthday', '生日', s1),
                             ),
                           ),
                         ],
@@ -722,7 +861,7 @@ class MemberAddPage extends StatelessWidget {
                             [
                               HStrHolder(
                                 initial: '宝马 5系 525Li',
-                                builder: (context, s3) => hTap(
+                                builder: (context, s2) => hTap(
                                   context,
                                   hbox(
                                     minH: 54,
@@ -745,7 +884,7 @@ class MemberAddPage extends StatelessWidget {
                                           ),
                                         ),
                                         hStr(
-                                          s3,
+                                          s2,
                                           hts(
                                             15,
                                             dk(
@@ -768,7 +907,7 @@ class MemberAddPage extends StatelessWidget {
                                     ),
                                   ),
                                   onTap: () =>
-                                      hPick(context, 'car', '品牌车型', s3),
+                                      hPick(context, 'car', '品牌车型', s2),
                                 ),
                               ),
                               hbox(
@@ -804,10 +943,10 @@ class MemberAddPage extends StatelessWidget {
                                       groups: [
                                         ({0}, false),
                                       ],
-                                      builder: (context, g4) => hrow(
+                                      builder: (context, g3) => hrow(
                                         [
                                           HSel(
-                                            ctrl: g4[0],
+                                            ctrl: g3[0],
                                             index: 0,
                                             on: hbox(
                                               w: 26,
@@ -856,7 +995,7 @@ class MemberAddPage extends StatelessWidget {
                                             ),
                                           ),
                                           HSel(
-                                            ctrl: g4[0],
+                                            ctrl: g3[0],
                                             index: 1,
                                             on: hbox(
                                               w: 26,
@@ -905,7 +1044,7 @@ class MemberAddPage extends StatelessWidget {
                                             ),
                                           ),
                                           HSel(
-                                            ctrl: g4[0],
+                                            ctrl: g3[0],
                                             index: 2,
                                             on: hbox(
                                               w: 26,
@@ -935,7 +1074,7 @@ class MemberAddPage extends StatelessWidget {
                                             ),
                                           ),
                                           HSel(
-                                            ctrl: g4[0],
+                                            ctrl: g3[0],
                                             index: 3,
                                             on: hbox(
                                               w: 26,
@@ -965,7 +1104,7 @@ class MemberAddPage extends StatelessWidget {
                                             ),
                                           ),
                                           HSel(
-                                            ctrl: g4[0],
+                                            ctrl: g3[0],
                                             index: 4,
                                             on: hbox(
                                               w: 26,
@@ -1065,7 +1204,7 @@ class MemberAddPage extends StatelessWidget {
                           Expanded(
                             flex: 1,
                             child: Text(
-                              '开卡',
+                              '会员等级',
                               style: hts(
                                 15,
                                 dk(
@@ -1078,46 +1217,64 @@ class MemberAddPage extends StatelessWidget {
                               ),
                             ),
                           ),
-                          hTap(
-                            context,
-                            Text(
-                              '保存后去充值',
+                          hbox(
+                            bg: dk(
+                              context,
+                              Color(0xFFDDF6E7),
+                              Color.fromRGBO(23, 201, 100, 0.16),
+                            ),
+                            radius: BorderRadius.circular(10),
+                            pad: EdgeInsets.fromLTRB(8, 0, 8, 0),
+                            child: Text(
+                              '自动升级',
                               style: hts(
-                                13,
+                                11,
                                 dk(
                                   context,
-                                  Color(0xFF1E63AE),
-                                  Color(0xFF6AB4FA),
+                                  Color(0xFF2B7745),
+                                  Color(0xFF5FD48C),
                                 ),
-                                w: FontWeight.w500,
-                                lh: 18,
+                                w: FontWeight.w600,
+                                lh: 20,
                               ),
                             ),
-                            to: 'Recharge',
                           ),
                         ],
                         main: MainAxisAlignment.start,
-                        cross: CrossAxisAlignment.baseline,
-                        gap: 0,
+                        cross: CrossAxisAlignment.center,
+                        gap: 8,
                       ),
-                      hcol([
+                      hstack(
                         hrow(
                           [
                             Expanded(
                               flex: 1,
-                              child: hTap(
-                                context,
-                                hbox(
-                                  h: 52,
-                                  bg: dk(
-                                    context,
-                                    Color(0xFFF4F4F5),
-                                    Color(0xFF27272A),
-                                  ),
-                                  radius: BorderRadius.circular(14),
-                                  child: Align(
-                                    alignment: Alignment.center,
-                                    widthFactor: 1,
+                              child: hcol(
+                                [
+                                  hbox(
+                                    h: 32,
+                                    minW: 52,
+                                    bg: dk(
+                                      context,
+                                      Color(0xFFF4F4F5),
+                                      Color(0xFF27272A),
+                                    ),
+                                    radius: BorderRadius.circular(16),
+                                    shadow: [
+                                      BoxShadow(
+                                        color: Color(0xFFFFFFFF),
+                                        offset: Offset(0, 0),
+                                        blurRadius: 0,
+                                        spreadRadius: 2,
+                                      ),
+                                      BoxShadow(
+                                        color: Color(0xFF0485F7),
+                                        offset: Offset(0, 0),
+                                        blurRadius: 0,
+                                        spreadRadius: 4,
+                                      ),
+                                    ],
+                                    pad: EdgeInsets.fromLTRB(12, 0, 12, 0),
                                     child: Text(
                                       '普通',
                                       style: hts(
@@ -1127,30 +1284,45 @@ class MemberAddPage extends StatelessWidget {
                                           Color(0xFF18181B),
                                           Color(0xFFFAFAFA),
                                         ),
-                                        w: FontWeight.w500,
-                                        lh: 18,
+                                        w: FontWeight.w600,
+                                        lh: 32,
                                       ),
+                                      textAlign: TextAlign.center,
                                     ),
                                   ),
-                                ),
-                                label: '普通',
+                                  Text(
+                                    '当前',
+                                    style: hts(
+                                      11,
+                                      dk(
+                                        context,
+                                        Color(0xFF18181B),
+                                        Color(0xFFFAFAFA),
+                                      ),
+                                      w: FontWeight.w600,
+                                      lh: 14,
+                                    ),
+                                  ),
+                                ],
+                                main: MainAxisAlignment.start,
+                                cross: CrossAxisAlignment.center,
+                                gap: 6,
                               ),
                             ),
                             Expanded(
                               flex: 1,
-                              child: hTap(
-                                context,
-                                hbox(
-                                  h: 52,
-                                  bg: dk(
-                                    context,
-                                    Color(0xFFE4E4E7),
-                                    Color(0xFF3A3A40),
-                                  ),
-                                  radius: BorderRadius.circular(14),
-                                  child: Align(
-                                    alignment: Alignment.center,
-                                    widthFactor: 1,
+                              child: hcol(
+                                [
+                                  hbox(
+                                    h: 32,
+                                    minW: 52,
+                                    bg: dk(
+                                      context,
+                                      Color(0xFFE4E4E7),
+                                      Color(0xFF3A3A40),
+                                    ),
+                                    radius: BorderRadius.circular(16),
+                                    pad: EdgeInsets.fromLTRB(12, 0, 12, 0),
                                     child: Text(
                                       '银卡',
                                       style: hts(
@@ -1160,92 +1332,162 @@ class MemberAddPage extends StatelessWidget {
                                           Color(0xFF27272A),
                                           Color(0xFFD4D4D8),
                                         ),
-                                        w: FontWeight.w500,
-                                        lh: 18,
+                                        w: FontWeight.w600,
+                                        lh: 32,
                                       ),
+                                      textAlign: TextAlign.center,
                                     ),
                                   ),
-                                ),
-                                label: '银卡',
+                                  Text(
+                                    '充值 ¥2,000\n或消费 ¥3,000',
+                                    style: hts(
+                                      10,
+                                      dk(
+                                        context,
+                                        Color(0xFF71717A),
+                                        Color(0xFF9A9AA3),
+                                      ),
+                                      lh: 14,
+                                      ls: -0.2,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    softWrap: false,
+                                    maxLines: 1,
+                                  ),
+                                ],
+                                main: MainAxisAlignment.start,
+                                cross: CrossAxisAlignment.center,
+                                gap: 6,
                               ),
                             ),
                             Expanded(
                               flex: 1,
-                              child: hTap(
-                                context,
-                                hbox(
-                                  h: 52,
-                                  bg: Color(0xFFF3E2B3),
-                                  radius: BorderRadius.circular(14),
-                                  border: Border.all(
-                                    color: Color(0xFF0485F7),
-                                    width: 2,
-                                  ),
-                                  child: Align(
-                                    alignment: Alignment.center,
-                                    widthFactor: 1,
+                              child: hcol(
+                                [
+                                  hbox(
+                                    h: 32,
+                                    minW: 52,
+                                    bg: Color(0xFFF3E2B3),
+                                    radius: BorderRadius.circular(16),
+                                    pad: EdgeInsets.fromLTRB(12, 0, 12, 0),
                                     child: Text(
                                       '金卡',
                                       style: hts(
                                         13,
                                         Color(0xFF3D2B0E),
-                                        w: FontWeight.w500,
-                                        lh: 18,
+                                        w: FontWeight.w600,
+                                        lh: 32,
                                       ),
+                                      textAlign: TextAlign.center,
                                     ),
                                   ),
-                                ),
-                                label: '金卡',
+                                  Text(
+                                    '充值 ¥5,000\n或消费 ¥10,000',
+                                    style: hts(
+                                      10,
+                                      dk(
+                                        context,
+                                        Color(0xFF71717A),
+                                        Color(0xFF9A9AA3),
+                                      ),
+                                      lh: 14,
+                                      ls: -0.2,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    softWrap: false,
+                                    maxLines: 1,
+                                  ),
+                                ],
+                                main: MainAxisAlignment.start,
+                                cross: CrossAxisAlignment.center,
+                                gap: 6,
                               ),
                             ),
                             Expanded(
                               flex: 1,
-                              child: hTap(
-                                context,
-                                hbox(
-                                  h: 52,
-                                  bg: dk(
-                                    context,
-                                    Color(0xFF18181B),
-                                    Color(0xFF34343A),
-                                  ),
-                                  radius: BorderRadius.circular(14),
-                                  child: Align(
-                                    alignment: Alignment.center,
-                                    widthFactor: 1,
+                              child: hcol(
+                                [
+                                  hbox(
+                                    h: 32,
+                                    minW: 52,
+                                    bg: dk(
+                                      context,
+                                      Color(0xFF18181B),
+                                      Color(0xFF34343A),
+                                    ),
+                                    radius: BorderRadius.circular(16),
+                                    pad: EdgeInsets.fromLTRB(12, 0, 12, 0),
                                     child: Text(
                                       '黑金',
                                       style: hts(
                                         13,
                                         Color(0xFFF5D78E),
-                                        w: FontWeight.w500,
-                                        lh: 18,
+                                        w: FontWeight.w600,
+                                        lh: 32,
                                       ),
+                                      textAlign: TextAlign.center,
                                     ),
                                   ),
-                                ),
-                                label: '黑金',
+                                  Text(
+                                    '充值 ¥10,000\n或消费 ¥30,000',
+                                    style: hts(
+                                      10,
+                                      dk(
+                                        context,
+                                        Color(0xFF71717A),
+                                        Color(0xFF9A9AA3),
+                                      ),
+                                      lh: 14,
+                                      ls: -0.2,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    softWrap: false,
+                                    maxLines: 1,
+                                  ),
+                                ],
+                                main: MainAxisAlignment.start,
+                                cross: CrossAxisAlignment.center,
+                                gap: 6,
                               ),
                             ),
                           ],
-                          cross: CrossAxisAlignment.stretch,
-                          gap: 8,
-                          intrinsic: true,
-                          min: false,
+                          main: MainAxisAlignment.start,
+                          cross: CrossAxisAlignment.start,
+                          gap: 0,
                         ),
-                      ], gap: 8),
-                      Text(
-                        '银卡及以上需充值达到开卡门槛后生效',
-                        style: hts(
-                          12,
-                          dk(context, Color(0xFF71717A), Color(0xFF9A9AA3)),
-                          lh: 16,
+                        [],
+                        behind: [
+                          Positioned(
+                            top: 15,
+                            height: 2,
+                            child: hbox(
+                              h: 2,
+                              bg: dk(
+                                context,
+                                Color(0xFFE4E4E7),
+                                Color(0xFF3A3A40),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      hbox(
+                        bg: dk(context, Color(0xFFF4F4F5), Color(0xFF27272A)),
+                        radius: BorderRadius.circular(14),
+                        pad: EdgeInsets.fromLTRB(12, 10, 12, 10),
+                        child: Text(
+                          '新会员默认为普通会员。单次充值或累计消费达到门槛，立即自动升级；两者同时满足时取最高等级。保存后可在成功页直接充值。',
+                          style: hts(
+                            12,
+                            dk(context, Color(0xFF52525B), Color(0xFFA8A8B3)),
+                            lh: 18,
+                          ),
                         ),
                       ),
                     ],
                     main: MainAxisAlignment.start,
                     cross: CrossAxisAlignment.stretch,
-                    gap: 12,
+                    gap: 14,
                   ),
                 ),
                 hbox(
@@ -1298,10 +1540,10 @@ class MemberAddPage extends StatelessWidget {
                         groups: [
                           ({1}, false),
                         ],
-                        builder: (context, g5) => hwrap(
+                        builder: (context, g4) => hwrap(
                           [
                             HSel(
-                              ctrl: g5[0],
+                              ctrl: g4[0],
                               index: 0,
                               on: hbox(
                                 h: 32,
@@ -1355,7 +1597,7 @@ class MemberAddPage extends StatelessWidget {
                               ),
                             ),
                             HSel(
-                              ctrl: g5[0],
+                              ctrl: g4[0],
                               index: 1,
                               on: hbox(
                                 h: 32,
@@ -1409,7 +1651,7 @@ class MemberAddPage extends StatelessWidget {
                               ),
                             ),
                             HSel(
-                              ctrl: g5[0],
+                              ctrl: g4[0],
                               index: 2,
                               on: hbox(
                                 h: 32,
@@ -1463,7 +1705,7 @@ class MemberAddPage extends StatelessWidget {
                               ),
                             ),
                             HSel(
-                              ctrl: g5[0],
+                              ctrl: g4[0],
                               index: 3,
                               on: hbox(
                                 h: 32,
@@ -1524,7 +1766,7 @@ class MemberAddPage extends StatelessWidget {
                       ),
                       HStrHolder(
                         initial: '王建国 · 黑金',
-                        builder: (context, s6) => hTap(
+                        builder: (context, s5) => hTap(
                           context,
                           hbox(
                             bg: dk(
@@ -1552,7 +1794,7 @@ class MemberAddPage extends StatelessWidget {
                                   ),
                                 ),
                                 hStr(
-                                  s6,
+                                  s5,
                                   hts(
                                     14,
                                     dk(
@@ -1565,7 +1807,7 @@ class MemberAddPage extends StatelessWidget {
                                   ),
                                 ),
                                 hsvg(
-                                  dk(context, Svgs.s187, Svgs.s188),
+                                  dk(context, Svgs.s207, Svgs.s208),
                                   w: 14,
                                   h: 14,
                                 ),
@@ -1575,7 +1817,7 @@ class MemberAddPage extends StatelessWidget {
                               gap: 10,
                             ),
                           ),
-                          onTap: () => hPick(context, 'referrer', '推荐人', s6),
+                          onTap: () => hPick(context, 'referrer', '推荐人', s5),
                         ),
                       ),
                       Text(

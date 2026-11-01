@@ -96,7 +96,7 @@ class CheckUpdatePage extends StatelessWidget {
                         bg: dk(context, Color(0xFF18181B), Color(0xFF34343A)),
                         radius: BorderRadius.circular(22),
                         child: hrow(
-                          [hsvg(Svgs.s78, w: 38, h: 38)],
+                          [hsvg(Svgs.s92, w: 38, h: 38)],
                           main: MainAxisAlignment.center,
                           cross: CrossAxisAlignment.center,
                           gap: 0,

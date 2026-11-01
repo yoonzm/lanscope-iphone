@@ -417,7 +417,7 @@ class PlansPage extends StatelessWidget {
                         [
                           hrow(
                             [
-                              hsvg(Svgs.s73, w: 14, h: 14),
+                              hsvg(Svgs.s87, w: 14, h: 14),
                               Flexible(
                                 flex: 141,
                                 child: Text(
@@ -440,7 +440,7 @@ class PlansPage extends StatelessWidget {
                           ),
                           hrow(
                             [
-                              hsvg(Svgs.s73, w: 14, h: 14),
+                              hsvg(Svgs.s87, w: 14, h: 14),
                               Flexible(
                                 flex: 173,
                                 child: Text(
@@ -463,7 +463,7 @@ class PlansPage extends StatelessWidget {
                           ),
                           hrow(
                             [
-                              hsvg(Svgs.s73, w: 14, h: 14),
+                              hsvg(Svgs.s87, w: 14, h: 14),
                               Flexible(
                                 flex: 95,
                                 child: Text(
@@ -486,7 +486,7 @@ class PlansPage extends StatelessWidget {
                           ),
                           hrow(
                             [
-                              hsvg(Svgs.s252, w: 14, h: 14),
+                              hsvg(Svgs.s308, w: 14, h: 14),
                               Flexible(
                                 flex: 117,
                                 child: Text(
@@ -582,7 +582,7 @@ class PlansPage extends StatelessWidget {
                               bg: Color(0xFF0485F7),
                               radius: BorderRadius.circular(12),
                               child: hrow(
-                                [hsvg(Svgs.s241, w: 14, h: 14)],
+                                [hsvg(Svgs.s309, w: 14, h: 14)],
                                 main: MainAxisAlignment.center,
                                 cross: CrossAxisAlignment.center,
                                 gap: 0,
@@ -638,7 +638,7 @@ class PlansPage extends StatelessWidget {
                           [
                             hrow(
                               [
-                                hsvg(Svgs.s253, w: 14, h: 14),
+                                hsvg(Svgs.s310, w: 14, h: 14),
                                 Flexible(
                                   flex: 149,
                                   child: Text(
@@ -653,7 +653,7 @@ class PlansPage extends StatelessWidget {
                             ),
                             hrow(
                               [
-                                hsvg(Svgs.s253, w: 14, h: 14),
+                                hsvg(Svgs.s310, w: 14, h: 14),
                                 Flexible(
                                   flex: 91,
                                   child: Text(
@@ -668,7 +668,7 @@ class PlansPage extends StatelessWidget {
                             ),
                             hrow(
                               [
-                                hsvg(Svgs.s253, w: 14, h: 14),
+                                hsvg(Svgs.s310, w: 14, h: 14),
                                 Flexible(
                                   flex: 159,
                                   child: Text(
@@ -683,7 +683,7 @@ class PlansPage extends StatelessWidget {
                             ),
                             hrow(
                               [
-                                hsvg(Svgs.s253, w: 14, h: 14),
+                                hsvg(Svgs.s310, w: 14, h: 14),
                                 Flexible(
                                   flex: 157,
                                   child: Text(
@@ -698,7 +698,7 @@ class PlansPage extends StatelessWidget {
                             ),
                             hrow(
                               [
-                                hsvg(Svgs.s253, w: 14, h: 14),
+                                hsvg(Svgs.s310, w: 14, h: 14),
                                 Flexible(
                                   flex: 109,
                                   child: Text(
@@ -843,7 +843,7 @@ class PlansPage extends StatelessWidget {
                         [
                           hrow(
                             [
-                              hsvg(Svgs.s73, w: 14, h: 14),
+                              hsvg(Svgs.s87, w: 14, h: 14),
                               Flexible(
                                 flex: 150,
                                 child: Text(
@@ -866,7 +866,7 @@ class PlansPage extends StatelessWidget {
                           ),
                           hrow(
                             [
-                              hsvg(Svgs.s73, w: 14, h: 14),
+                              hsvg(Svgs.s87, w: 14, h: 14),
                               Flexible(
                                 flex: 91,
                                 child: Text(
@@ -889,7 +889,7 @@ class PlansPage extends StatelessWidget {
                           ),
                           hrow(
                             [
-                              hsvg(Svgs.s73, w: 14, h: 14),
+                              hsvg(Svgs.s87, w: 14, h: 14),
                               Flexible(
                                 flex: 143,
                                 child: Text(
@@ -912,7 +912,7 @@ class PlansPage extends StatelessWidget {
                           ),
                           hrow(
                             [
-                              hsvg(Svgs.s73, w: 14, h: 14),
+                              hsvg(Svgs.s87, w: 14, h: 14),
                               Flexible(
                                 flex: 109,
                                 child: Text(
@@ -935,7 +935,7 @@ class PlansPage extends StatelessWidget {
                           ),
                           hrow(
                             [
-                              hsvg(Svgs.s73, w: 14, h: 14),
+                              hsvg(Svgs.s87, w: 14, h: 14),
                               Flexible(
                                 flex: 144,
                                 child: Text(

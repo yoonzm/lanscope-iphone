@@ -112,7 +112,7 @@ class DataBackupPage extends StatelessWidget {
                               bg: Color(0xFF27272A),
                               radius: BorderRadius.circular(14),
                               child: hrow(
-                                [hsvg(Svgs.s79, w: 24, h: 24)],
+                                [hsvg(Svgs.s93, w: 24, h: 24)],
                                 main: MainAxisAlignment.center,
                                 cross: CrossAxisAlignment.center,
                                 gap: 0,
@@ -290,7 +290,7 @@ class DataBackupPage extends StatelessWidget {
                             child: hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s80, Svgs.s81),
+                                  dk(context, Svgs.s94, Svgs.s95),
                                   w: 18,
                                   h: 18,
                                 ),
@@ -1143,7 +1143,7 @@ class DataBackupPage extends StatelessWidget {
                     Align(
                       alignment: Alignment.topLeft,
                       child: hsvg(
-                        dk(context, Svgs.s82, Svgs.s83),
+                        dk(context, Svgs.s96, Svgs.s97),
                         w: 12,
                         h: 12,
                       ),
