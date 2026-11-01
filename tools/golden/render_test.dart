@@ -15,6 +15,7 @@ import 'package:qimei_guanjia/pages/settings_page.dart';
 import 'package:qimei_guanjia/pages/services_page.dart';
 import 'package:qimei_guanjia/pages/order_page.dart';
 import 'package:qimei_guanjia/pages/appointments_page.dart';
+import 'package:qimei_guanjia/pages/appointment_add_page.dart';
 import 'package:qimei_guanjia/pages/login_page.dart';
 import 'package:qimei_guanjia/pages/member_detail_page.dart';
 import 'package:qimei_guanjia/mock/mock_data.dart';
@@ -65,6 +66,8 @@ void main() {
     'Services': () => const ServicesPage(),
     'Order': () => const OrderPage(),
     'Appointments': () => const AppointmentsPage(),
+    'AppointmentSchedule': () => const AppointmentsPage(initialView: 1),
+    'AppointmentAdd': () => const AppointmentAddPage(),
     'Login': () => const LoginPage(),
     'MemberDetail': () => MemberDetailPage(member: members.first),
   };

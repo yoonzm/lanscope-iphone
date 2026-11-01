@@ -579,6 +579,45 @@ Widget hsvg(String markup, {double? w, double? h}) =>
     SvgPicture.string(markup, width: w, height: h);
 
 // ───────── 表单控件 ─────────
+/// 受控开关（外部持有状态），样式与设计稿一致。
+class HSwitchValue extends StatelessWidget {
+  final bool value;
+  final ValueChanged<bool> onChanged;
+  const HSwitchValue({super.key, required this.value, required this.onChanged});
+  @override
+  Widget build(BuildContext context) => GestureDetector(
+    onTap: () => onChanged(!value),
+    child: AnimatedContainer(
+      duration: const Duration(milliseconds: 160),
+      width: 48,
+      height: 28,
+      padding: const EdgeInsets.all(2),
+      alignment: value ? Alignment.centerRight : Alignment.centerLeft,
+      decoration: BoxDecoration(
+        color: value
+            ? const Color(0xFF0485F7)
+            : (C.dark ? const Color(0xFF3F3F46) : const Color(0xFFD4D4D8)),
+        borderRadius: BorderRadius.circular(14),
+      ),
+      child: Container(
+        width: 24,
+        height: 24,
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(
+              color: Color(0x33000000),
+              blurRadius: 3,
+              offset: Offset(0, 1),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
 class HSwitch extends StatefulWidget {
   final bool initial;
   final Color onColor, offColor;

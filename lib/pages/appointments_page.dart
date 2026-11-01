@@ -81,37 +81,9 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
           ..sort((a, b) => a.time.compareTo(b.time));
 
     return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: GestureDetector(
-        onTap: () => push(context, const AppointmentAddPage()),
-        child: Container(
-          height: 50,
-          padding: const EdgeInsets.symmetric(horizontal: 22),
-          decoration: BoxDecoration(
-            color: C.btn,
-            borderRadius: BorderRadius.circular(25),
-            boxShadow: const [
-              BoxShadow(
-                color: Color(0x4018181B),
-                blurRadius: 20,
-                offset: Offset(0, 10),
-              ),
-            ],
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              AppIcon('add', color: C.btnFg, size: 20),
-              const SizedBox(width: 6),
-              Text(
-                '新建预约',
-                style: ts(15, w: FontWeight.w600, color: C.btnFg, h: 22),
-              ),
-            ],
-          ),
-        ),
-      ),
+      bottomNavigationBar: _bottomBar(context),
       body: SafeArea(
+        bottom: false,
         child: Column(
           children: [
             SubHeader(
@@ -129,7 +101,7 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
               child: ListView(
                 keyboardDismissBehavior:
                     ScrollViewKeyboardDismissBehavior.onDrag,
-                padding: const EdgeInsets.fromLTRB(20, 8, 20, 100),
+                padding: const EdgeInsets.fromLTRB(20, 8, 20, 24),
                 children: [
                   _week(),
                   const SizedBox(height: 16),
@@ -147,30 +119,37 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
                         _stat(
                           '待到店',
                           count(ApptStatus.waiting),
-                          C.amberInk,
+                          C.primarySoft,
+                          C.primaryInk,
                           ApptStatus.waiting,
                         ),
+                        const SizedBox(width: 8),
                         _stat(
                           '已到店',
                           count(ApptStatus.arrived),
+                          C.greenSoft,
                           C.greenInk,
                           ApptStatus.arrived,
                         ),
+                        const SizedBox(width: 8),
                         _stat(
                           '超时未到',
                           count(ApptStatus.late),
+                          C.redSoft,
                           C.redInk,
                           ApptStatus.late,
                         ),
+                        const SizedBox(width: 8),
                         _stat(
                           '已完成',
                           count(ApptStatus.done),
-                          C.muted,
+                          C.chip,
+                          C.sub,
                           ApptStatus.done,
                         ),
                       ],
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 16),
                     if (pending.isEmpty && done.isEmpty)
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 48),
@@ -181,35 +160,19 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
                           ),
                         ),
                       ),
-                    ...[
-                      Text(
-                        '待处理 · 现在 16:47',
-                        style: ts(
-                          13,
-                          w: FontWeight.w500,
-                          color: C.muted,
-                          h: 18,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
+                    if (pending.isNotEmpty) ...[
+                      _sectionTitle('待处理 · 现在 16:47'),
                       for (final a in pending) ...[
                         _card(context, a),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: 8),
                       ],
-                      const SizedBox(height: 10),
-                      Text(
-                        '已完成',
-                        style: ts(
-                          13,
-                          w: FontWeight.w500,
-                          color: C.muted,
-                          h: 18,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 8),
+                    ],
+                    if (done.isNotEmpty) ...[
+                      _sectionTitle('已完成'),
                       for (final a in done) ...[
                         _card(context, a),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: 8),
                       ],
                     ],
                   ],
@@ -222,12 +185,54 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
     );
   }
 
+  Widget _sectionTitle(String t) => Padding(
+    padding: const EdgeInsets.only(left: 4, bottom: 8),
+    child: Text(
+      t,
+      style: ts(13, w: FontWeight.w500, color: C.sub, h: 18),
+    ),
+  );
+
+  Widget _bottomBar(BuildContext context) {
+    final bottom = MediaQuery.of(context).padding.bottom;
+    return Container(
+      padding: EdgeInsets.fromLTRB(20, 12, 20, bottom > 0 ? bottom - 4 : 16),
+      decoration: BoxDecoration(
+        color: C.card.withValues(alpha: 0.94),
+        border: Border(top: BorderSide(color: C.stroke)),
+      ),
+      child: GestureDetector(
+        onTap: () => push(context, const AppointmentAddPage()),
+        child: Container(
+          height: 50,
+          decoration: BoxDecoration(
+            color: C.btn,
+            borderRadius: BorderRadius.circular(25),
+          ),
+          alignment: Alignment.center,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              AppIcon('add', color: C.btnFg, size: 20),
+              const SizedBox(width: 6),
+              Text(
+                '新建预约',
+                style: ts(15, w: FontWeight.w600, color: C.btnFg, h: 22),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget _week() => AppCard(
-    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-    radius: 22,
+    padding: const EdgeInsets.all(8),
+    radius: 24,
     child: Row(
       children: [
-        for (var i = 0; i < _days.length; i++)
+        for (var i = 0; i < _days.length; i++) ...[
+          if (i > 0) const SizedBox(width: 2),
           Expanded(
             child: GestureDetector(
               onTap: () => setState(() => day = i),
@@ -241,175 +246,262 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
                   children: [
                     Text(
                       _days[i].$1,
-                      style: ts(12, color: day == i ? C.faint : C.muted, h: 16),
+                      style: ts(11, color: day == i ? C.faint : C.muted, h: 14),
                     ),
                     const SizedBox(height: 2),
                     Text(
                       _days[i].$2,
                       style: ts(
-                        16,
+                        17,
                         w: FontWeight.w600,
                         color: day == i ? C.btnFg : C.ink,
-                        h: 22,
+                        h: 24,
                       ),
                     ),
                     const SizedBox(height: 2),
                     Text(
                       _days[i].$3 == 0 ? '—' : '${_days[i].$3} 单',
-                      style: ts(10, color: day == i ? C.gold : C.muted, h: 14),
+                      style: ts(10, color: day == i ? C.faint : C.muted, h: 12),
                     ),
                   ],
                 ),
               ),
             ),
           ),
+        ],
       ],
     ),
   );
 
-  Widget _stat(String label, int n, Color c, ApptStatus st) => Expanded(
-    child: GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTap: () => setState(() => filter = filter == st ? null : st),
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 6),
-        decoration: BoxDecoration(
-          color: filter == st ? C.card : Colors.transparent,
-          borderRadius: BorderRadius.circular(14),
-          boxShadow: filter == st ? softShadow : null,
-        ),
-        child: Column(
-          children: [
-            Text(
-              '$n',
-              style: ts(22, w: FontWeight.w600, color: c, h: 28, tabular: true),
+  Widget _stat(String label, int n, Color bg, Color fg, ApptStatus st) =>
+      Expanded(
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () => setState(() => filter = filter == st ? null : st),
+          child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 6),
+            decoration: BoxDecoration(
+              color: bg,
+              borderRadius: BorderRadius.circular(16),
+              border: filter == st ? Border.all(color: fg, width: 1.5) : null,
             ),
-            Text(label, style: ts(12, color: C.muted, h: 16)),
-          ],
+            child: Column(
+              children: [
+                Text(
+                  '$n',
+                  style: ts(20, w: FontWeight.w600, color: fg, h: 26),
+                ),
+                const SizedBox(height: 2),
+                Text(label, style: ts(11, color: fg, h: 14)),
+              ],
+            ),
+          ),
         ),
-      ),
-    ),
-  );
+      );
 
   (String, Color, Color) _statusStyle(ApptStatus s) {
     switch (s) {
       case ApptStatus.waiting:
-        return ('待到店', C.amberSoft, C.amberInk);
+        return ('待到店', C.primarySoft, C.primaryInk);
       case ApptStatus.arrived:
         return ('已到店', C.greenSoft, C.greenInk);
       case ApptStatus.late:
         return ('超时未到', C.redSoft, C.redInk);
       case ApptStatus.done:
-        return ('已完成', C.chip, C.muted);
+        return ('已完成', C.chip, C.sub);
+    }
+  }
+
+  Widget _plate(String t) => Container(
+    padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 1),
+    decoration: BoxDecoration(
+      color: const Color(0xFF0B5FD6),
+      borderRadius: BorderRadius.circular(4),
+      border: Border.all(color: const Color(0xFF5B9BF0), width: 1.5),
+    ),
+    child: Text(
+      t,
+      style: ts(11, w: FontWeight.w600, color: Colors.white, h: 16),
+    ),
+  );
+
+  Widget _tag(String t, Color bg, Color fg) => Container(
+    padding: const EdgeInsets.symmetric(horizontal: 8),
+    decoration: BoxDecoration(
+      color: bg,
+      borderRadius: BorderRadius.circular(9),
+    ),
+    child: Text(
+      t,
+      style: ts(11, w: FontWeight.w600, color: fg, h: 18),
+    ),
+  );
+
+  Widget _levelTag(String level) {
+    switch (level) {
+      case '黑金':
+        return _tag(level, C.pill, C.gold);
+      case '金卡':
+        return _tag(level, C.gold, C.onGold);
+      case '银卡':
+        return _tag(level, C.chip, C.sub);
+      default:
+        return _tag(level, C.chip, C.sub);
     }
   }
 
   Widget _card(BuildContext context, Appointment a) {
     final st = _statusStyle(a.status);
     final done = a.status == ApptStatus.done;
-    Widget btn(String t, {bool primary = false, required VoidCallback onTap}) =>
-        GestureDetector(
-          onTap: onTap,
-          child: Container(
-            height: 34,
-            padding: const EdgeInsets.symmetric(horizontal: 14),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: primary ? C.btn : C.chip,
-              borderRadius: BorderRadius.circular(17),
-            ),
-            child: Text(
-              t,
-              style: ts(
-                13,
-                w: FontWeight.w500,
-                color: primary ? C.btnFg : C.ink,
-                h: 18,
-              ),
-            ),
+    Widget btn(String t, Color bg, Color fg, VoidCallback onTap) => Expanded(
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          height: 40,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: bg,
+            borderRadius: BorderRadius.circular(20),
           ),
-        );
+          child: Text(
+            t,
+            style: ts(14, w: FontWeight.w600, color: fg, h: 20),
+          ),
+        ),
+      ),
+    );
+    final call = GestureDetector(
+      onTap: () => toast(context, '拨打 ${a.customer} 电话（演示）'),
+      child: Container(
+        width: 40,
+        height: 40,
+        decoration: BoxDecoration(color: C.greenSoft, shape: BoxShape.circle),
+        child: Center(child: AppIcon('phone', size: 18, color: C.greenInk)),
+      ),
+    );
+    final reschedule = btn(
+      '改期',
+      C.chip,
+      C.ink,
+      () => openRoute(context, 'AppointmentReschedule'),
+    );
     return AppCard(
-      radius: 22,
-      padding: const EdgeInsets.all(14),
-      onTap: () => openRoute(context, 'AppointmentDetail'),
+      radius: 24,
+      padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Text(
-                a.time,
-                style: ts(
-                  20,
-                  w: FontWeight.w600,
-                  h: 26,
-                  tabular: true,
-                  color: done ? C.muted : C.ink,
+          GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () => openRoute(context, 'AppointmentDetail'),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: 52,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        a.time,
+                        style: ts(
+                          18,
+                          w: FontWeight.w600,
+                          h: 24,
+                          tabular: true,
+                          color: C.ink,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(a.duration, style: ts(11, color: C.muted, h: 14)),
+                    ],
+                  ),
                 ),
-              ),
-              const SizedBox(width: 8),
-              Text(a.duration, style: ts(12, color: C.muted, h: 16)),
-              const Spacer(),
-              Pill(st.$1, bg: st.$2, fg: st.$3),
-            ],
-          ),
-          const SizedBox(height: 10),
-          Row(
-            children: [
-              PlateTag(a.plate, green: done),
-              const SizedBox(width: 10),
-              Text(a.customer, style: ts(14, w: FontWeight.w500, h: 20)),
-              const SizedBox(width: 6),
-              if (a.level != '散客')
-                LevelBadge(a.level)
-              else
-                Pill('散客', bg: C.chip, fg: C.muted, size: 11),
-            ],
-          ),
-          const SizedBox(height: 8),
-          Text(a.service, style: ts(14, h: 20)),
-          const SizedBox(height: 2),
-          Text(
-            a.station,
-            style: ts(
-              12,
-              color: a.status == ApptStatus.late ? C.redInk : C.muted,
-              h: 16,
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Row(
+                              children: [
+                                _plate(a.plate),
+                                const SizedBox(width: 6),
+                                Flexible(
+                                  child: Text(
+                                    a.customer,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: ts(15, w: FontWeight.w600, h: 22),
+                                  ),
+                                ),
+                                const SizedBox(width: 6),
+                                _levelTag(a.level),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(width: 6),
+                          _tag(st.$1, st.$2, st.$3),
+                        ],
+                      ),
+                      const SizedBox(height: 6),
+                      Text(a.service, style: ts(14, color: C.sub, h: 20)),
+                      const SizedBox(height: 6),
+                      Text(
+                        a.station,
+                        style: ts(
+                          12,
+                          color: a.status == ApptStatus.late
+                              ? C.redInk
+                              : C.muted,
+                          h: 16,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
           if (!done) ...[
             const SizedBox(height: 12),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                btn(
-                  '改期',
-                  onTap: () => openRoute(context, 'AppointmentReschedule'),
-                ),
-                const SizedBox(width: 8),
-                if (a.status == ApptStatus.arrived)
-                  btn(
-                    '去开单',
-                    primary: true,
-                    onTap: () => openRoute(context, 'Order'),
-                  )
-                else if (a.status == ApptStatus.late)
-                  btn(
-                    '联系客户',
-                    primary: true,
-                    onTap: () => toast(context, '拨打 ${a.customer} 电话（演示）'),
-                  )
-                else
-                  btn(
-                    '客户到店',
-                    primary: true,
-                    onTap: () {
+            Padding(
+              padding: const EdgeInsets.only(left: 64),
+              child: Row(
+                children: [
+                  if (a.status == ApptStatus.arrived) ...[
+                    btn(
+                      '去开单',
+                      C.btn,
+                      C.btnFg,
+                      () => openRoute(context, 'Order'),
+                    ),
+                    const SizedBox(width: 8),
+                    reschedule,
+                  ] else if (a.status == ApptStatus.late) ...[
+                    btn(
+                      '联系客户',
+                      C.primary,
+                      Colors.white,
+                      () => toast(context, '拨打 ${a.customer} 电话（演示）'),
+                    ),
+                    const SizedBox(width: 8),
+                    reschedule,
+                    const SizedBox(width: 8),
+                    call,
+                  ] else ...[
+                    btn('客户到店', C.btn, C.btnFg, () {
                       appointmentStore.setStatus(a, ApptStatus.arrived);
                       toast(context, '${a.plate} 已标记到店');
-                    },
-                  ),
-              ],
+                    }),
+                    const SizedBox(width: 8),
+                    reschedule,
+                    const SizedBox(width: 8),
+                    call,
+                  ],
+                ],
+              ),
             ),
           ],
         ],

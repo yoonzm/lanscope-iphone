@@ -197,15 +197,18 @@ class RoundBtn extends StatelessWidget {
 class SubHeader extends StatelessWidget {
   final String title;
   final Widget? trailing;
-  const SubHeader(this.title, {super.key, this.trailing});
+
+  /// 表单卡片：左上角是 ✕ 而不是返回箭头
+  final bool close;
+  const SubHeader(this.title, {super.key, this.trailing, this.close = false});
   @override
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
     child: Row(
       children: [
         RoundBtn(
-          'chevronLeft',
-          label: '返回',
+          close ? 'close' : 'chevronLeft',
+          label: close ? '取消' : '返回',
           onTap: () => Navigator.of(context).maybePop(),
         ),
         Expanded(
