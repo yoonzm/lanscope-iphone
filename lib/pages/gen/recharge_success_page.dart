@@ -97,7 +97,7 @@ class RechargeSuccessPage extends StatelessWidget {
                                   ),
                                 ],
                                 child: hrow(
-                                  [hsvg(Svgs.s29, w: 36, h: 36)],
+                                  [hsvg(Svgs.s30, w: 36, h: 36)],
                                   main: MainAxisAlignment.center,
                                   cross: CrossAxisAlignment.center,
                                   gap: 0,
@@ -113,7 +113,11 @@ class RechargeSuccessPage extends StatelessWidget {
                             Positioned(
                               left: -32,
                               top: -32,
-                              child: hsvg(Svgs.s28, w: 160, h: 160),
+                              child: hsvg(
+                                dk(context, Svgs.s28, Svgs.s29),
+                                w: 160,
+                                h: 160,
+                              ),
                             ),
                           ],
                         ),
@@ -451,7 +455,7 @@ class RechargeSuccessPage extends StatelessWidget {
                             child: hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s36, Svgs.s37),
+                                  dk(context, Svgs.s37, Svgs.s38),
                                   w: 18,
                                   h: 18,
                                 ),
@@ -561,7 +565,7 @@ class RechargeSuccessPage extends StatelessWidget {
                                         child: hrow(
                                           [
                                             hsvg(
-                                              dk(context, Svgs.s238, Svgs.s239),
+                                              dk(context, Svgs.s239, Svgs.s240),
                                               w: 20,
                                               h: 20,
                                             ),
@@ -612,7 +616,7 @@ class RechargeSuccessPage extends StatelessWidget {
                                         bg: Color(0xFF0485F7),
                                         radius: BorderRadius.circular(11),
                                         child: hrow(
-                                          [hsvg(Svgs.s240, w: 14, h: 14)],
+                                          [hsvg(Svgs.s241, w: 14, h: 14)],
                                           main: MainAxisAlignment.center,
                                           cross: CrossAxisAlignment.center,
                                           gap: 0,
@@ -646,7 +650,7 @@ class RechargeSuccessPage extends StatelessWidget {
                                         child: hrow(
                                           [
                                             hsvg(
-                                              dk(context, Svgs.s238, Svgs.s239),
+                                              dk(context, Svgs.s239, Svgs.s240),
                                               w: 20,
                                               h: 20,
                                             ),
@@ -697,7 +701,7 @@ class RechargeSuccessPage extends StatelessWidget {
                                         bg: Color(0xFF0485F7),
                                         radius: BorderRadius.circular(11),
                                         child: hrow(
-                                          [hsvg(Svgs.s240, w: 14, h: 14)],
+                                          [hsvg(Svgs.s241, w: 14, h: 14)],
                                           main: MainAxisAlignment.center,
                                           cross: CrossAxisAlignment.center,
                                           gap: 0,
@@ -739,7 +743,7 @@ class RechargeSuccessPage extends StatelessWidget {
                                         child: hrow(
                                           [
                                             hsvg(
-                                              dk(context, Svgs.s241, Svgs.s242),
+                                              dk(context, Svgs.s242, Svgs.s243),
                                               w: 20,
                                               h: 20,
                                             ),
@@ -828,7 +832,7 @@ class RechargeSuccessPage extends StatelessWidget {
                                         child: hrow(
                                           [
                                             hsvg(
-                                              dk(context, Svgs.s241, Svgs.s242),
+                                              dk(context, Svgs.s242, Svgs.s243),
                                               w: 20,
                                               h: 20,
                                             ),

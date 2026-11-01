@@ -25,6 +25,7 @@ import 'package:qimei_guanjia/pages/theme_sheet.dart';
 void main() {
   const out = String.fromEnvironment('OUT', defaultValue: '/tmp/out');
   const dark = bool.fromEnvironment('DARK');
+  const forceH = int.fromEnvironment('HEIGHT', defaultValue: 0);
   const only = String.fromEnvironment('ONLY', defaultValue: '');
   final canvas = jsonDecode(
     File('/tmp/claude-0/ref/canvas.json').readAsStringSync(),
@@ -80,7 +81,7 @@ void main() {
     if (only.isNotEmpty && !only.split(',').contains(e.key)) continue;
     testWidgets('render ${e.key}', (tester) async {
       final bk = e.key.replaceAll('__hand', '');
-      final h = (boards['$bk.dc.html']?['h'] ?? 844).toDouble();
+      final h = forceH > 0 ? forceH.toDouble() : (boards['$bk.dc.html']?['h'] ?? 844).toDouble();
       tester.view.physicalSize = Size(390 * 2, h * 2);
       tester.view.devicePixelRatio = 2;
       addTearDown(tester.view.reset);

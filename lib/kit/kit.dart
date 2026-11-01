@@ -113,7 +113,13 @@ Widget hTap(
       if (onTap != null) {
         onTap();
       } else if (back) {
-        Navigator.of(context).maybePop();
+        // 结果页（收款成功、开卡成功等）禁止侧滑返回，左上角 ✕ 回到入口，而不是上一步
+        final name = ModalRoute.of(context)?.settings.name;
+        if (name != null && resultPages.contains(name)) {
+          Navigator.of(context).popUntil((r) => r.isFirst);
+        } else {
+          Navigator.of(context).maybePop();
+        }
       } else if (to != null) {
         openRoute(context, to);
       } else {

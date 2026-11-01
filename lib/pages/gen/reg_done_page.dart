@@ -66,7 +66,7 @@ class RegDonePage extends StatelessWidget {
                             bg: Color(0xFF17C964),
                             radius: BorderRadius.circular(26),
                             child: hrow(
-                              [hsvg(Svgs.s274, w: 26, h: 26)],
+                              [hsvg(Svgs.s275, w: 26, h: 26)],
                               main: MainAxisAlignment.center,
                               cross: CrossAxisAlignment.center,
                               gap: 0,

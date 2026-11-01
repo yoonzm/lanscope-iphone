@@ -170,7 +170,7 @@ class MemberRecordsPage extends StatelessWidget {
                             child: hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s195, Svgs.s196),
+                                  dk(context, Svgs.s196, Svgs.s197),
                                   w: 20,
                                   h: 20,
                                 ),
@@ -806,7 +806,7 @@ class MemberRecordsPage extends StatelessWidget {
                                         child: hrow(
                                           [
                                             hsvg(
-                                              dk(context, Svgs.s148, Svgs.s149),
+                                              dk(context, Svgs.s149, Svgs.s150),
                                               w: 18,
                                               h: 18,
                                             ),
@@ -896,7 +896,7 @@ class MemberRecordsPage extends StatelessWidget {
                                         child: hrow(
                                           [
                                             hsvg(
-                                              dk(context, Svgs.s197, Svgs.s198),
+                                              dk(context, Svgs.s198, Svgs.s199),
                                               w: 18,
                                               h: 18,
                                             ),
@@ -985,7 +985,7 @@ class MemberRecordsPage extends StatelessWidget {
                                         child: hrow(
                                           [
                                             hsvg(
-                                              dk(context, Svgs.s199, Svgs.s200),
+                                              dk(context, Svgs.s200, Svgs.s201),
                                               w: 18,
                                               h: 18,
                                             ),
@@ -1075,7 +1075,7 @@ class MemberRecordsPage extends StatelessWidget {
                                         child: hrow(
                                           [
                                             hsvg(
-                                              dk(context, Svgs.s201, Svgs.s202),
+                                              dk(context, Svgs.s202, Svgs.s203),
                                               w: 18,
                                               h: 18,
                                             ),
@@ -1164,7 +1164,7 @@ class MemberRecordsPage extends StatelessWidget {
                                         child: hrow(
                                           [
                                             hsvg(
-                                              dk(context, Svgs.s148, Svgs.s149),
+                                              dk(context, Svgs.s149, Svgs.s150),
                                               w: 18,
                                               h: 18,
                                             ),
@@ -1337,7 +1337,7 @@ class MemberRecordsPage extends StatelessWidget {
                                         child: hrow(
                                           [
                                             hsvg(
-                                              dk(context, Svgs.s148, Svgs.s149),
+                                              dk(context, Svgs.s149, Svgs.s150),
                                               w: 18,
                                               h: 18,
                                             ),

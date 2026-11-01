@@ -268,7 +268,7 @@ class WechatBindPage extends StatelessWidget {
                                   child: hrow(
                                     [
                                       hsvg(
-                                        dk(context, Svgs.s330, Svgs.s331),
+                                        dk(context, Svgs.s331, Svgs.s332),
                                         w: 18,
                                         h: 18,
                                       ),
@@ -344,7 +344,7 @@ class WechatBindPage extends StatelessWidget {
                                   child: hrow(
                                     [
                                       hsvg(
-                                        dk(context, Svgs.s332, Svgs.s333),
+                                        dk(context, Svgs.s333, Svgs.s334),
                                         w: 18,
                                         h: 18,
                                       ),

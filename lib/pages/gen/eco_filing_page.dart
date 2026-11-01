@@ -137,7 +137,7 @@ class EcoFilingPage extends StatelessWidget {
                             child: hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s88, Svgs.s89),
+                                  dk(context, Svgs.s89, Svgs.s90),
                                   w: 16,
                                   h: 16,
                                 ),
@@ -259,7 +259,7 @@ class EcoFilingPage extends StatelessWidget {
                               child: hcol(
                                 [
                                   hsvg(
-                                    dk(context, Svgs.s90, Svgs.s91),
+                                    dk(context, Svgs.s91, Svgs.s92),
                                     w: 28,
                                     h: 28,
                                   ),
@@ -310,7 +310,7 @@ class EcoFilingPage extends StatelessWidget {
                               child: hcol(
                                 [
                                   hsvg(
-                                    dk(context, Svgs.s90, Svgs.s91),
+                                    dk(context, Svgs.s91, Svgs.s92),
                                     w: 28,
                                     h: 28,
                                   ),
@@ -556,7 +556,7 @@ class EcoFilingPage extends StatelessWidget {
                                       ),
                                     ),
                                     hsvg(
-                                      dk(context, Svgs.s92, Svgs.s93),
+                                      dk(context, Svgs.s93, Svgs.s94),
                                       w: 18,
                                       h: 18,
                                     ),

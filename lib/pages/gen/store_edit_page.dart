@@ -59,7 +59,7 @@ class StoreEditPage extends StatelessWidget {
                           ],
                         ),
                         child: hrow(
-                          [hsvg(dk(context, Svgs.s58, Svgs.s59), w: 20, h: 20)],
+                          [hsvg(dk(context, Svgs.s59, Svgs.s60), w: 20, h: 20)],
                           main: MainAxisAlignment.center,
                           cross: CrossAxisAlignment.center,
                           gap: 0,
@@ -197,7 +197,7 @@ class StoreEditPage extends StatelessWidget {
                                       hrow(
                                         [
                                           hsvg(
-                                            dk(context, Svgs.s303, Svgs.s304),
+                                            dk(context, Svgs.s304, Svgs.s305),
                                             w: 20,
                                             h: 20,
                                           ),
@@ -257,7 +257,7 @@ class StoreEditPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s303, Svgs.s304),
+                                          dk(context, Svgs.s304, Svgs.s305),
                                           w: 20,
                                           h: 20,
                                         ),
@@ -287,7 +287,7 @@ class StoreEditPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s303, Svgs.s304),
+                                          dk(context, Svgs.s304, Svgs.s305),
                                           w: 20,
                                           h: 20,
                                         ),
@@ -328,7 +328,7 @@ class StoreEditPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s305, Svgs.s306),
+                                          dk(context, Svgs.s306, Svgs.s307),
                                           w: 22,
                                           h: 22,
                                         ),
@@ -558,7 +558,7 @@ class StoreEditPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s307, Svgs.s308),
+                                          dk(context, Svgs.s308, Svgs.s309),
                                           w: 16,
                                           h: 16,
                                         ),

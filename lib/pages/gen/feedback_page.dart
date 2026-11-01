@@ -501,7 +501,7 @@ class FeedbackPage extends StatelessWidget {
                                   child: hrow(
                                     [
                                       hsvg(
-                                        dk(context, Svgs.s139, Svgs.s140),
+                                        dk(context, Svgs.s140, Svgs.s141),
                                         w: 22,
                                         h: 22,
                                       ),
@@ -530,7 +530,7 @@ class FeedbackPage extends StatelessWidget {
                                   child: hrow(
                                     [
                                       hsvg(
-                                        dk(context, Svgs.s139, Svgs.s140),
+                                        dk(context, Svgs.s140, Svgs.s141),
                                         w: 22,
                                         h: 22,
                                       ),
@@ -559,7 +559,7 @@ class FeedbackPage extends StatelessWidget {
                                   child: hrow(
                                     [
                                       hsvg(
-                                        dk(context, Svgs.s139, Svgs.s140),
+                                        dk(context, Svgs.s140, Svgs.s141),
                                         w: 22,
                                         h: 22,
                                       ),

@@ -72,7 +72,7 @@ class PlanExpiredPage extends StatelessWidget {
                             child: hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s245, Svgs.s246),
+                                  dk(context, Svgs.s246, Svgs.s247),
                                   w: 26,
                                   h: 26,
                                 ),
@@ -411,7 +411,7 @@ class PlanExpiredPage extends StatelessWidget {
                             child: hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s247, Svgs.s248),
+                                  dk(context, Svgs.s248, Svgs.s249),
                                   w: 18,
                                   h: 18,
                                 ),

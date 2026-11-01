@@ -97,7 +97,7 @@ class PayUnboundPage extends StatelessWidget {
                                   ),
                                 ],
                                 child: hrow(
-                                  [hsvg(Svgs.s29, w: 36, h: 36)],
+                                  [hsvg(Svgs.s30, w: 36, h: 36)],
                                   main: MainAxisAlignment.center,
                                   cross: CrossAxisAlignment.center,
                                   gap: 0,
@@ -113,7 +113,11 @@ class PayUnboundPage extends StatelessWidget {
                             Positioned(
                               left: -32,
                               top: -32,
-                              child: hsvg(Svgs.s28, w: 160, h: 160),
+                              child: hsvg(
+                                dk(context, Svgs.s28, Svgs.s29),
+                                w: 160,
+                                h: 160,
+                              ),
                             ),
                           ],
                         ),
@@ -367,7 +371,7 @@ class PayUnboundPage extends StatelessWidget {
                             child: hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s243, Svgs.s244),
+                                  dk(context, Svgs.s244, Svgs.s245),
                                   w: 18,
                                   h: 18,
                                 ),
@@ -431,20 +435,15 @@ class PayUnboundPage extends StatelessWidget {
                       hrow(
                         [
                           hbox(
-                            bg: dk(
-                              context,
-                              Color(0xFFFFFFFF),
-                              Color(0xFF18181B),
-                            ),
+                            bg: Color(0xFFFFFFFF),
                             radius: BorderRadius.circular(20),
-                            border: dk(
-                              context,
-                              Border.all(color: Color(0xFFE4E4E7), width: 1),
-                              Border.all(color: Color(0xFF3A3A40), width: 1),
+                            border: Border.all(
+                              color: Color(0xFFE4E4E7),
+                              width: 1,
                             ),
                             pad: EdgeInsets.fromLTRB(14, 14, 14, 14),
                             child: hrow(
-                              [hsvg(Svgs.s190, w: 132, h: 132)],
+                              [hsvg(Svgs.s191, w: 132, h: 132)],
                               main: MainAxisAlignment.center,
                               cross: CrossAxisAlignment.center,
                               gap: 0,

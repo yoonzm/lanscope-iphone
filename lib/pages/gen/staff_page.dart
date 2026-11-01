@@ -88,7 +88,7 @@ class StaffPage extends StatelessWidget {
                         bg: dk(context, Color(0xFF18181B), Color(0xFFFAFAFA)),
                         radius: BorderRadius.circular(22),
                         child: hrow(
-                          [hsvg(dk(context, Svgs.s68, Svgs.s69), w: 20, h: 20)],
+                          [hsvg(dk(context, Svgs.s69, Svgs.s70), w: 20, h: 20)],
                           main: MainAxisAlignment.center,
                           cross: CrossAxisAlignment.center,
                           gap: 0,
@@ -1030,7 +1030,7 @@ class StaffPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s287, Svgs.s288),
+                                          dk(context, Svgs.s288, Svgs.s289),
                                           w: 12,
                                           h: 12,
                                         ),
@@ -1077,7 +1077,7 @@ class StaffPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s287, Svgs.s288),
+                                          dk(context, Svgs.s288, Svgs.s289),
                                           w: 12,
                                           h: 12,
                                         ),
@@ -1132,7 +1132,7 @@ class StaffPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s287, Svgs.s288),
+                                          dk(context, Svgs.s288, Svgs.s289),
                                           w: 12,
                                           h: 12,
                                         ),
@@ -1179,7 +1179,7 @@ class StaffPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s287, Svgs.s288),
+                                          dk(context, Svgs.s288, Svgs.s289),
                                           w: 12,
                                           h: 12,
                                         ),
@@ -1234,7 +1234,7 @@ class StaffPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s289, Svgs.s290),
+                                          dk(context, Svgs.s290, Svgs.s291),
                                           w: 12,
                                           h: 12,
                                         ),
@@ -1281,7 +1281,7 @@ class StaffPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s289, Svgs.s290),
+                                          dk(context, Svgs.s290, Svgs.s291),
                                           w: 12,
                                           h: 12,
                                         ),

@@ -339,20 +339,15 @@ class StoreQRPage extends StatelessWidget {
                         hcol(
                           [
                             hbox(
-                              bg: dk(
-                                context,
-                                Color(0xFFFFFFFF),
-                                Color(0xFF18181B),
-                              ),
+                              bg: Color(0xFFFFFFFF),
                               radius: BorderRadius.circular(20),
-                              border: dk(
-                                context,
-                                Border.all(color: Color(0xFFE4E4E7), width: 1),
-                                Border.all(color: Color(0xFF3A3A40), width: 1),
+                              border: Border.all(
+                                color: Color(0xFFE4E4E7),
+                                width: 1,
                               ),
                               pad: EdgeInsets.fromLTRB(16, 16, 16, 16),
                               child: hrow(
-                                [hsvg(Svgs.s325, w: 190, h: 190)],
+                                [hsvg(Svgs.s326, w: 190, h: 190)],
                                 main: MainAxisAlignment.center,
                                 cross: CrossAxisAlignment.center,
                                 gap: 0,

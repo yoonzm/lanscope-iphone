@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:qimei_guanjia/pages/gen/gen_routes.dart';
+import 'package:qimei_guanjia/routes.dart';
 
 void main() {
+  resultCloseTest();
   void phone(WidgetTester t) {
     t.view.physicalSize = const Size(390 * 3, 900 * 3);
     t.view.devicePixelRatio = 3;
@@ -43,5 +45,34 @@ void main() {
     await t.tap(find.text('取消'));
     await t.pumpAndSettle();
     expect(find.text('从相册选择'), findsNothing);
+  });
+}
+
+// 结果页左上角 ✕：回到入口页（结果页禁止侧滑返回，但 ✕ 必须可用）
+void resultCloseTest() {
+  testWidgets('结果页点左上角关闭回到入口', (t) async {
+    t.view.physicalSize = const Size(390 * 3, 900 * 3);
+    t.view.devicePixelRatio = 3;
+    addTearDown(t.view.reset);
+    // 测试用字体比真机宽，忽略仅由字体宽度引起的 RenderFlex 溢出
+    final old = FlutterError.onError;
+    FlutterError.onError = (d) {
+      if (!d.exceptionAsString().contains('overflowed')) old?.call(d);
+    };
+    addTearDown(() => FlutterError.onError = old);
+    late BuildContext ctx;
+    await t.pumpWidget(MaterialApp(
+      home: Builder(builder: (c) {
+        ctx = c;
+        return const Scaffold(body: Text('入口页'));
+      }),
+    ));
+    openRoute(ctx, 'MemberAddDone');
+    await t.pumpAndSettle();
+    expect(find.text('开卡成功'), findsOneWidget);
+    await t.tapAt(const Offset(42, 34));
+    await t.pumpAndSettle();
+    expect(find.text('开卡成功'), findsNothing);
+    expect(find.text('入口页'), findsOneWidget);
   });
 }

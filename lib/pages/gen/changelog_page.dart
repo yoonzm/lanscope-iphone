@@ -172,7 +172,7 @@ class ChangelogPage extends StatelessWidget {
                       ),
                       hrow(
                         [
-                          hsvg(Svgs.s73, w: 14, h: 14),
+                          hsvg(Svgs.s74, w: 14, h: 14),
                           Flexible(
                             flex: 221,
                             child: Text(
@@ -195,7 +195,7 @@ class ChangelogPage extends StatelessWidget {
                       ),
                       hrow(
                         [
-                          hsvg(Svgs.s73, w: 14, h: 14),
+                          hsvg(Svgs.s74, w: 14, h: 14),
                           Flexible(
                             flex: 156,
                             child: Text(
@@ -218,7 +218,7 @@ class ChangelogPage extends StatelessWidget {
                       ),
                       hrow(
                         [
-                          hsvg(Svgs.s73, w: 14, h: 14),
+                          hsvg(Svgs.s74, w: 14, h: 14),
                           Flexible(
                             flex: 117,
                             child: Text(
@@ -241,7 +241,7 @@ class ChangelogPage extends StatelessWidget {
                       ),
                       hrow(
                         [
-                          hsvg(Svgs.s73, w: 14, h: 14),
+                          hsvg(Svgs.s74, w: 14, h: 14),
                           Flexible(
                             flex: 143,
                             child: Text(
@@ -264,7 +264,7 @@ class ChangelogPage extends StatelessWidget {
                       ),
                       hrow(
                         [
-                          hsvg(Svgs.s73, w: 14, h: 14),
+                          hsvg(Svgs.s74, w: 14, h: 14),
                           Flexible(
                             flex: 208,
                             child: Text(
@@ -353,7 +353,7 @@ class ChangelogPage extends StatelessWidget {
                       ),
                       hrow(
                         [
-                          hsvg(Svgs.s73, w: 14, h: 14),
+                          hsvg(Svgs.s74, w: 14, h: 14),
                           Flexible(
                             flex: 169,
                             child: Text(
@@ -376,7 +376,7 @@ class ChangelogPage extends StatelessWidget {
                       ),
                       hrow(
                         [
-                          hsvg(Svgs.s73, w: 14, h: 14),
+                          hsvg(Svgs.s74, w: 14, h: 14),
                           Flexible(
                             flex: 91,
                             child: Text(
@@ -399,7 +399,7 @@ class ChangelogPage extends StatelessWidget {
                       ),
                       hrow(
                         [
-                          hsvg(Svgs.s73, w: 14, h: 14),
+                          hsvg(Svgs.s74, w: 14, h: 14),
                           Flexible(
                             flex: 143,
                             child: Text(

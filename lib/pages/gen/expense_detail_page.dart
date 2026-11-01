@@ -135,7 +135,7 @@ class ExpenseDetailPage extends StatelessWidget {
                         child: hrow(
                           [
                             hsvg(
-                              dk(context, Svgs.s125, Svgs.s126),
+                              dk(context, Svgs.s126, Svgs.s127),
                               w: 26,
                               h: 26,
                             ),
@@ -549,7 +549,7 @@ class ExpenseDetailPage extends StatelessWidget {
                             child: hcol(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s127, Svgs.s128),
+                                  dk(context, Svgs.s128, Svgs.s129),
                                   w: 26,
                                   h: 26,
                                 ),
@@ -583,7 +583,7 @@ class ExpenseDetailPage extends StatelessWidget {
                             child: hcol(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s127, Svgs.s128),
+                                  dk(context, Svgs.s128, Svgs.s129),
                                   w: 26,
                                   h: 26,
                                 ),
@@ -697,7 +697,7 @@ class ExpenseDetailPage extends StatelessWidget {
                       radius: BorderRadius.circular(25),
                       child: hrow(
                         [
-                          hsvg(dk(context, Svgs.s129, Svgs.s130), w: 18, h: 18),
+                          hsvg(dk(context, Svgs.s130, Svgs.s131), w: 18, h: 18),
                           Flexible(
                             flex: 30,
                             child: Text(

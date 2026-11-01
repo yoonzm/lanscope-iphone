@@ -59,7 +59,7 @@ class CardTierEditPage extends StatelessWidget {
                           ],
                         ),
                         child: hrow(
-                          [hsvg(dk(context, Svgs.s58, Svgs.s59), w: 20, h: 20)],
+                          [hsvg(dk(context, Svgs.s59, Svgs.s60), w: 20, h: 20)],
                           main: MainAxisAlignment.center,
                           cross: CrossAxisAlignment.center,
                           gap: 0,
@@ -178,7 +178,7 @@ class CardTierEditPage extends StatelessWidget {
                         right: -80,
                         bottom: -110,
                         child: hsvg(
-                          dk(context, Svgs.s60, Svgs.s61),
+                          dk(context, Svgs.s61, Svgs.s62),
                           w: 240,
                           h: 240,
                         ),
@@ -847,7 +847,7 @@ class CardTierEditPage extends StatelessWidget {
                                       child: hrow(
                                         [
                                           hsvg(
-                                            dk(context, Svgs.s62, Svgs.s63),
+                                            dk(context, Svgs.s63, Svgs.s64),
                                             w: 18,
                                             h: 18,
                                           ),
@@ -930,7 +930,7 @@ class CardTierEditPage extends StatelessWidget {
                                       child: hrow(
                                         [
                                           hsvg(
-                                            dk(context, Svgs.s64, Svgs.s65),
+                                            dk(context, Svgs.s65, Svgs.s66),
                                             w: 18,
                                             h: 18,
                                           ),
@@ -1014,7 +1014,7 @@ class CardTierEditPage extends StatelessWidget {
                                   child: hrow(
                                     [
                                       hsvg(
-                                        dk(context, Svgs.s66, Svgs.s67),
+                                        dk(context, Svgs.s67, Svgs.s68),
                                         w: 18,
                                         h: 18,
                                       ),

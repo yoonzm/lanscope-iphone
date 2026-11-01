@@ -83,7 +83,7 @@ class NavTracker extends NavigatorObserver {
 final NavTracker navTracker = NavTracker();
 
 /// 结果页：覆盖在提交它的表单页之上，返回时不再回到表单。
-const Set<String> _resultPages = {
+const Set<String> resultPages = {
   'PaySuccess',
   'PayUnbound',
   'RechargeSuccess',
@@ -181,7 +181,7 @@ void openRoute(BuildContext context, String name) {
     subState.value = SubState.normal;
   }
   // 结果页（第 5 类）禁止下拉 / 侧滑返回，只能点主按钮或 ✕
-  final locked = _resultPages.contains(name);
+  final locked = resultPages.contains(name);
   final route = MaterialPageRoute<void>(
     settings: RouteSettings(name: name),
     fullscreenDialog: locked || _modalPages.contains(name),
@@ -192,7 +192,7 @@ void openRoute(BuildContext context, String name) {
     nav.popUntil((r) => r.settings.name == name || r.isFirst);
     return;
   }
-  if (_resultPages.contains(name) && nav.canPop()) {
+  if (resultPages.contains(name) && nav.canPop()) {
     nav.pushReplacement(route);
     return;
   }

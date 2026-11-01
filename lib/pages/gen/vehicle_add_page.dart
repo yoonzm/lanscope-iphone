@@ -59,7 +59,7 @@ class VehicleAddPage extends StatelessWidget {
                           ],
                         ),
                         child: hrow(
-                          [hsvg(dk(context, Svgs.s58, Svgs.s59), w: 20, h: 20)],
+                          [hsvg(dk(context, Svgs.s59, Svgs.s60), w: 20, h: 20)],
                           main: MainAxisAlignment.center,
                           cross: CrossAxisAlignment.center,
                           gap: 0,
@@ -130,7 +130,7 @@ class VehicleAddPage extends StatelessWidget {
                             child: hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s328, Svgs.s329),
+                                  dk(context, Svgs.s329, Svgs.s330),
                                   w: 22,
                                   h: 22,
                                 ),

@@ -176,7 +176,7 @@ class BindH5Page extends StatelessWidget {
                               child: hrow(
                                 [
                                   hsvg(
-                                    dk(context, Svgs.s32, Svgs.s33),
+                                    dk(context, Svgs.s33, Svgs.s34),
                                     w: 18,
                                     h: 18,
                                   ),
@@ -256,7 +256,7 @@ class BindH5Page extends StatelessWidget {
                               child: hrow(
                                 [
                                   hsvg(
-                                    dk(context, Svgs.s34, Svgs.s35),
+                                    dk(context, Svgs.s35, Svgs.s36),
                                     w: 18,
                                     h: 18,
                                   ),
@@ -336,7 +336,7 @@ class BindH5Page extends StatelessWidget {
                               child: hrow(
                                 [
                                   hsvg(
-                                    dk(context, Svgs.s36, Svgs.s37),
+                                    dk(context, Svgs.s37, Svgs.s38),
                                     w: 18,
                                     h: 18,
                                   ),

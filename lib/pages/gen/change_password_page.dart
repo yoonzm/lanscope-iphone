@@ -520,7 +520,7 @@ class ChangePasswordPage extends StatelessWidget {
                     [
                       hrow(
                         [
-                          hsvg(Svgs.s72, w: 14, h: 14),
+                          hsvg(Svgs.s73, w: 14, h: 14),
                           Flexible(
                             flex: 76,
                             child: Text(
@@ -542,7 +542,7 @@ class ChangePasswordPage extends StatelessWidget {
                       ),
                       hrow(
                         [
-                          hsvg(Svgs.s72, w: 14, h: 14),
+                          hsvg(Svgs.s73, w: 14, h: 14),
                           Flexible(
                             flex: 117,
                             child: Text(
@@ -564,7 +564,7 @@ class ChangePasswordPage extends StatelessWidget {
                       ),
                       hrow(
                         [
-                          hsvg(Svgs.s72, w: 14, h: 14),
+                          hsvg(Svgs.s73, w: 14, h: 14),
                           Flexible(
                             flex: 117,
                             child: Text(
@@ -586,7 +586,7 @@ class ChangePasswordPage extends StatelessWidget {
                       ),
                       hrow(
                         [
-                          hsvg(Svgs.s72, w: 14, h: 14),
+                          hsvg(Svgs.s73, w: 14, h: 14),
                           Flexible(
                             flex: 117,
                             child: Text(

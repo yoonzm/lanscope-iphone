@@ -633,7 +633,7 @@ class BudgetTotalPage extends StatelessWidget {
                                       child: hrow(
                                         [
                                           hsvg(
-                                            dk(context, Svgs.s42, Svgs.s43),
+                                            dk(context, Svgs.s43, Svgs.s44),
                                             w: 17,
                                             h: 17,
                                           ),
@@ -768,7 +768,7 @@ class BudgetTotalPage extends StatelessWidget {
                                       child: hrow(
                                         [
                                           hsvg(
-                                            dk(context, Svgs.s44, Svgs.s45),
+                                            dk(context, Svgs.s45, Svgs.s46),
                                             w: 17,
                                             h: 17,
                                           ),
@@ -903,7 +903,7 @@ class BudgetTotalPage extends StatelessWidget {
                                       child: hrow(
                                         [
                                           hsvg(
-                                            dk(context, Svgs.s46, Svgs.s47),
+                                            dk(context, Svgs.s47, Svgs.s48),
                                             w: 17,
                                             h: 17,
                                           ),
@@ -1038,7 +1038,7 @@ class BudgetTotalPage extends StatelessWidget {
                                       child: hrow(
                                         [
                                           hsvg(
-                                            dk(context, Svgs.s48, Svgs.s49),
+                                            dk(context, Svgs.s49, Svgs.s50),
                                             w: 17,
                                             h: 17,
                                           ),
@@ -1173,7 +1173,7 @@ class BudgetTotalPage extends StatelessWidget {
                                       child: hrow(
                                         [
                                           hsvg(
-                                            dk(context, Svgs.s50, Svgs.s51),
+                                            dk(context, Svgs.s51, Svgs.s52),
                                             w: 17,
                                             h: 17,
                                           ),
@@ -1308,7 +1308,7 @@ class BudgetTotalPage extends StatelessWidget {
                                       child: hrow(
                                         [
                                           hsvg(
-                                            dk(context, Svgs.s52, Svgs.s53),
+                                            dk(context, Svgs.s53, Svgs.s54),
                                             w: 17,
                                             h: 17,
                                           ),
@@ -1437,7 +1437,7 @@ class BudgetTotalPage extends StatelessWidget {
                   pad: EdgeInsets.fromLTRB(16, 14, 16, 14),
                   child: hrow(
                     [
-                      hsvg(dk(context, Svgs.s54, Svgs.s55), w: 18, h: 18),
+                      hsvg(dk(context, Svgs.s55, Svgs.s56), w: 18, h: 18),
                       Expanded(
                         flex: 1,
                         child: Text(

@@ -97,7 +97,7 @@ class BindDonePage extends StatelessWidget {
                                   ),
                                 ],
                                 child: hrow(
-                                  [hsvg(Svgs.s29, w: 36, h: 36)],
+                                  [hsvg(Svgs.s30, w: 36, h: 36)],
                                   main: MainAxisAlignment.center,
                                   cross: CrossAxisAlignment.center,
                                   gap: 0,
@@ -113,7 +113,11 @@ class BindDonePage extends StatelessWidget {
                             Positioned(
                               left: -32,
                               top: -32,
-                              child: hsvg(Svgs.s28, w: 160, h: 160),
+                              child: hsvg(
+                                dk(context, Svgs.s28, Svgs.s29),
+                                w: 160,
+                                h: 160,
+                              ),
                             ),
                           ],
                         ),
@@ -312,7 +316,7 @@ class BindDonePage extends StatelessWidget {
                         right: -90,
                         bottom: -120,
                         child: hsvg(
-                          dk(context, Svgs.s30, Svgs.s31),
+                          dk(context, Svgs.s31, Svgs.s32),
                           w: 260,
                           h: 260,
                         ),

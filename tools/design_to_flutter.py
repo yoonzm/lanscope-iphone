@@ -41,6 +41,7 @@ FG_DARK = {
     '#71717A': '#9A9AA3', '#A1A1AA': '#80808A', '#1E63AE': '#6AB4FA', '#2B7745': '#5FD48C',
     '#855F2E': '#F0C46A', '#A43433': '#FF7B7E', '#1F5E37': '#5FD48C', '#6B4A1F': '#F0C46A',
     '#8A2A29': '#FF7B7E',
+    '#CFEFDB': '#1F5A3A', '#E6F6EC': '#163D29',
 }
 LINE_DARK = {'#E4E4E7': '#3A3A40', '#D4D4D8': '#3F3F46', '#EFEFF1': '#2A2A2E', '#E8E8EA': '#26262B'}
 
@@ -139,7 +140,8 @@ class Node:
     @property
     def dark(self):
         if self._dark is None:
-            self._dark = dark_of(self)
+            # 二维码底板保持白底黑码（深色模式下也要能被扫描）
+            self._dark = {} if self.attrs.get('_keeplight') else dark_of(self)
         return self._dark
 
     def copy_with_style(self, style):
@@ -1677,6 +1679,15 @@ class %s extends StatelessWidget {
         root.attrs['_root'] = '1'
         root._dark = None
         self.page_name = name
+
+        def mark_qr(n):
+            for c in n.children:
+                if isinstance(c, Node):
+                    if c.tag == 'svg' and c.raw and '二维码' in c.raw:
+                        n.attrs['_keeplight'] = '1'
+                        n._dark = None
+                    mark_qr(c)
+        mark_qr(root)
         self.refs, self.shared, self.dyn_filter = {}, {}, {}
         self.prescan(root)
         for k, v in self.global_refs.items():

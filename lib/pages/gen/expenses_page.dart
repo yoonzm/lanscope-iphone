@@ -156,7 +156,7 @@ class ExpensesPage extends StatelessWidget {
                             child: hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s112, Svgs.s113),
+                                  dk(context, Svgs.s113, Svgs.s114),
                                   w: 16,
                                   h: 16,
                                 ),
@@ -1274,7 +1274,7 @@ class ExpensesPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s131, Svgs.s132),
+                                          dk(context, Svgs.s132, Svgs.s133),
                                           w: 20,
                                           h: 20,
                                         ),
@@ -1494,7 +1494,7 @@ class ExpensesPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s133, Svgs.s134),
+                                          dk(context, Svgs.s134, Svgs.s135),
                                           w: 20,
                                           h: 20,
                                         ),
@@ -1602,7 +1602,7 @@ class ExpensesPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s135, Svgs.s136),
+                                          dk(context, Svgs.s136, Svgs.s137),
                                           w: 20,
                                           h: 20,
                                         ),
@@ -1785,7 +1785,7 @@ class ExpensesPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s131, Svgs.s132),
+                                          dk(context, Svgs.s132, Svgs.s133),
                                           w: 20,
                                           h: 20,
                                         ),
@@ -2005,7 +2005,7 @@ class ExpensesPage extends StatelessWidget {
                                     child: hrow(
                                       [
                                         hsvg(
-                                          dk(context, Svgs.s137, Svgs.s138),
+                                          dk(context, Svgs.s138, Svgs.s139),
                                           w: 20,
                                           h: 20,
                                         ),

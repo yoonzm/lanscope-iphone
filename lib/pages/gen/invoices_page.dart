@@ -154,7 +154,7 @@ class InvoicesPage extends StatelessWidget {
                                   child: hrow(
                                     [
                                       hsvg(
-                                        dk(context, Svgs.s148, Svgs.s149),
+                                        dk(context, Svgs.s149, Svgs.s150),
                                         w: 18,
                                         h: 18,
                                       ),
@@ -274,7 +274,7 @@ class InvoicesPage extends StatelessWidget {
                                   child: hrow(
                                     [
                                       hsvg(
-                                        dk(context, Svgs.s148, Svgs.s149),
+                                        dk(context, Svgs.s149, Svgs.s150),
                                         w: 18,
                                         h: 18,
                                       ),

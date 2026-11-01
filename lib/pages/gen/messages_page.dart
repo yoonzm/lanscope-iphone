@@ -451,7 +451,7 @@ class MessagesPage extends StatelessWidget {
                                 child: hrow(
                                   [
                                     hsvg(
-                                      dk(context, Svgs.s203, Svgs.s204),
+                                      dk(context, Svgs.s204, Svgs.s205),
                                       w: 20,
                                       h: 20,
                                     ),
@@ -558,7 +558,7 @@ class MessagesPage extends StatelessWidget {
                                 child: hrow(
                                   [
                                     hsvg(
-                                      dk(context, Svgs.s205, Svgs.s206),
+                                      dk(context, Svgs.s206, Svgs.s207),
                                       w: 20,
                                       h: 20,
                                     ),
@@ -665,7 +665,7 @@ class MessagesPage extends StatelessWidget {
                                 child: hrow(
                                   [
                                     hsvg(
-                                      dk(context, Svgs.s207, Svgs.s208),
+                                      dk(context, Svgs.s208, Svgs.s209),
                                       w: 20,
                                       h: 20,
                                     ),
@@ -772,7 +772,7 @@ class MessagesPage extends StatelessWidget {
                                 child: hrow(
                                   [
                                     hsvg(
-                                      dk(context, Svgs.s209, Svgs.s210),
+                                      dk(context, Svgs.s210, Svgs.s211),
                                       w: 20,
                                       h: 20,
                                     ),
@@ -873,7 +873,7 @@ class MessagesPage extends StatelessWidget {
                                 child: hrow(
                                   [
                                     hsvg(
-                                      dk(context, Svgs.s211, Svgs.s212),
+                                      dk(context, Svgs.s212, Svgs.s213),
                                       w: 20,
                                       h: 20,
                                     ),
@@ -974,7 +974,7 @@ class MessagesPage extends StatelessWidget {
                                 child: hrow(
                                   [
                                     hsvg(
-                                      dk(context, Svgs.s213, Svgs.s214),
+                                      dk(context, Svgs.s214, Svgs.s215),
                                       w: 20,
                                       h: 20,
                                     ),

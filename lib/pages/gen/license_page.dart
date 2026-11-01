@@ -204,7 +204,7 @@ class LicensePage extends StatelessWidget {
                           child: hcol(
                             [
                               hsvg(
-                                dk(context, Svgs.s150, Svgs.s151),
+                                dk(context, Svgs.s151, Svgs.s152),
                                 w: 30,
                                 h: 30,
                               ),

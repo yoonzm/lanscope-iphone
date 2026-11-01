@@ -54,7 +54,7 @@ class MainExpiringPage extends StatelessWidget {
                                   ),
                                 ),
                                 hsvg(
-                                  dk(context, Svgs.s152, Svgs.s153),
+                                  dk(context, Svgs.s153, Svgs.s154),
                                   w: 18,
                                   h: 18,
                                 ),
@@ -113,7 +113,7 @@ class MainExpiringPage extends StatelessWidget {
                           hrow(
                             [
                               hsvg(
-                                dk(context, Svgs.s154, Svgs.s155),
+                                dk(context, Svgs.s155, Svgs.s156),
                                 w: 20,
                                 h: 20,
                               ),
@@ -198,7 +198,7 @@ class MainExpiringPage extends StatelessWidget {
                         child: hrow(
                           [
                             hsvg(
-                              dk(context, Svgs.s156, Svgs.s25),
+                              dk(context, Svgs.s157, Svgs.s25),
                               w: 18,
                               h: 18,
                             ),
@@ -326,7 +326,7 @@ class MainExpiringPage extends StatelessWidget {
                                   ),
                                   hrow(
                                     [
-                                      hsvg(Svgs.s159, w: 14, h: 14),
+                                      hsvg(Svgs.s160, w: 14, h: 14),
                                       Flexible(
                                         flex: 90,
                                         child: Text(
@@ -527,7 +527,7 @@ class MainExpiringPage extends StatelessWidget {
                         top: -80,
                         right: -70,
                         child: hsvg(
-                          dk(context, Svgs.s157, Svgs.s158),
+                          dk(context, Svgs.s158, Svgs.s159),
                           w: 220,
                           h: 220,
                         ),
@@ -563,7 +563,7 @@ class MainExpiringPage extends StatelessWidget {
                                         ),
                                         radius: BorderRadius.circular(22),
                                         child: hrow(
-                                          [hsvg(Svgs.s169, w: 22, h: 22)],
+                                          [hsvg(Svgs.s170, w: 22, h: 22)],
                                           main: MainAxisAlignment.center,
                                           cross: CrossAxisAlignment.center,
                                           gap: 0,
@@ -607,7 +607,7 @@ class MainExpiringPage extends StatelessWidget {
                                   Positioned(
                                     right: -80,
                                     bottom: -80,
-                                    child: hsvg(Svgs.s168, w: 190, h: 190),
+                                    child: hsvg(Svgs.s169, w: 190, h: 190),
                                   ),
                                 ],
                               ),
@@ -637,7 +637,7 @@ class MainExpiringPage extends StatelessWidget {
                                         hrow(
                                           [
                                             hsvg(
-                                              dk(context, Svgs.s162, Svgs.s163),
+                                              dk(context, Svgs.s163, Svgs.s164),
                                               w: 20,
                                               h: 20,
                                             ),
@@ -688,7 +688,7 @@ class MainExpiringPage extends StatelessWidget {
                                         right: -8,
                                         bottom: -10,
                                         child: hsvg(
-                                          dk(context, Svgs.s160, Svgs.s161),
+                                          dk(context, Svgs.s161, Svgs.s162),
                                           w: 64,
                                           h: 64,
                                         ),
@@ -719,7 +719,7 @@ class MainExpiringPage extends StatelessWidget {
                                         hrow(
                                           [
                                             hsvg(
-                                              dk(context, Svgs.s166, Svgs.s167),
+                                              dk(context, Svgs.s167, Svgs.s168),
                                               w: 20,
                                               h: 20,
                                             ),
@@ -770,7 +770,7 @@ class MainExpiringPage extends StatelessWidget {
                                         right: -8,
                                         bottom: -10,
                                         child: hsvg(
-                                          dk(context, Svgs.s164, Svgs.s165),
+                                          dk(context, Svgs.s165, Svgs.s166),
                                           w: 64,
                                           h: 64,
                                         ),
@@ -828,7 +828,7 @@ class MainExpiringPage extends StatelessWidget {
                                 child: hrow(
                                   [
                                     hsvg(
-                                      dk(context, Svgs.s172, Svgs.s173),
+                                      dk(context, Svgs.s173, Svgs.s174),
                                       w: 18,
                                       h: 18,
                                     ),
@@ -872,7 +872,7 @@ class MainExpiringPage extends StatelessWidget {
                               hrow(
                                 [
                                   hsvg(
-                                    dk(context, Svgs.s174, Svgs.s175),
+                                    dk(context, Svgs.s175, Svgs.s176),
                                     w: 18,
                                     h: 18,
                                   ),
@@ -892,7 +892,7 @@ class MainExpiringPage extends StatelessWidget {
                               top: -70,
                               right: -50,
                               child: hsvg(
-                                dk(context, Svgs.s170, Svgs.s171),
+                                dk(context, Svgs.s171, Svgs.s172),
                                 w: 190,
                                 h: 190,
                               ),
@@ -1490,7 +1490,7 @@ class MainExpiringPage extends StatelessWidget {
                                 pad: EdgeInsets.fromLTRB(0, 10, 0, 0),
                                 child: hcol(
                                   [
-                                    hsvg(Svgs.s176, w: 24, h: 24),
+                                    hsvg(Svgs.s177, w: 24, h: 24),
                                     Text(
                                       '首页',
                                       style: hts(
@@ -1524,7 +1524,7 @@ class MainExpiringPage extends StatelessWidget {
                                 child: hcol(
                                   [
                                     hsvg(
-                                      dk(context, Svgs.s177, Svgs.s178),
+                                      dk(context, Svgs.s178, Svgs.s179),
                                       w: 24,
                                       h: 24,
                                     ),
@@ -1561,7 +1561,7 @@ class MainExpiringPage extends StatelessWidget {
                                 child: hcol(
                                   [
                                     hsvg(
-                                      dk(context, Svgs.s179, Svgs.s180),
+                                      dk(context, Svgs.s180, Svgs.s181),
                                       w: 24,
                                       h: 24,
                                     ),
@@ -1597,7 +1597,7 @@ class MainExpiringPage extends StatelessWidget {
                                 child: hcol(
                                   [
                                     hsvg(
-                                      dk(context, Svgs.s181, Svgs.s182),
+                                      dk(context, Svgs.s182, Svgs.s183),
                                       w: 24,
                                       h: 24,
                                     ),
@@ -1671,7 +1671,7 @@ class MainExpiringPage extends StatelessWidget {
                           ),
                         ],
                         child: hrow(
-                          [hsvg(Svgs.s183, w: 26, h: 26)],
+                          [hsvg(Svgs.s184, w: 26, h: 26)],
                           main: MainAxisAlignment.center,
                           cross: CrossAxisAlignment.center,
                           gap: 0,

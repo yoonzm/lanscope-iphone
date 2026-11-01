@@ -392,25 +392,14 @@ class ChannelConfigPage extends StatelessWidget {
                               hbox(
                                 w: 96,
                                 h: 96,
-                                bg: dk(
-                                  context,
-                                  Color(0xFFFFFFFF),
-                                  Color(0xFF18181B),
-                                ),
+                                bg: Color(0xFFFFFFFF),
                                 radius: BorderRadius.circular(16),
-                                border: dk(
-                                  context,
-                                  Border.all(
-                                    color: Color(0xFFE4E4E7),
-                                    width: 1,
-                                  ),
-                                  Border.all(
-                                    color: Color(0xFF3A3A40),
-                                    width: 1,
-                                  ),
+                                border: Border.all(
+                                  color: Color(0xFFE4E4E7),
+                                  width: 1,
                                 ),
                                 child: hrow(
-                                  [hsvg(Svgs.s74, w: 76, h: 76)],
+                                  [hsvg(Svgs.s75, w: 76, h: 76)],
                                   main: MainAxisAlignment.center,
                                   cross: CrossAxisAlignment.center,
                                   gap: 0,
@@ -661,7 +650,7 @@ class ChannelConfigPage extends StatelessWidget {
                             top: -80,
                             right: -70,
                             child: hsvg(
-                              dk(context, Svgs.s75, Svgs.s76),
+                              dk(context, Svgs.s76, Svgs.s77),
                               w: 200,
                               h: 200,
                             ),

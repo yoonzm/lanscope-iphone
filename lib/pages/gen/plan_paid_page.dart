@@ -99,7 +99,7 @@ class PlanPaidPage extends StatelessWidget {
                                   ),
                                 ],
                                 child: hrow(
-                                  [hsvg(Svgs.s29, w: 36, h: 36)],
+                                  [hsvg(Svgs.s30, w: 36, h: 36)],
                                   main: MainAxisAlignment.center,
                                   cross: CrossAxisAlignment.center,
                                   gap: 0,
@@ -115,7 +115,11 @@ class PlanPaidPage extends StatelessWidget {
                             Positioned(
                               left: -32,
                               top: -32,
-                              child: hsvg(Svgs.s28, w: 160, h: 160),
+                              child: hsvg(
+                                dk(context, Svgs.s28, Svgs.s29),
+                                w: 160,
+                                h: 160,
+                              ),
                             ),
                           ],
                         ),
@@ -435,7 +439,7 @@ class PlanPaidPage extends StatelessWidget {
                             child: hrow(
                               [
                                 hsvg(
-                                  dk(context, Svgs.s249, Svgs.s250),
+                                  dk(context, Svgs.s250, Svgs.s251),
                                   w: 18,
                                   h: 18,
                                 ),
