@@ -34,7 +34,8 @@
     "appleBinaryValidation": "passed",
     "ownerDeviceSmokeTest": "passed: LAN, authorized public IPv4/domain scanning"
   },
-  "submissionStatus": "awaiting_manual_screenshot_upload",
+  "submissionStatus": "waiting_for_review",
+  "submissionVerifiedAt": "2026-11-20T06:41:45Z",
   "screenshotDirectory": "release/screenshots",
   "screenshotSizes": {"iphone": "1206x2622", "ipad": "2064x2752"},
   "screenshotsRun": "https://github.com/yoonzm/lanscope-iphone/actions/runs/44688128523"
