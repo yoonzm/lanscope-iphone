@@ -32,7 +32,7 @@ options = {
     'signingCertificate': 'Apple Distribution',
     'provisioningProfiles': {bundle: uuid},
     'manageAppVersionAndBuildNumber': False,
-    'testFlightInternalTestingOnly': True,
+    'testFlightInternalTestingOnly': False,
     'uploadSymbols': True,
 }
 (temp / 'ExportOptions.plist').write_bytes(plistlib.dumps(options))

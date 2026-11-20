@@ -9,7 +9,12 @@ struct DiscoveredAssetsView: View {
     var historical = false
     var localAddress: String?
     var localWiFiName: String?
-    @State private var tab: AssetTab = .ip
+    @State private var tab: AssetTab = {
+        #if DEBUG
+        if ProcessInfo.processInfo.arguments.contains("--screenshot-web") { return .web }
+        #endif
+        return .ip
+    }()
 
     private var services: [WebService] { hosts.flatMap { $0.webServices ?? [] } }
 

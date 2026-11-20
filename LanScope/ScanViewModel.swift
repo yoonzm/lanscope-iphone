@@ -65,6 +65,12 @@ final class ScanViewModel: ObservableObject {
     private var initialDetectionFinished = false
 
     init() {
+        #if DEBUG
+        if ProcessInfo.processInfo.arguments.contains("--screenshots") {
+            prepareScreenshots()
+            return
+        }
+        #endif
         settings = settingsStore.load()
         do { history = try historyStore.load() }
         catch { historyError = "无法读取扫描历史：\(error.localizedDescription)" }
@@ -77,6 +83,9 @@ final class ScanViewModel: ObservableObject {
     deinit { networkMonitor.cancel() }
 
     func refreshWiFiName() async {
+        #if DEBUG
+        if ProcessInfo.processInfo.arguments.contains("--screenshots") { return }
+        #endif
         let name = await wifiNameReader.currentName()
         guard !Task.isCancelled else { return }
         currentWiFiName = name.flatMap { $0.isEmpty ? nil : $0 }
@@ -286,4 +295,35 @@ final class ScanViewModel: ObservableObject {
             monitor.start(queue: DispatchQueue(label: "LanScope.network.check"))
         }
     }
+
+    #if DEBUG
+    // Sample data for reproducible simulator screenshots of the actual SwiftUI screens.
+    // This path is absent from the App Store build and never sends network probes.
+    private func prepareScreenshots() {
+        cidr = "192.168.1.0/24"
+        currentWiFiName = "Home Network"
+        localAddress = "192.168.1.100"
+        let now = Date()
+        hosts = [
+            HostResult(ip: "192.168.1.1", port: 443, open: true, milliseconds: 4, discoveredAt: now,
+                       ports: [PortResult(port: 80, state: .open, milliseconds: 4), PortResult(port: 443, state: .open, milliseconds: 5)],
+                       webServices: [WebService(url: "https://192.168.1.1:443/", statusCode: 200, title: "Router Dashboard", server: "nginx", certificateTrusted: false, isPage: true)],
+                       identity: DeviceIdentity(hostname: "router.local", names: ["Home Router"])),
+            HostResult(ip: "192.168.1.20", port: 445, open: true, milliseconds: 6, discoveredAt: now,
+                       ports: [PortResult(port: 445, state: .open, milliseconds: 6), PortResult(port: 5001, state: .open, milliseconds: 8)],
+                       webServices: [WebService(url: "https://192.168.1.20:5001/", statusCode: 200, title: "Personal Storage", server: "nginx", certificateTrusted: false, isPage: true)],
+                       identity: DeviceIdentity(names: ["Home NAS"], services: ["_smb._tcp."])),
+            HostResult(ip: "192.168.1.30", port: 631, open: true, milliseconds: 12, discoveredAt: now,
+                       ports: [PortResult(port: 631, state: .open, milliseconds: 12)],
+                       identity: DeviceIdentity(names: ["Office Printer"], services: ["_ipp._tcp."]))
+        ]
+        completed = 253
+        total = 253
+        status = "扫描完成；未发现的地址仍可能在线。"
+        history = [ScanRecord(id: UUID(), startedAt: now.addingTimeInterval(-30), endedAt: now,
+                              cidr: cidr, wifiName: currentWiFiName, outcome: .completed,
+                              completed: completed, total: total, hosts: hosts, diagnostic: nil,
+                              settings: ScanSettings(pingOnly: false, ports: ScanSettings().ports))]
+    }
+    #endif
 }

@@ -1,0 +1,35 @@
+name: App Store Screenshots
+on:
+  push:
+    branches: [main]
+    paths: ['LanScope/**', 'Core/**', 'LanScope.xcodeproj/**', 'scripts/capture-screenshots.py', '.github/workflows/screenshots.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: macos-15
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select Xcode
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, subprocess
+          candidates = []
+          for p in pathlib.Path('/Applications').glob('Xcode_*.app'):
+              m = re.fullmatch(r'Xcode_(\d+)\.(\d+)(?:\.(\d+))?\.app', p.name)
+              if m and int(m[1]) >= 26:
+                  candidates.append((tuple(int(v or 0) for v in m.groups()), p))
+          subprocess.run(['sudo', 'xcode-select', '--switch', str(max(candidates)[1] / 'Contents/Developer')], check=True)
+          PY
+      - name: Build simulator app
+        run: xcodebuild -project LanScope.xcodeproj -scheme LanScope -configuration Debug -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' -derivedDataPath build/simulator CODE_SIGNING_ALLOWED=NO build
+      - name: Capture actual app screens
+        run: python3 scripts/capture-screenshots.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: app-store-screenshots
+          path: release-artifacts/screenshots
+          retention-days: 30

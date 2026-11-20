@@ -10,3 +10,5 @@ xcuserdata/
 *.p12
 *.pem
 *.mobileprovision
+.release-site/
+release-artifacts/

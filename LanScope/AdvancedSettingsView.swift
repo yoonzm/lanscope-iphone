@@ -95,6 +95,18 @@ struct AdvancedSettingsView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .card(radius: 22)
 
+                    VStack(alignment: .leading, spacing: 14) {
+                        Link(destination: URL(string: "https://lanscope-support.yinzhimin.chatgpt.site/privacy.html")!) {
+                            Label("隐私政策", systemImage: "hand.raised")
+                        }
+                        Link(destination: URL(string: "https://lanscope-support.yinzhimin.chatgpt.site/")!) {
+                            Label("帮助与支持", systemImage: "questionmark.circle")
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(16)
+                    .card(radius: 22)
+
                     Button {
                         pingOnly = true
                         portsText = ScanSettings().portsText

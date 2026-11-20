@@ -24,6 +24,11 @@ struct ContentView: View {
         .environment(\.locale, AppLocalization.locale)
         .tint(Theme.mint)
         .preferredColorScheme(.dark)
+        .task {
+            #if DEBUG
+            if ProcessInfo.processInfo.arguments.contains("--screenshot-settings") { showingSettings = true }
+            #endif
+        }
         .onChange(of: scenePhase) { _, phase in
             if phase == .background { model.stop(background: true) }
         }
