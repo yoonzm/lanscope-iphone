@@ -1,0 +1,41 @@
+{
+  "appId": "6824871322",
+  "bundleId": "com.yoonzm.lanscope",
+  "version": "1.0.0",
+  "build": "27",
+  "sourceCommit": "908075e27180dd79cedbc22066315e717f0e1c5f",
+  "primaryLocale": "en-US",
+  "locales": [
+    "en-US",
+    "zh-Hans"
+  ],
+  "name": "LanScope - IPv4 & Port Scanner",
+  "subtitle": "IPv4, ports & web discovery",
+  "price": 0,
+  "territories": [
+    "USA",
+    "CAN",
+    "AUS",
+    "NZL"
+  ],
+  "automaticallyIncludeNewTerritories": false,
+  "macAvailability": false,
+  "visionProAvailability": false,
+  "releaseAfterApproval": "automatic",
+  "supportUrl": "https://lanscope-support.yinzhimin.chatgpt.site/",
+  "privacyPolicyUrl": "https://lanscope-support.yinzhimin.chatgpt.site/privacy",
+  "supportEmail": "yinzhim@gmail.com",
+  "dataCollected": false,
+  "ageRating": "4+",
+  "validation": {
+    "coreTests": "passed",
+    "releaseArchive": "passed",
+    "appStoreUpload": "passed",
+    "appleBinaryValidation": "passed",
+    "ownerDeviceSmokeTest": "passed: LAN, authorized public IPv4/domain scanning"
+  },
+  "submissionStatus": "awaiting_manual_screenshot_upload",
+  "screenshotDirectory": "release/screenshots",
+  "screenshotSizes": {"iphone": "1206x2622", "ipad": "2064x2752"},
+  "screenshotsRun": "https://github.com/yoonzm/lanscope-iphone/actions/runs/44688128523"
+}
