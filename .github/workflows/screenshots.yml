@@ -8,6 +8,10 @@ permissions:
   contents: read
 jobs:
   capture:
+    strategy:
+      fail-fast: false
+      matrix:
+        family: [iphone, ipad]
     runs-on: macos-15
     timeout-minutes: 25
     steps:
@@ -26,10 +30,12 @@ jobs:
       - name: Build simulator app
         run: xcodebuild -project LanScope.xcodeproj -scheme LanScope -configuration Debug -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' -derivedDataPath build/simulator CODE_SIGNING_ALLOWED=NO build
       - name: Capture actual app screens
+        env:
+          SCREENSHOT_FAMILY: ${{ matrix.family }}
         run: python3 scripts/capture-screenshots.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: app-store-screenshots
+          name: app-store-screenshots-${{ matrix.family }}
           path: release-artifacts/screenshots
           retention-days: 30
