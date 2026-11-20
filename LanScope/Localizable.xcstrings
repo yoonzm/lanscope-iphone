@@ -2076,6 +2076,214 @@
           }
         }
       }
+    },
+    "不支持未指定、回环、组播或保留 IPv4 地址。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unspecified, loopback, multicast, and reserved IPv4 addresses are not supported."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不支持未指定、回环、组播或保留 IPv4 地址。"
+          }
+        }
+      }
+    },
+    "请输入 IPv4、CIDR 或域名（例如 example.com），不要包含协议、端口或路径。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter an IPv4 address, CIDR, or domain (e.g. example.com), without a scheme, port, or path."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请输入 IPv4、CIDR 或域名（例如 example.com），不要包含协议、端口或路径。"
+          }
+        }
+      }
+    },
+    "域名解析超时，请检查网络或域名后重试。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DNS lookup timed out. Check your network or domain and try again."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "域名解析超时，请检查网络或域名后重试。"
+          }
+        }
+      }
+    },
+    "域名没有可扫描的 IPv4 地址，请检查域名与网络；暂不支持仅 IPv6 的域名。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No scannable IPv4 addresses were found. Check your domain and network; IPv6-only domains are not supported yet."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "域名没有可扫描的 IPv4 地址，请检查域名与网络；暂不支持仅 IPv6 的域名。"
+          }
+        }
+      }
+    },
+    "输入 IPv4、CIDR 或域名后开始扫描。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter an IPv4 address, CIDR, or domain to start scanning."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "输入 IPv4、CIDR 或域名后开始扫描。"
+          }
+        }
+      }
+    },
+    "扫描未能开始，请查看提示后重试。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The scan could not start. Review the message and try again."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "扫描未能开始，请查看提示后重试。"
+          }
+        }
+      }
+    },
+    "IPv4 / 域名" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IPv4 / Domain"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IPv4 / 域名"
+          }
+        }
+      }
+    },
+    "支持 IPv4、CIDR 和域名，最多 1024 个地址。局域网使用 Wi-Fi；公网和域名使用当前网络及深度模式。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supports IPv4, CIDR, and domains, up to 1024 addresses. LAN scans use Wi-Fi; public IP and domain scans use the current network and Deep mode."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支持 IPv4、CIDR 和域名，最多 1024 个地址。局域网使用 Wi-Fi；公网和域名使用当前网络及深度模式。"
+          }
+        }
+      }
+    },
+    "扫描目标" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan Target"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "扫描目标"
+          }
+        }
+      }
+    },
+    "IPv4、CIDR 或 example.com" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IPv4, CIDR, or example.com"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IPv4、CIDR 或 example.com"
+          }
+        }
+      }
+    },
+    "IPv4、CIDR 或域名" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IPv4, CIDR, or domain"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IPv4、CIDR 或域名"
+          }
+        }
+      }
+    },
+    "等待网络路径超时（%@）：%@。请检查网络连接和访问权限；其余探测继续。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Network path timed out (%@): %@. Check your connection and access permissions; other probes will continue."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "等待网络路径超时（%@）：%@。请检查网络连接和访问权限；其余探测继续。"
+          }
+        }
+      }
+    },
+    "公网和域名扫描始终使用深度模式。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Public IP and domain scans always use Deep mode."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "公网和域名扫描始终使用深度模式。"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

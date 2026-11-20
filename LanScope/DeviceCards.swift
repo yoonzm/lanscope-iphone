@@ -37,8 +37,15 @@ struct DiscoveredAssetsView: View {
                     if services.isEmpty {
                         EmptyAssetsRow(text: running ? tr("正在扫描…") : tr("暂无已确认的 Web 资产"))
                     }
-                    ForEach(services) { service in
-                        WebServiceCard(service: service)
+                    ForEach(hosts) { host in
+                        ForEach(host.webServices ?? []) { service in
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(host.ip)
+                                    .font(.caption.monospaced())
+                                    .foregroundStyle(Theme.secondary)
+                                WebServiceCard(service: service)
+                            }
+                        }
                     }
                 }
             }

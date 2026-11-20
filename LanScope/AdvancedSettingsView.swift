@@ -34,6 +34,9 @@ struct AdvancedSettingsView: View {
                         }
                         .pickerStyle(.segmented)
                         .labelsHidden()
+                        Text("公网和域名扫描始终使用深度模式。")
+                            .font(.footnote)
+                            .foregroundStyle(Theme.secondary)
                         Text(pingOnly ? tr("只检查有回应的设备，速度快，但可能漏掉少数设备。")
                                       : tr("逐个检查所有地址，结果更全，但耗时更长。"))
                             .font(.footnote)

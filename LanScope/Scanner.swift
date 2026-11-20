@@ -32,6 +32,8 @@ final class Scanner {
     private var timers: [UUID: DispatchWorkItem] = [:]
     private var monitor: NWPathMonitor?
     private var interface = ""
+    private var localNetwork = true
+    private var domain: String?
     private var callback: ((ScanUpdate) -> Void)?
     private let bonjour = BonjourDiscovery()
     private let nameLookups = DispatchQueue(label: "LanScope.reverse-dns", attributes: .concurrent)
@@ -40,21 +42,56 @@ final class Scanner {
     private var bonjourStop: DispatchWorkItem?
 
     func start(addresses: [String], settings: ScanSettings, done: Set<String> = [],
+               localNetwork: Bool = true, domain: String? = nil,
                update: @escaping (ScanUpdate) -> Void) {
         queue.async {
             self.clear()
             self.addresses = addresses
             self.settings = settings
+            self.localNetwork = localNetwork
+            self.domain = domain
+            if !localNetwork { self.settings.pingOnly = false }
             self.next = 0
             self.done = done
             self.completed = 0
             self.callback = update
-            guard !addresses.isEmpty, !settings.ports.isEmpty else {
+            guard (!addresses.isEmpty || domain != nil), !settings.ports.isEmpty else {
                 self.abort(tr("扫描地址或端口列表为空。"))
                 return
             }
-            // Both scan modes need the current local address before probing.
-            self.prepareWiFi()
+            // LAN scans exclude the Wi-Fi address; remote scans use the system route.
+            if localNetwork { self.prepareWiFi() }
+            else if let domain { self.resolve(domain) }
+            else { self.launchBatch() }
+        }
+    }
+
+    private func resolve(_ domain: String) {
+        let token = generation
+        let id = UUID()
+        let timeout = DispatchWorkItem { [weak self] in
+            guard let self, self.generation == token else { return }
+            self.abort(tr("域名解析超时，请检查网络或域名后重试。"))
+        }
+        timers[id] = timeout
+        queue.asyncAfter(deadline: .now() + 8, execute: timeout)
+        nameLookups.async { [weak self] in
+            let addresses = ForwardDNS.addresses(for: domain)
+            self?.queue.async {
+                guard let self, self.generation == token else { return }
+                self.timers.removeValue(forKey: id)?.cancel()
+                guard !addresses.isEmpty else {
+                    self.abort(tr("域名没有可扫描的 IPv4 地址，请检查域名与网络；暂不支持仅 IPv6 的域名。"))
+                    return
+                }
+                guard addresses.count <= 1024 else {
+                    self.abort(tr("单次最多 1024 个地址，请使用 /22 或更小的范围。"))
+                    return
+                }
+                self.addresses = addresses
+                self.emit()
+                self.launchBatch()
+            }
         }
     }
 
@@ -204,7 +241,7 @@ final class Scanner {
 
     // Runs once per responding host, alongside its port probes: reverse DNS, NetBIOS and SSDP/UPnP.
     private func lookUpName(ip: String) {
-        guard lookedUp.insert(ip).inserted else { return }
+        guard localNetwork, lookedUp.insert(ip).inserted else { return }
         let token = generation
         let interface = self.interface
         let deliver: (DeviceIdentity?) -> Void = { [weak self] identity in
@@ -266,7 +303,7 @@ final class Scanner {
                        completion: @escaping (PortResult, String?) -> Void) {
         guard token == generation else { return }
         let parameters = NWParameters.tcp
-        parameters.requiredInterfaceType = .wifi
+        if localNetwork { parameters.requiredInterfaceType = .wifi }
         let connection = NWConnection(host: NWEndpoint.Host(ip), port: NWEndpoint.Port(rawValue: port)!, using: parameters)
         active[id] = connection
         let started = DispatchTime.now().uptimeNanoseconds
@@ -306,7 +343,7 @@ final class Scanner {
                 } else if case .posix(.EACCES) = error {
                     finish(.error, diagnostic: tr("访问被拒绝（\(target)），请检查局域网权限；其余探测继续。"))
                 } else {
-                    waitingReason = tr("等待网络路径超时（\(target)）：\(String(describing: error))。请检查 Wi-Fi 和局域网权限；其余探测继续。")
+                    waitingReason = tr("等待网络路径超时（\(target)）：\(String(describing: error))。请检查网络连接和访问权限；其余探测继续。")
                 }
             case .preparing:
                 // A recovered path must not retain an earlier waiting error.
@@ -377,17 +414,19 @@ final class Scanner {
     private func startWeb(ip: String, port: UInt16, tls: Bool, token: UUID, fetchPage: Bool,
                           id: UUID, completion: @escaping (WebService?) -> Void) {
         guard token == generation else { return }
+        let serverName = domain ?? ip
         let tlsOptions = tls ? NWProtocolTLS.Options() : nil
         var certificateTrusted: Bool?
         if let tlsOptions {
+            if let domain { sec_protocol_options_set_tls_server_name(tlsOptions.securityProtocolOptions, domain) }
             sec_protocol_options_set_verify_block(tlsOptions.securityProtocolOptions, { [weak self] _, trust, verify in
                 guard let self, self.generation == token, self.active[id] != nil else {
                     verify(false)
                     return
                 }
                 let securityTrust = sec_trust_copy_ref(trust).takeRetainedValue()
-                // Evaluate the scanned IP locally, without fetching certificates over other routes.
-                let policyStatus = SecTrustSetPolicies(securityTrust, SecPolicyCreateSSL(true, ip as CFString))
+                // Validate the original domain (or IP), without fetching certificates over other routes.
+                let policyStatus = SecTrustSetPolicies(securityTrust, SecPolicyCreateSSL(true, serverName as CFString))
                 let fetchStatus = SecTrustSetNetworkFetchAllowed(securityTrust, false)
                 guard policyStatus == errSecSuccess, fetchStatus == errSecSuccess else {
                     verify(true)
@@ -407,12 +446,12 @@ final class Scanner {
             }, queue)
         }
         let parameters = NWParameters(tls: tlsOptions, tcp: NWProtocolTCP.Options())
-        parameters.requiredInterfaceType = .wifi
+        if localNetwork { parameters.requiredInterfaceType = .wifi }
         let connection = NWConnection(host: NWEndpoint.Host(ip), port: NWEndpoint.Port(rawValue: port)!,
                                       using: parameters)
         active[id] = connection
         var received = Data()
-        let url = "\(tls ? "https" : "http")://\(ip):\(port)/"
+        let url = "\(tls ? "https" : "http")://\(serverName):\(port)/"
         let limit = fetchPage ? 65_536 : 16_384
         func finish() {
             guard token == self.generation, self.active.removeValue(forKey: id) != nil else { return }
@@ -448,7 +487,7 @@ final class Scanner {
             case .ready:
                 // Read a bounded page after HEAD; never follow redirects or send credentials.
                 let method = fetchPage ? "GET" : "HEAD"
-                let request = "\(method) / HTTP/1.1\r\nHost: \(ip):\(port)\r\nAccept-Encoding: identity\r\nConnection: close\r\n\r\n"
+                let request = "\(method) / HTTP/1.1\r\nHost: \(serverName):\(port)\r\nAccept-Encoding: identity\r\nConnection: close\r\n\r\n"
                 connection.send(content: Data(request.utf8), completion: .contentProcessed { error in
                     guard token == self.generation, self.active[id] != nil else { return }
                     if error != nil { finish() } else { receive() }

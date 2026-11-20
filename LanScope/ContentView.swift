@@ -160,7 +160,7 @@ private struct IdleSection: View {
 
     // Addresses in the typed range, before the local address is excluded at scan time.
     private var addressCount: Int? {
-        (try? IPv4Range(model.cidr))?.addresses.count
+        (try? ScanTarget(model.cidr)).flatMap { $0.domain == nil ? $0.addresses.count : nil }
     }
 
     var body: some View {
@@ -175,7 +175,7 @@ private struct IdleSection: View {
                             .minimumScaleFactor(0.5)
                             .lineLimit(1)
                         // One short word under the number; it must never wrap inside the inner ring.
-                        Text(addressCount == nil ? tr("无效网段") : tr("个地址"))
+                        Text(addressCount == nil ? tr("IPv4 / 域名") : tr("个地址"))
                             .font(.footnote)
                             .foregroundStyle(Theme.secondary)
                             .lineLimit(1)
@@ -190,7 +190,8 @@ private struct IdleSection: View {
 
             HStack(spacing: 10) {
                 SettingChip(title: tr("扫描模式"),
-                            value: model.settings.pingOnly ? tr("快速模式") : tr("深度模式")) {
+                            value: (try? ScanTarget(model.cidr))?.isLocal == false ? tr("深度模式") :
+                                (model.settings.pingOnly ? tr("快速模式") : tr("深度模式"))) {
                     showingSettings = true
                 }
                 SettingChip(title: tr("TCP 端口"),
@@ -224,7 +225,7 @@ private struct IdleSection: View {
                 .buttonStyle(.plain)
             }
 
-            Text("仅 Wi-Fi · 私有 IPv4 / 链路本地地址 · 最多 1024 个地址。扫描时自动排除本机地址。更换 Wi-Fi 后请确认扫描范围。")
+            Text("支持 IPv4、CIDR 和域名，最多 1024 个地址。局域网使用 Wi-Fi；公网和域名使用当前网络及深度模式。")
                 .font(.caption)
                 .foregroundStyle(Theme.tertiary)
                 .multilineTextAlignment(.center)
@@ -238,16 +239,16 @@ private struct RangeCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text("扫描范围")
+            Text("扫描目标")
                 .font(.footnote.weight(.medium))
                 .foregroundStyle(Theme.secondary)
-            TextField("例如 192.168.1.0/24", text: $model.cidr)
+            TextField("IPv4、CIDR 或 example.com", text: $model.cidr)
                 .font(Font.mono(.title2, weight: .semibold))
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
-                .keyboardType(.numbersAndPunctuation)
+                .keyboardType(.URL)
                 .disabled(model.running)
-                .accessibilityLabel("IPv4 网段")
+                .accessibilityLabel("IPv4、CIDR 或域名")
             if let message = model.networkMessage {
                 Text(tr(message))
                     .font(.footnote)

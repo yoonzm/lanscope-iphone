@@ -19,3 +19,27 @@ enum ReverseDNS {
         return DeviceIdentity.cleanHostname(String(cString: buffer), ip: ip)
     }
 }
+
+
+enum ForwardDNS {
+    // Run on a worker queue: getaddrinfo may block beyond the scan's own deadline.
+    static func addresses(for domain: String) -> [String] {
+        var hints = addrinfo()
+        hints.ai_family = AF_INET
+        hints.ai_socktype = SOCK_STREAM
+        var result: UnsafeMutablePointer<addrinfo>?
+        guard getaddrinfo(domain, nil, &hints, &result) == 0, let first = result else { return [] }
+        defer { freeaddrinfo(first) }
+        var addresses = Set<String>()
+        var cursor: UnsafeMutablePointer<addrinfo>? = first
+        while let item = cursor {
+            if let pointer = item.pointee.ai_addr, item.pointee.ai_family == AF_INET {
+                let address = pointer.withMemoryRebound(to: sockaddr_in.self, capacity: 1) { $0.pointee }
+                let number = UInt32(bigEndian: address.sin_addr.s_addr)
+                if IPv4Range.isScannable(number) { addresses.insert(IPv4Range.string(number)) }
+            }
+            cursor = item.pointee.ai_next
+        }
+        return addresses.sorted { IPv4Range.number($0)! < IPv4Range.number($1)! }
+    }
+}

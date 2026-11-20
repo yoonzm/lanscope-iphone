@@ -3,6 +3,21 @@ import XCTest
 @testable import LanScopeCore
 
 final class ScanHistoryTests: XCTestCase {
+    func testDomainScanHistoryRoundTrip() throws {
+        let host = HostResult(ip: "203.0.113.10", port: 443, open: true,
+                              milliseconds: 30, discoveredAt: Date(),
+                              webServices: [WebService(url: "https://example.com:443/", statusCode: 200)])
+        let scan = ScanRecord(id: UUID(), startedAt: Date(), endedAt: Date(),
+                              cidr: "example.com", wifiName: nil, outcome: .completed,
+                              completed: 1, total: 1, hosts: [host], diagnostic: nil,
+                              settings: ScanSettings(pingOnly: false, ports: [443]))
+        let restored = try JSONDecoder().decode(ScanRecord.self, from: JSONEncoder().encode(scan))
+        XCTAssertEqual(restored.cidr, "example.com")
+        XCTAssertEqual(restored.hosts.first?.ip, "203.0.113.10")
+        XCTAssertEqual(restored.hosts.first?.webServices?.first?.url, "https://example.com:443/")
+        XCTAssertEqual(restored.settings?.pingOnly, false)
+    }
+
     func testLegacyHostAndNewPingOnlyHostRoundTrip() throws {
         let legacy = Data("""
         {"ip":"192.168.1.1","port":80,"open":false,"milliseconds":12,"discoveredAt":0}

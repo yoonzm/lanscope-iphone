@@ -28,10 +28,10 @@ final class IPv4RangeTests: XCTestCase {
         XCTAssertNoThrow(try IPv4Range("169.254.1.0/24"))
     }
 
-    func testRejectsInvalidOversizedAndPublicRanges() {
+    func testRejectsInvalidOversizedAndReservedRanges() {
         for input in ["", "1.2.3/24", "192.168.1.256/24", "192.168.1.0/33",
                       "192.168.1.0/-1", "192.168.1.0/24/", "10.0.0.0/8",
-                      "8.8.8.8/32", "172.32.0.0/24", "127.0.0.1/32"] {
+                      "0.0.0.0/32", "224.0.0.0/24", "255.255.255.255/32", "127.0.0.1/32"] {
             XCTAssertThrowsError(try IPv4Range(input), input)
         }
     }

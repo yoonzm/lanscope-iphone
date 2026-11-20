@@ -40,7 +40,7 @@ final class ScanViewModel: ObservableObject {
     @Published private(set) var completed = 0
     @Published private(set) var total = 0
     @Published private(set) var running = false
-    @Published private(set) var status: String.LocalizationValue = "连接 Wi-Fi，确认网段后开始扫描。"
+    @Published private(set) var status: String.LocalizationValue = "输入 IPv4、CIDR 或域名后开始扫描。"
     @Published private(set) var diagnostic: String?
     @Published private(set) var history: [ScanRecord] = []
     @Published private(set) var historyError: String.LocalizationValue?
@@ -131,44 +131,46 @@ final class ScanViewModel: ObservableObject {
     func start() {
         guard !running else { return }
         do {
-            let range = try IPv4Range(cidr)
-            cidr = range.canonicalCIDR
+            let target = try ScanTarget(cidr)
+            cidr = target.label
             hosts = []
             localAddress = nil
             identities = [:]
             completed = 0
-            total = range.addresses.count
+            total = target.addresses.count
             diagnostic = nil
             running = true
             scanSettings = settings
+            if !target.isLocal { scanSettings.pingOnly = false }
             status = "正在扫描…"
             session = UUID()
             recordID = UUID()
             pausedScan = nil
             startedAt = Date()
-            scanCIDR = range.canonicalCIDR
+            scanCIDR = target.label
             scanWiFiName = nil
             scanNetwork = nil
             let current = session
             Task {
                 guard session == current, running else { return }
-                let name = await wifiNameReader.currentName()
-                let network = await currentNetwork()
+                let name = target.isLocal ? await wifiNameReader.currentName() : nil
+                let network = target.isLocal ? await currentNetwork() : nil
                 guard session == current, running else { return }
                 scanWiFiName = name
                 scanNetwork = network.map(Self.snapshot)
-                localAddress = network.map(\.address).flatMap { range.addresses.contains($0) ? $0 : nil }
+                localAddress = network.map(\.address).flatMap { target.addresses.contains($0) ? $0 : nil }
                 startedAt = Date()
-                beginScan(range: range, session: current)
+                beginScan(target: target, session: current)
             }
         } catch {
             diagnostic = error.localizedDescription
         }
     }
 
-    private func beginScan(range: IPv4Range, session current: UUID, done: Set<String> = []) {
+    private func beginScan(target: ScanTarget, session current: UUID, done: Set<String> = []) {
         status = "正在扫描…"
-        scanner.start(addresses: range.addresses, settings: scanSettings, done: done) { [weak self] update in
+        scanner.start(addresses: target.addresses, settings: scanSettings, done: done,
+                      localNetwork: target.isLocal, domain: target.domain) { [weak self] update in
             DispatchQueue.main.async {
                 guard let self, self.session == current, self.running else { return }
                 self.completed = update.completed
@@ -179,7 +181,9 @@ final class ScanViewModel: ObservableObject {
                 if update.finished {
                     self.running = false
                     self.saveHistory(outcome: update.completed == update.total ? .completed : .interrupted)
-                    if update.completed != update.total {
+                    if update.total == 0 && update.diagnostic != nil {
+                        self.status = "扫描未能开始，请查看提示后重试。"
+                    } else if update.completed != update.total {
                         self.status = "扫描因网络或权限问题中止，请检查后重试。"
                     } else if update.total == 0 {
                         self.status = "已排除本机地址，扫描范围内没有其他地址。"
@@ -220,7 +224,7 @@ final class ScanViewModel: ObservableObject {
 
     // Continue a scan paused in the background, but only if the Wi-Fi environment is unchanged.
     func resume() {
-        guard !running, let paused = pausedScan, let range = try? IPv4Range(paused.cidr) else { return }
+        guard !running, let paused = pausedScan, let target = try? ScanTarget(paused.cidr) else { return }
         running = true
         status = "正在检查网络…"
         session = UUID()
@@ -237,7 +241,7 @@ final class ScanViewModel: ObservableObject {
                 return
             }
             pausedScan = nil
-            beginScan(range: range, session: current, done: paused.done)
+            beginScan(target: target, session: current, done: paused.done)
         }
     }
 

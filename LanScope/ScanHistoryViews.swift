@@ -140,7 +140,7 @@ struct ScanRecordView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 VStack(alignment: .leading, spacing: 0) {
-                    InfoRow(label: tr("网段"), value: record.cidr, mono: true)
+                    InfoRow(label: tr("扫描目标"), value: record.cidr, mono: true)
                     if let settings = record.settings {
                         InfoRow(label: tr("扫描模式"),
                                 value: settings.pingOnly ? tr("快速模式") : tr("深度模式"))
